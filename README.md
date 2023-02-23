@@ -1,2 +1,0 @@
-# luxmiyu.com
-luxmiyu.com
