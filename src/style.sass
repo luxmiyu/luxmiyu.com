@@ -1,4 +1,3 @@
-$font-h: 'Fredoka One', sans-serif
 $font-p: 'Rubik', sans-serif
 
 *
@@ -8,16 +7,7 @@ $font-p: 'Rubik', sans-serif
   font-family: 'Rubik', sans-serif
   font-size: 16px
 
-  color: var(--color-c5)
-
-  /* color variables */
-  --color-c0: #1a1a1a
-  --color-c1: #2a2a2a
-  --color-c2: #3a3a3a
-  --color-c3: #5a5a5a
-  --color-c4: #bababa
-  --color-c5: #eaeaea
-  --color-ca: #ff99be
+  color: var(--color-text)
 
 /* scrollbar */
 ::-webkit-scrollbar
@@ -27,165 +17,183 @@ $font-p: 'Rubik', sans-serif
   width: 0px
   height: 0px
 ::-webkit-scrollbar-thumb
-  background: var(--color-c4)
+  background: var(--color-scrollbar-thumb)
   border: none
 ::-webkit-scrollbar-track
-  background: var(--color-c2)
+  background: var(--color-scrollbar-track)
   border: none 
 ::-webkit-scrollbar-corner
-  background: var(--color-c2) 
+  background: var(--color-scrollbar-track) 
 
 ::selection
-  color: var(--color-c5)
-  background: #cd435c
+  color: var(--color-selection-text)
+  background: var(--color-selection)
 
 /* reset links */
 a
   text-decoration: none
-  color: #eaeaea
-
-// a:hover
-//   text-decoration: underline
+  color: var(--color-text)
 
 body
-  background: var(--color-c0)
-  background-image: radial-gradient(#222222 1.5px, transparent 1.5px)
+  background: var(--color-background)
+  background-image: radial-gradient(var(--color-background-accent) 1.5px, transparent 1.5px)
   background-size: 10px 10px
-  background-color: #1a1a1a
+  background-color: var(--color-background)
 
   display: flex
   align-items: center 
   justify-content: center
 
-  #container
+  .container
     display: flex
     flex-direction: column
     align-items: center
     justify-content: center
+    gap: 12px
 
+    min-height: 90vh
     width: clamp(69px, 100%, 727px)
 
     padding: 16px
     padding-top: 32px
 
-    #header
-      display: flex
-      flex-direction: column
-      align-items: center
-      justify-content: center
-      gap: 12px
-
-      #pfp
-        width: 150px
-        height: 150px
-        
-        box-shadow: 4px 4px 0px 0px var(--color-c2)
+    .pfp
+      width: 150px
+      height: 150px
       
-      #title
-        // font-family: $font-h
-        font-size: 1.75rem
-        text-shadow: 3px 3px 0 var(--color-c2)
-
-        color: var(--color-c5)
-
-        font-weight: 800
-      
-      #subtitle
-        font-family: $font-p
-        font-size: 0.8rem
-        font-weight: 300
-
-        color: var(--color-c4)
-
-        display: flex
-        align-items: center
-
-        img
-          display: none // hide the discord icon for now
-
-          width: 16px
-          margin-right: 2px
-      
-      #bio
-        font-family: $font-p
-        font-size: 0.9rem
-        font-weight: 300
-
-        color: var(--color-c5)
-
-        text-align: justify
+      box-shadow: 4px 4px 0px 0px var(--color-shadow)
     
-    #cards
+    .title
+      // font-family: $font-h
+      font-size: 1.75rem
+      text-shadow: 3px 3px 0 var(--color-shadow)
+
+      color: var(--color-text)
+
+      font-weight: 800
+    
+    .subtitle
+      font-family: $font-p
+      font-size: 0.8rem
+      font-weight: 300
+      
+      color: var(--color-text-secondary)
+    
+    h2
+      width: 100%
+      margin-top: 6px
+      margin-bottom: -2px
+      font-size: 1rem
+      font-weight: 400
+    
+    h3
+      width: 100%
+      margin: -2px 0
+
+      font-size: 0.8rem
+      font-weight: 300
+      color: var(--color-text-secondary)
+
+    p
+      font-family: $font-p
+      font-size: 0.9rem
+      font-weight: 300
+
+      color: var(--color-text)
+
+      text-align: justify
+    
+    strong
+      font-weight: 500
+
+    em
+      font-style: italic
+
+    a
+      color: var(--color-text-secondary)
+      cursor: pointer
+
+      &:hover
+        text-decoration: underline
+    
+    .buttons
       display: flex
-      flex-direction: column
+      gap: 12px
+      width: 100%
+
+    .button, button
+      display: flex
+      align-items: center
       gap: 12px
 
       width: 100%
 
-      .category
-        margin-top: 16px
+      padding: 8px
+      color: var(--color-text)
+      font-family: $font-p
+      font-size: 0.9rem
+      font-weight: 300
+      cursor: pointer
+      background: var(--color-button)
+      border: 1px solid var(--color-button-border)
       
-      .note
+      box-shadow: 4px 4px 0px 0px var(--color-shadow)
+
+      &:is(button)
+        width: auto
+
+      &.hidden
+        display: none
+
+      &:hover
+        transform: translate(1px, 1px)
+        box-shadow: 3px 3px 0px 0px var(--color-shadow)
+
+        background: var(--color-button-hover)
+
+      &:active
+        transform: translate(3px, 3px)
+        box-shadow: 1px 1px 0px 0px var(--color-shadow)
+
+        background: var(--color-button-active)
+
+      .icon
+        width: 32px
+        height: 32px
+      
+      .label
         font-family: $font-p
-        font-size: 0.8rem
+        font-size: 1rem
         font-weight: 300
 
-        color: var(--color-c4)
+        color: var(--color-text)
 
-        text-align: justify
-
-      .card
-        display: flex
-        align-items: center
-        gap: 12px
-
-        width: 100%
-
-        padding: 8px
-        background: var(--color-c1)
-        border: 1px solid var(--color-c4)
-        
-        box-shadow: 4px 4px 0px 0px var(--color-c2)
-
-        &.hidden
-          display: none
-
-        &:hover
-          transform: translate(1px, 1px)
-          box-shadow: 3px 3px 0px 0px var(--color-c2)
-
-          background: var(--color-c2)
-
-        &:active
-          transform: translate(3px, 3px)
-          box-shadow: 1px 1px 0px 0px var(--color-c2)
-
-          background: var(--color-c3)
-
-        .icon
-          width: 32px
-          height: 32px
-        
-        .label
-          font-family: $font-p
-          font-size: 1rem
-          font-weight: 300
-
-          color: var(--color-c5)
-
-          overflow: hidden
+        overflow: hidden
     
-    #footer
+    input[type=text], textarea, .output
+      width: 100%
+      padding: 8px
+      color: var(--color-text)
+      font-family: $font-p
+      font-size: 0.9rem
+      font-weight: 300
+      cursor: text
+      background: var(--color-input)
+      border: 1px solid var(--color-input-border)
+      resize: vertical
+    
+    footer
       font-family: $font-p
       font-size: 0.7rem
       font-weight: 300
+      
+      color: var(--color-text-secondary)
 
-      color: var(--color-c4)
+      padding-top: 6px
 
-      padding-top: 16px
-        
       a
-        color: var(--color-c4)
-        
+        color: var(--color-text-secondary)
+        cursor: pointer
+
         &:hover
           text-decoration: underline
