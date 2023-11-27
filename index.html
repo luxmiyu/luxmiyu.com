@@ -31,6 +31,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <style>
+      .material-symbols-rounded {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+      }
+    </style>
     
     <!-- compiled -->
   </head>
@@ -44,202 +55,82 @@
 
       <h2 class="category">My Stuff</h2>
       <h3>Join my anime &amp; gaming discord server!</h3>
-      <a class="button" href="https://luxmiyu.dev" target="_blank">
-        <img class="icon" src="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/suiseihat.jpg?v=1677173567603" alt="luxmiyu icon">
-        <p class="label">luxmiyu.dev</p>
-      </a>
-      <a class="button" href="https://discord.gg/komimau" target="_blank">
-        <img class="icon" src="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/komimau_logo_128.jpg?v=1677244637983" alt="komimau icon">
-        <p class="label">discord.gg/komimau</p>
-      </a>
-      <a class="button" href="https://dcag.luxmiyu.com" target="_blank">
-        <img class="icon" src="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/uibeam.jpg?v=1677415472660" alt="daily cute anime girl icon">
-        <p class="label">Daily Cute Anime Girl</p>
-      </a>
+      <a class="button" href="https://luxmiyu.dev" data-icon="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/suiseihat.jpg?v=1677173567603" data-name="luxmiyu">luxmiyu.dev</a>
+      <a class="button" href="https://discord.gg/komimau" data-icon="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/komimau_logo_128.jpg?v=1677244637983" data-name="komimau">discord.gg/komimau</a>
+      <a class="button" href="https://luxmiyu.com/dcag" data-icon="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/uibeam.jpg?v=1677415472660" data-name="daily cute anime girl">daily cute anime girl</a>
       
       <h2 class="category">Tools</h2>
-      <h3>Things I've made you might find useful</h3>
-      <a class="button" href="https://luxmiyu.com/template" target="_blank">
-        <img class="icon" src="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/link.png?v=1677244549990" alt="link icon">
-        <p class="label">template</p>
-      </a>
-      <a class="button" href="https://luxmiyu.com/uwufier" target="_blank">
-        <img class="icon" src="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/link.png?v=1677244549990" alt="link icon">
-        <p class="label">uwufier</p>
-      </a>
-      <a class="button" href="https://luxmiyu.com/bpmconverter" target="_blank">
-        <img class="icon" src="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/link.png?v=1677244549990" alt="link icon">
-        <p class="label">bpmconverter</p>
-      </a>
-      <a class="button" href="https://luxmiyu.com/bpmtap" target="_blank">
-        <img class="icon" src="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/link.png?v=1677244549990" alt="link icon">
-        <p class="label">bpmtap</p>
-      </a>
-      <a class="button" href="https://luxmiyu.com/metronome" target="_blank">
-        <img class="icon" src="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/link.png?v=1677244549990" alt="link icon">
-        <p class="label">metronome</p>
-      </a>
-      <a class="button" href="https://luxmiyu.com/sliders" target="_blank">
-        <img class="icon" src="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/link.png?v=1677244549990" alt="link icon">
-        <p class="label">sliders</p>
-      </a>
-      <a class="button" href="https://luxmiyu.com/convert" target="_blank">
-        <img class="icon" src="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/link.png?v=1677244549990" alt="link icon">
-        <p class="label">convert</p>
-      </a>
-      <a class="button" href="https://luxmiyu.com/wordle" target="_blank">
-        <img class="icon" src="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/link.png?v=1677244549990" alt="link icon">
-        <p class="label">wordle</p>
-      </a>
-      <a class="button" href="https://luxmiyu.com/colors" target="_blank">
-        <img class="icon" src="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/link.png?v=1677244549990" alt="link icon">
-        <p class="label">colors</p>
-      </a>
+      <h3>Things I've made you might find fun and useful</h3>
+      <div id="tools">
+        <a class="button tool" href="https://luxmiyu.com/template" data-icon="html">template</a>
+        <a class="button tool" href="https://luxmiyu.com/uwufier" data-icon="forum">uwufier</a>
+        <a class="button tool" href="https://luxmiyu.com/bpmconverter" data-icon="music_note">bpmconverter</a>
+        <a class="button tool" href="https://luxmiyu.com/bpmtap" data-icon="touch_app">bpmtap</a>
+        <a class="button tool" href="https://luxmiyu.com/metronome" data-icon="tune">metronome</a>
+        <a class="button tool" href="https://luxmiyu.com/sliders" data-icon="switches">sliders</a>
+        <a class="button tool" href="https://luxmiyu.com/convert" data-icon="square_foot">convert</a>
+        <a class="button tool" href="https://luxmiyu.com/wordle" data-icon="password">wordle</a>
+        <a class="button tool" href="https://luxmiyu.com/colors" data-icon="palette">colors</a>
+        <a class="button tool" href="https://luxmiyu.com/dcag" data-icon="wall_art">dcag</a>
+        <!--
+          <a class="button tool" href="https://luxmiyu.com/advancements" data-icon="label">advancements</a>
+          <a class="button tool" href="https://luxmiyu.com/minesweeper" data-icon="explosion">minesweeper</a>
+          <a class="button tool" href="https://luxmiyu.com/sudoku" data-icon="grid_3x3">sudoku</a>
+          <a class="button tool" href="https://luxmiyu.com/bars" data-icon="finance">bars</a>
+          <a class="button tool" href="https://luxmiyu.com/paint" data-icon="brush">paint</a>
+          <a class="button tool" href="https://luxmiyu.com/reaction" data-icon="speed">reaction</a>
+          <a class="button tool" href="https://luxmiyu.com/regex" data-icon="regular_expression">regex</a>
+        -->
+      </div>
 
       <h2 class="category">Active Accounts</h2>
       <h3>Feel free to add me!</h3>
-      <a class="button" href="https://anilist.co/user/luxmiyu/" target="_blank">
-        <img class="icon" src="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/anilist.png?v=1677246315355" alt="anilist icon">
-        <p class="label">anilist.co/user/luxmiyu</p>
-      </a>
-      <a class="button" href="https://osu.ppy.sh/users/luxmiyu" target="_blank">
-        <img class="icon" src="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/osu.png?v=1677246634136" alt="osu icon">
-        <p class="label">osu.ppy.sh/u/luxmiyu</p>
-      </a>
-      <a class="button" href="https://steamcommunity.com/id/luxmiyu/" target="_blank">
-        <img class="icon" src="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/steam.png?v=1677263423434" alt="steam icon">
-        <p class="label">steamcommunity.com/id/luxmiyu</p>
-      </a>
-      <a class="button" href="https://www.chess.com/member/luxmiyu" target="_blank">
-        <img class="icon" src="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/chess.png?v=1677267498437" alt="chess.com icon">
-        <p class="label">chess.com/member/luxmiyu</p>
-      </a>
-      <a class="button" href="https://github.com/luxmiyu" target="_blank">
-        <img class="icon" src="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/github.png" alt="github icon">
-        <p class="label">github.com/luxmiyu</p>
-      </a>
-      <a class="button" href="https://www.youtube.com/@luxmiyu" target="_blank">
-        <img class="icon" src="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/youtube.png?v=1677262992194" alt="youtube icon">
-        <p class="label">youtube.com/@luxmiyu</p>
-      </a>
-      <a class="button" href="https://www.pixiv.net/users/38342777" target="_blank">
-        <img class="icon" src="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/pixiv.png?v=1677264474356" alt="pixiv icon">
-        <p class="label">pixiv.me/luxmiyu</p>
-      </a>
+      <a class="button" href="https://anilist.co/user/luxmiyu/" data-icon="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/anilist.png?v=1677246315355" data-name="anilist">anilist.co/user/luxmiyu</a>
+      <a class="button" href="https://osu.ppy.sh/users/luxmiyu" data-icon="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/osu.png?v=1677246634136" data-name="osu">osu.ppy.sh/u/luxmiyu</a>
+      <a class="button" href="https://steamcommunity.com/id/luxmiyu/" data-icon="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/steam.png?v=1677263423434" data-name="steam">steamcommunity.com/id/luxmiyu</a>
+      <a class="button" href="https://www.chess.com/member/luxmiyu" data-icon="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/chess.png?v=1677267498437" data-name="chess.com">chess.com/member/luxmiyu</a>
+      <a class="button" href="https://github.com/luxmiyu" data-icon="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/github.png" data-name="github">github.com/luxmiyu</a>
+      <a class="button" href="https://www.youtube.com/@luxmiyu" data-icon="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/youtube.png?v=1677262992194" data-name="youtube">youtube.com/@luxmiyu</a>
+      <a class="button" href="https://www.pixiv.net/users/38342777" data-icon="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/pixiv.png?v=1677264474356" data-name="pixiv">pixiv.me/luxmiyu</a>
 
       <h2 class="category">Inactive Accounts</h2>
       <h3>Accounts I use but not frequently</h3>
-      <a class="button" href="https://www.planetminecraft.com/member/luxmiyu/" target="_blank">
-        <img class="icon" src="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/planetminecraft.png?v=1677246807412" alt="planetminecraft icon">
-        <p class="label">planetminecraft.com/member/luxmiyu</p>
-      </a>
-      <a class="button" href="https://ch.tetr.io/u/lux" target="_blank">
-        <img class="icon" src="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/tetrio.png?v=1677246634451" alt="tetris icon">
-        <p class="label">ch.tetr.io/u/lux</p>
-      </a>
-      <a class="button" href="https://twitter.com/luxmiyu" target="_blank">
-        <img class="icon" src="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/twitter.png?v=1677262948627" alt="twitter icon">
-        <p class="label">twitter.com/luxmiyu</p>
-      </a>
-      <a class="button" href="https://www.reddit.com/user/luxmiyu" target="_blank">
-        <img class="icon" src="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/reddit.png?v=1677263082617" alt="reddit icon">
-        <p class="label">reddit.com/u/luxmiyu</p>
-      </a>
-      <a class="button" href="https://soundcloud.com/luxmiyu" target="_blank">
-        <img class="icon" src="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/soundcloud.png?v=1681150581193" alt="soundcloud icon">
-        <p class="label">soundcloud.com/luxmiyu</p>
-      </a>
-      <a class="button" href="https://bandcamp.com/luxmiyu" target="_blank">
-        <img class="icon" src="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/bandcamp.png?v=1677267670624" alt="bandcamp icon">
-        <p class="label">bandcamp.com/luxmiyu</p>
-      </a>
-      <a class="button" href="https://paypal.me/luxmiyu" target="_blank">
-        <img class="icon" src="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/paypal.png?v=1677268964911" alt="paypal icon">
-        <p class="label">paypal.me/luxmiyu</p>
-      </a>
-      <a class="button" href="https://stackoverflow.com/users/10943586/luxmiyu" target="_blank">
-        <img class="icon" src="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/stackoverflow.png?v=1687004096178" alt="stackoverflow icon">
-        <p class="label">stackoverflow.com/luxmiyu</p>
-      </a>
+      <a class="button" href="https://www.planetminecraft.com/member/luxmiyu/" data-icon="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/planetminecraft.png?v=1677246807412" data-name="planetminecraft">planetminecraft.com/member/luxmiyu</a>
+      <a class="button" href="https://ch.tetr.io/u/lux" data-icon="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/tetrio.png?v=1677246634451" data-name="tetris">ch.tetr.io/u/lux</a>
+      <a class="button" href="https://twitter.com/luxmiyu" data-icon="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/twitter.png?v=1677262948627" data-name="twitter">twitter.com/luxmiyu</a>
+      <a class="button" href="https://x.com/luxmiyu" data-icon="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/x.png?v=1692376765451" data-name="x">x.com/luxmiyu</a>
+      <a class="button" href="https://www.reddit.com/user/luxmiyu" data-icon="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/reddit.png?v=1677263082617" data-name="reddit">reddit.com/u/luxmiyu</a>
+      <a class="button" href="https://soundcloud.com/luxmiyu" data-icon="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/soundcloud.png?v=1681150581193" data-name="soundcloud">soundcloud.com/luxmiyu</a>
+      <a class="button" href="https://bandcamp.com/luxmiyu" data-icon="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/bandcamp.png?v=1677267670624" data-name="bandcamp">bandcamp.com/luxmiyu</a>
+      <a class="button" href="https://paypal.me/luxmiyu" data-icon="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/paypal.png?v=1677268964911" data-name="paypal">paypal.me/luxmiyu</a>
+      <a class="button" href="https://stackoverflow.com/users/10943586/luxmiyu" data-icon="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/stackoverflow.png?v=1687004096178" data-name="stackoverflow">stackoverflow.com/luxmiyu</a>
 
       <h2 class="category">Unused Accounts</h2>
       <h3>Accounts I own but don't use</h3>
-      <a class="button" href="https://luxmiyu.fanbox.cc/" target="_blank">
-        <img class="icon" src="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/fanbox.png?v=1677622046994" alt="fanbox icon">
-        <p class="label">fanbox.cc/@luxmiyu</p>
-      </a>
-      <a class="button" href="https://skeb.jp/@luxmiyu" target="_blank">
-        <img class="icon" src="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/skeb.png?v=1680175506610" alt="skeb icon">
-        <p class="label">skeb.jp/@luxmiyu</p>
-      </a>
-      <a class="button" href="https://www.deviantart.com/luxmiyu" target="_blank">
-        <img class="icon" src="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/deviantart.png?v=1677264689314" alt="deviantart icon">
-        <p class="label">deviantart.com/luxmiyu</p>
-      </a>
-      <a class="button" href="https://www.twitch.tv/luxmiyu" target="_blank">
-        <img class="icon" src="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/twitch.png?v=1677263034696" alt="twitch icon">
-        <p class="label">twitch.tv/luxmiyu</p>
-      </a>
-      <a class="button" href="https://kick.com/luxmiyu" target="_blank">
-        <img class="icon" src="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/kick.png?v=1687004096532" alt="kick icon">
-        <p class="label">kick.com/luxmiyu</p>
-      </a>
-      <a class="button" href="https://mastodon.social/@luxmiyu" target="_blank">
-        <img class="icon" src="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/mastodon.png?v=1690648704298" alt="mastodon icon">
-        <p class="label">mastodon.social/@luxmiyu</p>
-      </a>
-      <a class="button" href="https://misskey.io/@luxmiyu" target="_blank">
-        <img class="icon" src="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/misskey.png?v=1690649006594" alt="misskey icon">
-        <p class="label">misskey.io/@luxmiyu</p>
-      </a>
-      <a class="button" href="https://sakurajima.moe/@luxmiyu" target="_blank">
-        <img class="icon" src="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/sakurajima.png?v=1690649611255" alt="sakurajima icon">
-        <p class="label">sakurajima.moe/@luxmiyu</p>
-      </a>
-      <a class="button" href="https://www.instagram.com/luxmiyu/" target="_blank">
-        <img class="icon" src="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/instagram.png?v=1677263690245" alt="instagram icon">
-        <p class="label">instagram.com/luxmiyu</p>
-      </a>
-      <a class="button" href="https://www.tiktok.com/@luxmiyu" target="_blank">
-        <img class="icon" src="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/tiktok.png?v=1677263229005" alt="tiktok icon">
-        <p class="label">tiktok.com/@luxmiyu</p>
-      </a>
-      <a class="button" href="https://onlyfans.com/luxmiyu" target="_blank">
-        <img class="icon" src="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/onlyfans.png?v=1677265100902" alt="onlyfans icon">
-        <p class="label">onlyfans.com/luxmiyu</p>
-      </a>
-      <a class="button" href="https://fansly.com/luxmiyu" target="_blank">
-        <img class="icon" src="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/fansly.png?v=1677514480711" alt="fansly icon">
-        <p class="label">fansly.com/luxmiyu</p>
-      </a>
-      <a class="button" href="https://www.patreon.com/luxmiyu" target="_blank">
-        <img class="icon" src="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/patreon.png?v=1677265181812" alt="patreon icon">
-        <p class="label">patreon.com/luxmiyu</p>
-      </a>
-      <a class="button" href="https://fanhouse.app/luxmiyu" target="_blank">
-        <img class="icon" src="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/fanhouse.png?v=1678126680391" alt="fanhouse icon">
-        <p class="label">fanhouse.app/luxmiyu</p>
-      </a>
-      <a class="button" href="https://www.fanvue.com/luxmiyu" target="_blank">
-        <img class="icon" src="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/fanvue.png?v=1700090348432" alt="fanvue icon">
-        <p class="label">fanvue.com/luxmiyu</p>
-      </a>
-      <a class="button" href="https://ko-fi.com/luxmiyu" target="_blank">
-        <img class="icon" src="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/ko-fi.png?v=1677269148127" alt="ko-fi icon">
-        <p class="label">ko-fi.com/luxmiyu</p>
-      </a>
-      <a class="button" href="https://luxmiyu.gumroad.com/" target="_blank">
-        <img class="icon" src="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/gumroad.png?v=1677268866887" alt="gumroad icon">
-        <p class="label">gumroad.com/luxmiyu</p>
-      </a>
-      <a class="button" href="https://ganknow.com/luxmiyu" target="_blank">
-        <img class="icon" src="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/gank.png?v=1684800520327" alt="gank icon">
-        <p class="label">ganknow.com/luxmiyu</p>
-      </a>
-      <a class="button" href="https://app.konect.gg/luxmiyu" target="_blank">
-        <img class="icon" src="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/konect.png?v=1691672931914" alt="konect icon">
-        <p class="label">konect.gg/luxmiyu</p>
-      </a>
+      <a class="button" href="https://luxmiyu.fanbox.cc/" data-icon="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/fanbox.png?v=1677622046994" data-name="fanbox">fanbox.cc/@luxmiyu</a>
+      <a class="button" href="https://skeb.jp/@luxmiyu" data-icon="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/skeb.png?v=1680175506610" data-name="skeb">skeb.jp/@luxmiyu</a>
+      <a class="button" href="https://www.deviantart.com/luxmiyu" data-icon="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/deviantart.png?v=1677264689314" data-name="deviantart">deviantart.com/luxmiyu</a>
+      <a class="button" href="https://www.twitch.tv/luxmiyu" data-icon="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/twitch.png?v=1677263034696" data-name="twitch">twitch.tv/luxmiyu</a>
+      <a class="button" href="https://kick.com/luxmiyu" data-icon="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/kick.png?v=1687004096532" data-name="kick">kick.com/luxmiyu</a>
+      <a class="button" href="https://mastodon.social/@luxmiyu" data-icon="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/mastodon.png?v=1690648704298" data-name="mastodon">mastodon.social/@luxmiyu</a>
+      <a class="button" href="https://misskey.io/@luxmiyu" data-icon="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/misskey.png?v=1690649006594" data-name="misskey">misskey.io/@luxmiyu</a>
+      <a class="button" href="https://sakurajima.moe/@luxmiyu" data-icon="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/sakurajima.png?v=1690649611255" data-name="sakurajima">sakurajima.moe/@luxmiyu</a>
+      <a class="button" href="https://www.instagram.com/luxmiyu/" data-icon="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/instagram.png?v=1677263690245" data-name="instagram">instagram.com/luxmiyu</a>
+      <a class="button" href="https://www.tiktok.com/@luxmiyu" data-icon="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/tiktok.png?v=1677263229005" data-name="tiktok">tiktok.com/@luxmiyu</a>
+      <a class="button" href="https://onlyfans.com/luxmiyu" data-icon="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/onlyfans.png?v=1677265100902" data-name="onlyfans">onlyfans.com/luxmiyu</a>
+      <a class="button" href="https://fansly.com/luxmiyu" data-icon="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/fansly.png?v=1677514480711" data-name="fansly">fansly.com/luxmiyu</a>
+      <a class="button" href="https://www.patreon.com/luxmiyu" data-icon="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/patreon.png?v=1677265181812" data-name="patreon">patreon.com/luxmiyu</a>
+      <a class="button" href="aahttps://fanhouse.app/luxmiyuaa" data-icon="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/fanhouse.png?v=1678126680391" data-name="fanhouse">fanhouse.app/luxmiyu</a>
+      <a class="button" href="https://www.fanvue.com/luxmiyu" data-icon="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/fanvue.png?v=1700090348432" data-name="fanvue">fanvue.com/luxmiyu</a>
+      <a class="button" href="https://ko-fi.com/luxmiyu" data-icon="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/ko-fi.png?v=1677269148127" data-name="ko-fi">ko-fi.com/luxmiyu</a>
+      <a class="button" href="https://luxmiyu.gumroad.com/" data-icon="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/gumroad.png?v=1677268866887" data-name="gumroad">gumroad.com/luxmiyu</a>
+      <a class="button" href="https://ganknow.com/luxmiyu" data-icon="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/gank.png?v=1684800520327" data-name="gank">ganknow.com/luxmiyu</a>
+      <a class="button" href="https://app.konect.gg/luxmiyu" data-icon="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/konect.png?v=1691672931914" data-name="konect">konect.gg/luxmiyu</a>
+      
+      <h2 class="category">Legacy</h2>
+      <h3>Discontinued stuff, here for archiving purposes</h3>
+      <a class="button" href="https://dcag.luxmiyu.com" data-icon="https://cdn.glitch.global/e5143343-dba7-4602-8cff-d021bb699e44/link.png?v=1677244549990" data-name="link">dcag.luxmiyu.com</a>
+      <!-- <a class="button" href="aaaa" data-icon="bbbb" data-name="cccc">dddd</a> -->
       
       <footer><a href="https://luxmiyu.com">by luxmiyu</a> | <a id="theme-toggle">switch to light theme</a></footer>
     </div>

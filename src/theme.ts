@@ -20,6 +20,7 @@ const colors: Color[] = [
   { dark: '5a5a5a', light: '8a8a8a', name: 'input-border' },
   { dark: 'eaeaea', light: '5a5a5a', name: 'scrollbar-thumb' },
   { dark: '1a1a1a', light: 'eaeaea', name: 'scrollbar-track' },
+  { dark: 'eaeaea', light: '4a4a4a', name: 'icon' },
 ]
 
 const buttonThemeToggle = document.getElementById('theme-toggle')
