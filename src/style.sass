@@ -134,6 +134,7 @@ body
       font-size: 0.9rem
       font-weight: 300
       cursor: pointer
+      user-select: none
       background: var(--color-button)
       border: 1px solid var(--color-button-border)
       
@@ -145,11 +146,12 @@ body
       &.hidden
         display: none
 
-      &:hover
-        transform: translate(1px, 1px)
-        box-shadow: 3px 3px 0px 0px var(--color-shadow)
+      @media (hover: hover)
+        &:hover
+          transform: translate(1px, 1px)
+          box-shadow: 3px 3px 0px 0px var(--color-shadow)
 
-        background: var(--color-button-hover)
+          background: var(--color-button-hover)
 
       &:active
         transform: translate(3px, 3px)
