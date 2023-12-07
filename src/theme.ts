@@ -44,9 +44,11 @@ function toggleTheme() {
   updateTheme()
 }
 
+let currentTheme = ''
+
 function updateTheme() {
   // default to dark unless it's already set to light
-  let theme: 'dark' | 'light' = localStorage.getItem('theme') === 'light' ? 'light' : 'dark'
+  let theme = localStorage.getItem('theme') === 'light' ? 'light' : 'dark'
   localStorage.setItem('theme', theme)
 
   if (buttonThemeToggle) {
@@ -59,11 +61,19 @@ function updateTheme() {
 
   for (let color in colors) {
     let colorName = colors[color].name
-    let colorValue = colors[color][theme]
+    let colorValue = colors[color][theme as 'dark' | 'light']
     document.documentElement.style.setProperty(`--color-${colorName}`, `#${colorValue}`)
   }
+
+  currentTheme = theme
 }
 
 updateTheme()
+
+setInterval(() => {
+  if (currentTheme !== localStorage.getItem('theme')) {
+    updateTheme()
+  }
+}, 500)
 
 export {}
