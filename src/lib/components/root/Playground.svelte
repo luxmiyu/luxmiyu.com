@@ -1,5 +1,4 @@
 <script lang="ts">
-  import Box from '../Box.svelte'
   import Icon from '../Icon.svelte'
 
   let {
@@ -97,4 +96,5 @@
             cursor: not-allowed
             pointer-events: none
             background: var(--background-dots)
+            color: var(--text-disabled)
 </style>

@@ -1,9 +1,15 @@
 <script lang="ts">
+  import { enhance } from '$app/forms'
+
   import Container from '$lib/components/Container.svelte'
+  import Button from '$lib/components/Button.svelte'
+  import Icon from '$lib/components/Icon.svelte'
   import ProfilePicture from '$lib/components/root/ProfilePicture.svelte'
   import Masonry from '$lib/components/root/Masonry.svelte'
   import Link from '$lib/components/root/Link.svelte'
   import Playground from '$lib/components/root/Playground.svelte'
+
+  let { data } = $props()
 
   const tabs: {
     name: string
@@ -12,9 +18,9 @@
     {
       name: 'Tools',
       tools: [
-        { status: 'no', icon: 'html', name: 'template' },
+        { status: 'wip', icon: 'html', name: 'template' },
         { status: 'wip', icon: 'music_note', name: 'bpmconverter' },
-        { status: 'no', icon: 'touch_app', name: 'bpmtap' },
+        { status: 'wip', icon: 'touch_app', name: 'bpmtap' },
         { status: 'no', icon: 'tune', name: 'metronome' },
         { status: 'no', icon: 'square_foot', name: 'convert' },
         { status: 'no', icon: 'colors', name: 'color' },
@@ -27,12 +33,12 @@
         { status: 'no', icon: 'keyboard', name: 'keyboard' },
         { status: 'no', icon: 'font_download', name: 'emoji' },
         { status: 'no', icon: 'sticky_note', name: 'lorem' },
-      ],
+      ], //.toSorted((a, b) => a.name.localeCompare(b.name)),
     },
     {
       name: 'Utility',
       tools: [
-        { status: 'no', icon: 'forum', name: 'uwufier' },
+        { status: 'wip', icon: 'forum', name: 'uwufier' },
         { status: 'no', icon: 'switches', name: 'sliders' },
         { status: 'no', icon: 'wall_art', name: 'dcag' },
         { status: 'no', icon: 'label', name: 'advancements' },
@@ -46,12 +52,12 @@
         { status: 'no', icon: 'door_open', name: 'adm2' },
         { status: 'no', icon: 'apparel', name: 'anything' },
         { status: 'no', icon: 'stack_hexagon', name: 'luxore' },
-      ],
+      ], //.toSorted((a, b) => a.name.localeCompare(b.name)),
     },
     {
       name: 'Games',
       tools: [
-        { status: 'no', icon: 'password', name: 'wordle' },
+        { status: 'wip', icon: 'password', name: 'wordle' },
         { status: 'no', icon: 'grid_3x3', name: 'tictactoe' },
         { status: 'no', icon: 'floor', name: 'snake' },
         { status: 'no', icon: 'bomb', name: 'minesweeper' },
@@ -59,7 +65,7 @@
         { status: 'no', icon: 'page_control', name: 'mastermind' },
         { status: 'no', icon: 'backlight_low', name: 'lights' },
         { status: 'no', icon: 'album', name: 'drums' },
-      ],
+      ], //.toSorted((a, b) => a.name.localeCompare(b.name)),
     },
   ]
 </script>
@@ -78,10 +84,25 @@
       <Link url="https://map.luxmiyu.com/" icon="/icon/squaremap.png" label="Komimau Minecraft" />
     </Masonry>
 
+    <form action="?/toggleTheme" method="post" use:enhance>
+      <Button>
+        <div class="toggleTheme">
+          {#if data.lightTheme}
+            <Icon name="dark_mode" size="20px" />
+            <span>Switch to Dark Theme</span>
+          {:else}
+            <Icon name="light_mode" size="20px" />
+            <span>Switch to Light Theme</span>
+          {/if}
+        </div>
+      </Button>
+    </form>
+
     <section>
       <h2>Playground</h2>
       <p class="subtitle">Mini web tools I've made that you might find cool or useful</p>
       <Playground {tabs} />
+      <p class="subtitle">Striped options are legacy and might be rewritten in the future</p>
     </section>
 
     <section>
@@ -194,6 +215,18 @@
 
     p
       text-align: justify
+
+    form
+      display: grid
+      grid-template-columns: 1fr
+      width: 100%
+
+      .toggleTheme
+        display: flex
+        flex-direction: row
+        justify-content: center
+        align-items: center
+        gap: 8px
 
     section
       display: flex

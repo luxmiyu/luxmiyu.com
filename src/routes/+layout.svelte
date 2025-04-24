@@ -4,9 +4,9 @@
   import { page } from '$app/state'
   import { dev, browser } from '$app/environment'
 
-  let { children } = $props()
+  let { children, data } = $props()
 
-  let light = true
+  let light = $derived(data.theme === 'light')
 </script>
 
 <svelte:head>
@@ -40,11 +40,11 @@
       data-website-id="d342ae40-963a-4871-a69b-421fff5beda8"
     ></script>
   {:else}
-    <!-- <script
+    <script
       defer
       src="https://umami.luxmiyu.com/script.js"
-      data-website-id="09a51d89-f0cd-417d-8d33-82984d74e8ee"
-    ></script> -->
+      data-website-id="8fc13be5-e7d4-4383-af6d-92ad3fed6eda"
+    ></script>
   {/if}
 </svelte:head>
 
@@ -108,7 +108,7 @@
     background-size: 10px 10px
     background-color: var(--background)
 
-    &.light
+    &:has(main.light)
       --text: #1a1a1a
       --text-secondary: #5a5a5a
       --text-disabled: #8a8a8a
@@ -117,6 +117,8 @@
       --shadow: #eaeaea
       --input: #d8d8d8
       --input-hover: #c8c8c8
+
+      --background-dots: #eaeaea
 
   main
     display: flex
