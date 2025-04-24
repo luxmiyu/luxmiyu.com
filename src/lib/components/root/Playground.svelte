@@ -5,14 +5,11 @@
   let {
     tabs,
   }: {
-    tabs: { name: string; tools: { name: string; icon: string }[] }[]
+    tabs: {
+      name: string
+      tools: { name: string; icon: string; status?: string }[]
+    }[]
   } = $props()
-
-  let tools: { tab: string; name: string; icon: string }[] = $derived(
-    tabs.flatMap((tab) => tab.tools.map((tool) => ({ ...tool, tab: tab.name })))
-  )
-
-  let selectedTab = $state(tabs[0].name)
 </script>
 
 <main>
@@ -20,8 +17,15 @@
     <div class="tab">
       <p class="subtitle">{tab.name}</p>
       <section>
-        {#each tab.tools as { icon, name }}
-          <a class="tool" href="/{name}">
+        {#each tab.tools as { icon, name, status }}
+          <a
+            class="tool"
+            href="/{name}"
+            class:ready={status === 'ready'}
+            class:wip={status === 'wip'}
+            class:no={status === 'no'}
+            class:golden={status === 'golden'}
+          >
             <Icon name={icon} size="16px" />
             <p>{name}</p>
           </a>
@@ -72,9 +76,25 @@
           font-weight: 400
           background: var(--input)
 
+          user-select: none
+
+          &.wip
+            background: repeating-linear-gradient(
+              -33deg,
+              var(--input),
+              var(--input) 10px,
+              var(--card) 10px,
+              var(--card) 12px
+            )
+          
+          &.golden
+            border: 2px solid var(--yellow)
+
           &:hover
             background: var(--input-hover)
 
-          &.hidden
-            display: none
+          &.no
+            cursor: not-allowed
+            pointer-events: none
+            background: var(--background-dots)
 </style>
