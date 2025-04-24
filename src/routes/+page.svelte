@@ -3,8 +3,62 @@
   import ProfilePicture from '$lib/components/root/ProfilePicture.svelte'
   import Masonry from '$lib/components/root/Masonry.svelte'
   import Link from '$lib/components/root/Link.svelte'
-  import Toolbox from '$lib/components/root/Toolbox.svelte'
-  import Tool from '$lib/components/root/Tool.svelte'
+  import Playground from '$lib/components/root/Playground.svelte'
+
+  const tabs: { name: string; tools: { name: string; icon: string }[] }[] = [
+    {
+      name: 'Tools',
+      tools: [
+        { icon: 'html', name: 'template' },
+        { icon: 'music_note', name: 'bpmconverter' },
+        { icon: 'touch_app', name: 'bpmtap' },
+        { icon: 'tune', name: 'metronome' },
+        { icon: 'square_foot', name: 'convert' },
+        { icon: 'colors', name: 'color' },
+        { icon: 'numbers', name: 'rng' },
+        { icon: 'hourglass', name: 'progress' },
+        { icon: 'text_format', name: 'base64' },
+        { icon: 'timer_10', name: 'base' },
+        { icon: 'subscript', name: 'binary' },
+        { icon: 'media_link', name: 'youtube' },
+        { icon: 'keyboard', name: 'keyboard' },
+        { icon: 'font_download', name: 'emoji' },
+        { icon: 'sticky_note', name: 'lorem' },
+      ],
+    },
+    {
+      name: 'Utility',
+      tools: [
+        { icon: 'forum', name: 'uwufier' },
+        { icon: 'switches', name: 'sliders' },
+        { icon: 'wall_art', name: 'dcag' },
+        { icon: 'label', name: 'advancements' },
+        { icon: 'lists', name: 'hsr' },
+        { icon: 'group', name: 'osucollab' },
+        { icon: 'steps', name: 'speedtune' },
+        { icon: 'playing_cards', name: 'qingque' },
+        { icon: 'open_with', name: 'stratagems' },
+        { icon: 'lists', name: 'wuwa' },
+        { icon: 'brightness_empty', name: 'convene' },
+        { icon: 'door_open', name: 'adm2' },
+        { icon: 'apparel', name: 'anything' },
+        { icon: 'stack_hexagon', name: 'luxore' },
+      ],
+    },
+    {
+      name: 'Games',
+      tools: [
+        { icon: 'password', name: 'wordle' },
+        { icon: 'grid_3x3', name: 'tictactoe' },
+        { icon: 'floor', name: 'snake' },
+        { icon: 'bomb', name: 'minesweeper' },
+        { icon: 'pace', name: 'reaction' },
+        { icon: 'page_control', name: 'mastermind' },
+        { icon: 'backlight_low', name: 'lights' },
+        { icon: 'album', name: 'drums' },
+      ],
+    },
+  ]
 </script>
 
 <main>
@@ -22,61 +76,9 @@
     </Masonry>
 
     <section>
-      <h2>Tools</h2>
-      <p class="subtitle">Things I've made that you might find cool or useful</p>
-      <Toolbox>
-        <Tool icon="html" name="template" />
-        <Tool icon="music_note" name="bpmconverter" />
-        <Tool icon="touch_app" name="bpmtap" />
-        <Tool icon="tune" name="metronome" />
-        <Tool icon="square_foot" name="convert" />
-        <Tool icon="colors" name="color" />
-        <Tool icon="numbers" name="rng" />
-        <Tool icon="hourglass" name="progress" />
-        <Tool icon="text_format" name="base64" />
-        <Tool icon="timer_10" name="base" />
-        <Tool icon="subscript" name="binary" />
-        <Tool icon="media_link" name="youtube" />
-        <Tool icon="keyboard" name="keyboard" />
-        <Tool icon="font_download" name="emoji" />
-        <Tool icon="sticky_note" name="lorem" />
-      </Toolbox>
-    </section>
-
-    <section>
-      <h2>Utility</h2>
-      <p class="subtitle">Tools I've made for communities I'm a part of</p>
-      <Toolbox>
-        <Tool icon="forum" name="uwufier" />
-        <Tool icon="switches" name="sliders" />
-        <Tool icon="wall_art" name="dcag" />
-        <Tool icon="label" name="advancements" />
-        <Tool icon="lists" name="hsr" />
-        <Tool icon="group" name="osucollab" />
-        <Tool icon="steps" name="speedtune" />
-        <Tool icon="playing_cards" name="qingque" />
-        <Tool icon="open_with" name="stratagems" />
-        <Tool icon="lists" name="wuwa" />
-        <Tool icon="brightness_empty" name="convene" />
-        <Tool icon="door_open" name="adm2" />
-        <Tool icon="apparel" name="anything" />
-        <Tool icon="stack_hexagon" name="luxore" />
-      </Toolbox>
-    </section>
-
-    <section>
-      <h2>Games</h2>
-      <p class="subtitle">Mini browser games I've made that you might find fun</p>
-      <Toolbox>
-        <Tool icon="password" name="wordle" />
-        <Tool icon="grid_3x3" name="tictactoe" />
-        <Tool icon="floor" name="snake" />
-        <Tool icon="bomb" name="minesweeper" />
-        <Tool icon="pace" name="reaction" />
-        <Tool icon="page_control" name="mastermind" />
-        <Tool icon="backlight_low" name="lights" />
-        <Tool icon="album" name="drums" />
-      </Toolbox>
+      <h2>Playground</h2>
+      <p class="subtitle">Mini web tools I've made that you might find cool or useful</p>
+      <Playground {tabs} />
     </section>
 
     <section>

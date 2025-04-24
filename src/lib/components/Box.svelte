@@ -2,13 +2,15 @@
   let {
     children = () => {},
     borderless = false,
+    nopadding = false,
   }: {
     children: () => any
     borderless?: boolean
+    nopadding?: boolean
   } = $props()
 </script>
 
-<div class:borderless>
+<div class:borderless class:nopadding>
   {@render children()}
 </div>
 
@@ -25,4 +27,7 @@
 
     &.borderless
       border: none
+
+    &.nopadding
+      padding: 0
 </style>
