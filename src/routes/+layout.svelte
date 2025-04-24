@@ -62,6 +62,8 @@
 
     line-height: 1
 
+    scroll-behavior: smooth
+
   :global(body)
     --font-family: 'Rubik', sans-serif
     --font-weight: 300
@@ -75,6 +77,8 @@
     --shadow: #3a3a3a
     --input: #3a3a3a
     --input-hover: #4a4a4a
+    
+    --background-dots: #222222
 
     --red: #e13e53
     --green: #00cc2f
@@ -86,17 +90,23 @@
 
     --background-size: 10px 10px
 
-    color: var(--text)
-    background: var(--background)
-    background-color: var(--background)
-    background-image: var(--background-image)
-    background-size: var(--background-size)
-
     font-family: var(--font-family)
     font-weight: var(--font-weight)
     font-size: var(--font-size)
 
-    scroll-behavior: smooth
+    color: var(--text)
+
+    // plain background
+    background: var(--background)
+    background-image: var(--background-image)
+    background-size: var(--background-size)
+    background-color: var(--background)
+
+    // dotted background
+    background: var(--background)
+    background-image: radial-gradient(var(--background-dots) 1.5px, transparent 1.5px)
+    background-size: 10px 10px
+    background-color: var(--background)
 
     &.light
       --text: #1a1a1a
