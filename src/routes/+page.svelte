@@ -18,53 +18,53 @@
     {
       name: 'Tools',
       tools: [
-        { status: 'wip', icon: 'html', name: 'template' },
-        { status: 'wip', icon: 'music_note', name: 'bpmconverter' },
-        { status: 'wip', icon: 'touch_app', name: 'bpmtap' },
-        { status: 'no', icon: 'tune', name: 'metronome' },
-        { status: 'no', icon: 'square_foot', name: 'convert' },
-        { status: 'no', icon: 'colors', name: 'color' },
-        { status: 'no', icon: 'numbers', name: 'rng' },
-        { status: 'no', icon: 'hourglass', name: 'progress' },
-        { status: 'no', icon: 'text_format', name: 'base64' },
-        { status: 'no', icon: 'timer_10', name: 'base' },
-        { status: 'no', icon: 'subscript', name: 'binary' },
-        { status: 'no', icon: 'media_link', name: 'youtube' },
-        { status: 'no', icon: 'keyboard', name: 'keyboard' },
-        { status: 'no', icon: 'font_download', name: 'emoji' },
-        { status: 'no', icon: 'sticky_note', name: 'lorem' },
+        { icon: 'html', name: 'template' },
+        { icon: 'music_note', name: 'bpmconverter' },
+        { icon: 'touch_app', name: 'bpmtap' },
+        { icon: 'tune', name: 'metronome' },
+        { icon: 'square_foot', name: 'convert' },
+        { icon: 'colors', name: 'color' },
+        { icon: 'numbers', name: 'rng' },
+        { icon: 'hourglass', name: 'progress' },
+        { icon: 'text_format', name: 'base64' },
+        { icon: 'timer_10', name: 'base' },
+        { icon: 'subscript', name: 'binary' },
+        { icon: 'media_link', name: 'youtube' },
+        { icon: 'keyboard', name: 'keyboard' },
+        { icon: 'font_download', name: 'emoji' },
+        { icon: 'sticky_note', name: 'lorem' },
       ], //.toSorted((a, b) => a.name.localeCompare(b.name)),
     },
     {
       name: 'Utility',
       tools: [
-        { status: 'wip', icon: 'forum', name: 'uwufier' },
-        { status: 'no', icon: 'switches', name: 'sliders' },
-        { status: 'no', icon: 'wall_art', name: 'dcag' },
-        { status: 'no', icon: 'label', name: 'advancements' },
-        { status: 'no', icon: 'lists', name: 'hsr' },
-        { status: 'no', icon: 'group', name: 'osucollab' },
-        { status: 'no', icon: 'steps', name: 'speedtune' },
-        { status: 'no', icon: 'playing_cards', name: 'qingque' },
-        { status: 'no', icon: 'open_with', name: 'stratagems' },
-        { status: 'no', icon: 'lists', name: 'wuwa' },
-        { status: 'no', icon: 'brightness_empty', name: 'convene' },
-        { status: 'no', icon: 'door_open', name: 'adm2' },
-        { status: 'no', icon: 'apparel', name: 'anything' },
-        { status: 'no', icon: 'stack_hexagon', name: 'luxore' },
+        { icon: 'forum', name: 'uwufier' },
+        { icon: 'switches', name: 'sliders' },
+        { icon: 'wall_art', name: 'dcag' },
+        { icon: 'label', name: 'advancements' },
+        { icon: 'lists', name: 'hsr' },
+        { icon: 'group', name: 'osucollab' },
+        { icon: 'steps', name: 'speedtune' },
+        { icon: 'playing_cards', name: 'qingque' },
+        { icon: 'open_with', name: 'stratagems' },
+        { icon: 'lists', name: 'wuwa' },
+        { icon: 'brightness_empty', name: 'convene' },
+        { icon: 'door_open', name: 'adm2' },
+        { icon: 'apparel', name: 'anything' },
+        { icon: 'stack_hexagon', name: 'luxore' },
       ], //.toSorted((a, b) => a.name.localeCompare(b.name)),
     },
     {
       name: 'Games',
       tools: [
-        { status: 'wip', icon: 'password', name: 'wordle' },
-        { status: 'no', icon: 'grid_3x3', name: 'tictactoe' },
-        { status: 'no', icon: 'floor', name: 'snake' },
-        { status: 'no', icon: 'bomb', name: 'minesweeper' },
-        { status: 'no', icon: 'pace', name: 'reaction' },
-        { status: 'no', icon: 'page_control', name: 'mastermind' },
-        { status: 'no', icon: 'backlight_low', name: 'lights' },
-        { status: 'no', icon: 'album', name: 'drums' },
+        { icon: 'password', name: 'wordle' },
+        { icon: 'grid_3x3', name: 'tictactoe' },
+        { icon: 'floor', name: 'snake' },
+        { icon: 'bomb', name: 'minesweeper' },
+        { icon: 'pace', name: 'reaction' },
+        { icon: 'page_control', name: 'mastermind' },
+        { icon: 'backlight_low', name: 'lights' },
+        { icon: 'album', name: 'drums' },
       ], //.toSorted((a, b) => a.name.localeCompare(b.name)),
     },
   ]
@@ -104,7 +104,7 @@
       <p class="subtitle">
         These are mini web tools I've made that you might find cool or useful :D
       </p>
-      <p class="subtitle">Striped options use legacy code and will be rewritten soon&trade;</p>
+      <p class="subtitle">Legacy tools will open in a new tab, might be rewritten soon&trade;</p>
     </section>
 
     <section>
@@ -199,7 +199,11 @@
       <p class="subtitle">Discontinued stuff, here for archiving purposes</p>
       <Masonry>
         <Link url="https://dcag.luxmiyu.com/" icon="/icon/link.png" label="dcag.luxmiyu.com" />
-        <Link url="https://luxmiyu.com/hsr_old" icon="/icon/link.png" label="luxmiyu.com/hsr_old" />
+        <Link
+          url="https://legacy.luxmiyu.com/hsr_old"
+          icon="/icon/link.png"
+          label="luxmiyu.com/hsr_old"
+        />
       </Masonry>
     </section>
   </Container>

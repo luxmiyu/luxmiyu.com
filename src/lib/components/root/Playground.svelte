@@ -1,12 +1,13 @@
 <script lang="ts">
   import Icon from '../Icon.svelte'
+  import { legacy, disabled } from '../../../params/legacy'
 
   let {
     tabs,
   }: {
     tabs: {
       name: string
-      tools: { name: string; icon: string; status?: string }[]
+      tools: { name: string; icon: string }[]
     }[]
   } = $props()
 </script>
@@ -16,19 +17,24 @@
     <div class="tab">
       <p class="subtitle">{tab.name}</p>
       <section>
-        {#each tab.tools as { icon, name, status }}
-          <a
-            class="tool"
-            href="/{name}"
-            class:ready={status === 'ready'}
-            class:wip={status === 'wip'}
-            class:no={status === 'no'}
-            class:golden={status === 'golden'}
-            target={status === 'wip' ? '_blank' : '_self'}
-          >
-            <Icon name={icon} size="16px" />
-            <p>{name}</p>
-          </a>
+        {#each tab.tools as { icon, name }}
+          {#if disabled.includes(name)}
+            <div class="tool disabled">
+              <Icon name={icon} size="16px" />
+              <p>{name}</p>
+            </div>
+          {:else}
+            <a
+              class="tool"
+              href="/{name}"
+              class:legacy={legacy.includes(name)}
+              class:disabled={disabled.includes(name)}
+              target={legacy.includes(name) ? '_blank' : '_self'}
+            >
+              <Icon name={icon} size="16px" />
+              <p>{name}</p>
+            </a>
+          {/if}
         {/each}
       </section>
     </div>
@@ -74,28 +80,24 @@
           color: var(--text)
           font-size: 12px
           font-weight: 400
-          background: var(--input)
+          background-color: var(--input)
 
           user-select: none
 
-          &.wip
-            background: repeating-linear-gradient(
+          &.legacy
+            background-image: repeating-linear-gradient(
               -33deg,
               var(--input),
               var(--input) 10px,
               var(--card) 10px,
-              var(--card) 12px
+              var(--card) 20px
             )
-          
-          &.golden
-            border: 2px solid var(--yellow)
 
           &:hover
             background: var(--input-hover)
 
-          &.no
+          &.disabled
             cursor: not-allowed
-            pointer-events: none
             background: var(--background-dots)
             color: var(--text-disabled)
 </style>
