@@ -24,6 +24,7 @@
             class:wip={status === 'wip'}
             class:no={status === 'no'}
             class:golden={status === 'golden'}
+            target={status === 'wip' ? '_blank' : '_self'}
           >
             <Icon name={icon} size="16px" />
             <p>{name}</p>
