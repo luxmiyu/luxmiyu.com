@@ -81,7 +81,7 @@
     <Masonry>
       <Link url="https://dcag.art" icon="/icon/dcag.png" label="Daily Cute Anime Girl" />
       <Link url="https://discord.gg/komimau" icon="/icon/komimau.png" label="Komimau Discord" />
-      <Link url="https://map.luxmiyu.com/" icon="/icon/squaremap.png" label="Komimau Minecraft" />
+      <Link url="https://map.luxmiyu.com/" icon="/icon/squaremap.png" label="SMP Minecraft Map" />
     </Masonry>
 
     <form action="?/toggleTheme" method="post" use:enhance>
