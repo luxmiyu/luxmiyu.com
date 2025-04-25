@@ -100,9 +100,11 @@
 
     <section>
       <h2>Playground</h2>
-      <p class="subtitle">Mini web tools I've made that you might find cool or useful</p>
       <Playground {tabs} />
-      <p class="subtitle">Striped options are legacy and might be rewritten in the future</p>
+      <p class="subtitle">
+        These are mini web tools I've made that you might find cool or useful :D
+      </p>
+      <p class="subtitle">Striped options use legacy code and will be rewritten soon&trade;</p>
     </section>
 
     <section>
