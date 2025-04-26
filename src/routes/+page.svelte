@@ -13,7 +13,7 @@
 
   const tabs: {
     name: string
-    tools: { name: string; icon: string; status?: string }[]
+    tools: { name: string; icon: string; status?: string }[] // ######################### todo: make hover description #########################
   }[] = [
     {
       name: 'Tools',
@@ -195,6 +195,11 @@
         <Link url="https://luxmiyu.gumroad.com/" icon="/icon/gumroad.png" label="Gumroad" />
         <Link url="https://ganknow.com/luxmiyu" icon="/icon/gank.png" label="Gank" />
         <Link url="https://konect.gg/luxmiyu" icon="/icon/konect.png" label="Konect" />
+        <Link
+          url="https://www.zerochan.net/user/luxmiyu"
+          icon="/icon/zerochan.png"
+          label="zerochan"
+        />
       </Masonry>
     </section>
 
