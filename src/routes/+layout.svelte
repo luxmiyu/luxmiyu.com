@@ -118,7 +118,7 @@
       --input: #d8d8d8
       --input-hover: #c8c8c8
 
-      --background-dots: #eaeaea
+      --background-dots: #f4f4f4
 
   main
     display: flex
