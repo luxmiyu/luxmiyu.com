@@ -104,7 +104,11 @@
       <p class="subtitle">
         These are mini web tools I've made that you might find cool or useful :D
       </p>
-      <p class="subtitle">Legacy tools will open in a new tab, might be rewritten soon&trade;</p>
+      <p class="subtitle">
+        <span style="color: var(--green)">Updated</span> /
+        <span style="color: var(--yellow)">Legacy</span> /
+        <span style="color: var(--red)">Deprecated</span>
+      </p>
     </section>
 
     <section>

@@ -22,6 +22,7 @@
             <div class="tool disabled">
               <Icon name={icon} size="16px" />
               <p>{name}</p>
+              <div class="dot"></div>
             </div>
           {:else}
             <a
@@ -33,6 +34,7 @@
             >
               <Icon name={icon} size="16px" />
               <p>{name}</p>
+              <div class="dot"></div>
             </a>
           {/if}
         {/each}
@@ -84,14 +86,20 @@
 
           user-select: none
 
+          position: relative
+
+          .dot
+            position: absolute
+            top: 6px
+            right: 6px
+            width: 2px
+            height: calc(100% - 12px)
+            border-radius: 1px
+            background-color: var(--green)
+
           &.legacy
-            background-image: repeating-linear-gradient(
-              -33deg,
-              var(--input),
-              var(--input) 10px,
-              var(--card) 10px,
-              var(--card) 20px
-            )
+            .dot
+              background-color: var(--yellow)
 
           &:hover
             background: var(--input-hover)
@@ -100,4 +108,7 @@
             cursor: not-allowed
             background: var(--background-dots)
             color: var(--text-disabled)
+            
+            .dot
+              background-color: var(--red)
 </style>
