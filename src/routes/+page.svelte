@@ -13,61 +13,109 @@
 
   const tabs: {
     name: string
-    tools: { name: string; icon: string; status?: string }[] // ######################### todo: make hover description #########################
+    tools: { name: string; icon: string; description?: string }[]
   }[] = [
     {
       name: 'Tools',
       tools: [
-        { icon: 'html', name: 'template' },
-        { icon: 'music_note', name: 'bpmconverter' },
-        { icon: 'touch_app', name: 'bpmtap' },
-        { icon: 'tune', name: 'metronome' },
-        { icon: 'square_foot', name: 'convert' },
-        { icon: 'colors', name: 'color' },
-        { icon: 'numbers', name: 'rng' },
-        { icon: 'hourglass', name: 'progress' },
-        { icon: 'text_format', name: 'base64' },
-        { icon: 'timer_10', name: 'base' },
-        { icon: 'subscript', name: 'binary' },
-        { icon: 'media_link', name: 'youtube' },
-        { icon: 'keyboard', name: 'keyboard' },
-        { icon: 'font_download', name: 'emoji' },
-        { icon: 'sticky_note', name: 'lorem' },
-      ], //.toSorted((a, b) => a.name.localeCompare(b.name)),
+        { icon: 'html', name: 'template', description: 'Legacy web template' },
+        {
+          icon: 'music_note',
+          name: 'bpmconverter',
+          description: 'Convert between rhythms and BPMs',
+        },
+        { icon: 'touch_app', name: 'bpmtap', description: 'Find the BPM by tapping' },
+        { icon: 'tune', name: 'metronome', description: 'Simple metronome' },
+        { icon: 'square_foot', name: 'convert', description: 'Convert between units' },
+        { icon: 'colors', name: 'color', description: 'Pretty color picker' },
+        { icon: 'numbers', name: 'rng', description: 'Random number generator' },
+        { icon: 'hourglass', name: 'progress', description: 'Progress bar for the current year' },
+        { icon: 'text_format', name: 'base64', description: 'Encode or decode Base64' },
+        { icon: 'timer_10', name: 'base', description: 'Convert between bases' },
+        {
+          icon: 'subscript',
+          name: 'binary',
+          description: 'Encode or decode binary or hexadecimal',
+        },
+        {
+          icon: 'media_link',
+          name: 'youtube',
+          description: 'Get the thumbnail of a YouTube video',
+        },
+        { icon: 'keyboard', name: 'keyboard', description: "Test your keyboard's keys" },
+        { icon: 'font_download', name: 'emoji', description: 'Quickly convert text to emoji' },
+        { icon: 'sticky_note', name: 'lorem', description: 'Dummy text' },
+      ],
     },
     {
       name: 'Utility',
       tools: [
-        { icon: 'forum', name: 'uwufier' },
-        { icon: 'switches', name: 'sliders' },
-        { icon: 'wall_art', name: 'dcag' },
-        { icon: 'label', name: 'advancements' },
-        { icon: 'lists', name: 'hsr' },
-        { icon: 'group', name: 'osucollab' },
-        { icon: 'steps', name: 'speedtune' },
-        { icon: 'playing_cards', name: 'qingque' },
-        { icon: 'open_with', name: 'stratagems' },
-        { icon: 'lists', name: 'wuwa' },
-        { icon: 'brightness_empty', name: 'convene' },
-        { icon: 'door_open', name: 'adm2' },
-        { icon: 'apparel', name: 'anything' },
-        { icon: 'stack_hexagon', name: 'luxore' },
-      ], //.toSorted((a, b) => a.name.localeCompare(b.name)),
+        { icon: 'forum', name: 'uwufier', description: 'Convert a string to uwu' },
+        { icon: 'switches', name: 'sliders', description: 'Advanced slider editor for osu!' },
+        { icon: 'wall_art', name: 'dcag', description: 'Daily Cute Anime Girl (2024 version)' },
+        { icon: 'label', name: 'advancements', description: 'Minecraft advancements editor' },
+        { icon: 'lists', name: 'hsr', description: 'Banner schedule for Honkai: Star Rail' },
+        { icon: 'group', name: 'osucollab', description: 'Komimau osu! pfp collab' },
+        {
+          icon: 'steps',
+          name: 'speedtune',
+          description: 'Advanced Honkai: Star Rail combat rotation planner',
+        },
+        {
+          icon: 'playing_cards',
+          name: 'qingque',
+          description: 'Probability graphs for Qingque from Honkai: Star Rail',
+        },
+        {
+          icon: 'open_with',
+          name: 'stratagems',
+          description: 'List of stratagems from Helldivers 2',
+        },
+        { icon: 'lists', name: 'wuwa', description: 'Banner schedule for Wuthering Waves' },
+        {
+          icon: 'brightness_empty',
+          name: 'convene',
+          description: 'Convene tracker for Wuthering Waves',
+        },
+        { icon: 'door_open', name: 'adm2', description: 'Any Dimensions Mod 2 for Minecraft' },
+        { icon: 'apparel', name: 'anything', description: 'Anything mod for Minecraft' },
+        { icon: 'stack_hexagon', name: 'luxore', description: 'Luxore mod for Minecraft' },
+      ],
     },
     {
       name: 'Games',
       tools: [
-        { icon: 'password', name: 'wordle' },
-        { icon: 'grid_3x3', name: 'tictactoe' },
-        { icon: 'floor', name: 'snake' },
-        { icon: 'bomb', name: 'minesweeper' },
-        { icon: 'pace', name: 'reaction' },
-        { icon: 'page_control', name: 'mastermind' },
-        { icon: 'backlight_low', name: 'lights' },
-        { icon: 'album', name: 'drums' },
-      ], //.toSorted((a, b) => a.name.localeCompare(b.name)),
+        { icon: 'password', name: 'wordle', description: 'Guess the word' },
+        {
+          icon: 'grid_3x3',
+          name: 'tictactoe',
+          description: 'Play tic-tac-toe against the computer',
+        },
+        { icon: 'floor', name: 'snake', description: 'Collect as many apples as you can' },
+        { icon: 'bomb', name: 'minesweeper', description: 'Flag all of the mines' },
+        { icon: 'pace', name: 'reaction', description: 'Test your reaction time' },
+        { icon: 'page_control', name: 'mastermind', description: 'Guess the color code' },
+        {
+          icon: 'backlight_low',
+          name: 'lights',
+          description: 'A puzzle game about turning off lights',
+        },
+        { icon: 'album', name: 'drums', description: 'Simple drum machine' },
+      ],
     },
   ]
+
+  let flat = $derived(tabs.flatMap((tab) => tab.tools.map((tool) => ({ ...tool, tab: tab.name }))))
+
+  const defaultDescription =
+    "These are mini web tools I've made that you might find cool or useful :D"
+
+  let current: string | null = $state(null)
+  let description: string = $derived.by(() => {
+    const tool = flat.find((tool) => tool.name === current)
+    if (!tool) return defaultDescription
+    return tool.description ?? `luxmiyu.com/${tool.name}`
+  })
 </script>
 
 <main>
@@ -100,9 +148,9 @@
 
     <section>
       <h2>Playground</h2>
-      <Playground {tabs} />
+      <Playground {tabs} bind:current />
       <p class="subtitle">
-        These are mini web tools I've made that you might find cool or useful :D
+        {description}
       </p>
       <p class="subtitle">
         <span style="color: var(--green)">Updated</span> /

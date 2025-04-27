@@ -4,12 +4,17 @@
 
   let {
     tabs,
+    current = $bindable(),
   }: {
     tabs: {
       name: string
-      tools: { name: string; icon: string }[]
+      tools: { name: string; icon: string; description?: string }[]
     }[]
+    current: string | null
   } = $props()
+
+  const onmouseenter = (name: string) => (current = name)
+  const onmouseleave = () => (current = null)
 </script>
 
 <main>
@@ -31,6 +36,8 @@
               class:legacy={legacy.includes(name)}
               class:disabled={disabled.includes(name)}
               target={legacy.includes(name) ? '_blank' : '_self'}
+              onmouseenter={() => onmouseenter(name)}
+              {onmouseleave}
             >
               <Icon name={icon} size="16px" />
               <p>{name}</p>
@@ -50,6 +57,7 @@
     gap: 12px
 
     width: 100%
+    overflow: hidden
 
     .tab
       display: flex
