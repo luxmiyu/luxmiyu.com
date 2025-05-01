@@ -1,6 +1,8 @@
 <script lang="ts">
+  import { type Snippet } from 'svelte'
+
   let {
-    children = () => {},
+    children,
 
     onclick = () => {},
     href = undefined,
@@ -9,7 +11,7 @@
     borderless = false,
     nopadding = false,
   }: {
-    children: () => any
+    children?: Snippet
 
     onclick?: () => void
     href?: string
@@ -22,11 +24,11 @@
 
 {#if href}
   <a {href} {target} class:borderless class:nopadding>
-    {@render children()}
+    {@render children?.()}
   </a>
 {:else}
   <button {onclick} class:borderless class:nopadding>
-    {@render children()}
+    {@render children?.()}
   </button>
 {/if}
 

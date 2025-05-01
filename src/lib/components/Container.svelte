@@ -1,15 +1,17 @@
 <script lang="ts">
+  import { type Snippet } from 'svelte'
+
   let {
-    children = () => {},
+    children,
     large = false,
   }: {
-    children: () => any
+    children?: Snippet
     large?: boolean
   } = $props()
 </script>
 
 <main class:large>
-  {@render children()}
+  {@render children?.()}
 </main>
 
 <style lang="sass">

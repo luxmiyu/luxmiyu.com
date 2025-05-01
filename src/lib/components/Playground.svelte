@@ -1,6 +1,6 @@
 <script lang="ts">
-  import Icon from '../Icon.svelte'
-  import { legacy, disabled } from '../../../params/legacy'
+  import { Icon } from '../components'
+  import { legacy, disabled } from '../../params/legacy'
 
   let {
     tabs,

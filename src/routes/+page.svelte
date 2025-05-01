@@ -1,13 +1,7 @@
 <script lang="ts">
   import { enhance } from '$app/forms'
 
-  import Container from '$lib/components/Container.svelte'
-  import Button from '$lib/components/Button.svelte'
-  import Icon from '$lib/components/Icon.svelte'
-  import ProfilePicture from '$lib/components/root/ProfilePicture.svelte'
-  import Masonry from '$lib/components/root/Masonry.svelte'
-  import Link from '$lib/components/root/Link.svelte'
-  import Playground from '$lib/components/root/Playground.svelte'
+  import { Container, Button, Icon, Header, Masonry, Link, Playground } from '$lib/components'
 
   let { data } = $props()
 
@@ -120,7 +114,8 @@
 
 <main>
   <Container>
-    <ProfilePicture />
+    <!-- <ProfilePicture /> -->
+    <Header pfp />
 
     <p>
       I do a bunch of things in my free time, but most of all, I love sharing stuff! I do dev,

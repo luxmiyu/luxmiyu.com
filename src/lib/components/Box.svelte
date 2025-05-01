@@ -1,17 +1,19 @@
 <script lang="ts">
+  import { type Snippet } from 'svelte'
+
   let {
-    children = () => {},
+    children,
     borderless = false,
     nopadding = false,
   }: {
-    children: () => any
+    children?: Snippet
     borderless?: boolean
     nopadding?: boolean
   } = $props()
 </script>
 
 <div class:borderless class:nopadding>
-  {@render children()}
+  {@render children?.()}
 </div>
 
 <style lang="sass">
