@@ -74,6 +74,11 @@
         { icon: 'door_open', name: 'adm2', description: 'Any Dimensions Mod 2 for Minecraft' },
         { icon: 'apparel', name: 'anything', description: 'Anything mod for Minecraft' },
         { icon: 'stack_hexagon', name: 'luxore', description: 'Luxore mod for Minecraft' },
+        {
+          icon: 'category_search',
+          name: 'collector',
+          description: 'The Collector quest tracker for Escape from Tarkov',
+        },
       ],
     },
     {
