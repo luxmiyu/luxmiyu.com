@@ -10,6 +10,7 @@
 
     borderless = false,
     nopadding = false,
+    disabled = false,
   }: {
     children?: Snippet
 
@@ -19,6 +20,7 @@
 
     borderless?: boolean
     nopadding?: boolean
+    disabled?: boolean
   } = $props()
 </script>
 
@@ -27,7 +29,7 @@
     {@render children?.()}
   </a>
 {:else}
-  <button {onclick} class:borderless class:nopadding>
+  <button {onclick} class:borderless class:nopadding {disabled}>
     {@render children?.()}
   </button>
 {/if}
@@ -73,4 +75,15 @@
 
       transform: translate(2px, 2px)
       box-shadow: 2px 2px 0px 0px var(--shadow)
+
+    &:disabled
+      cursor: not-allowed
+      color: var(--text-disabled)
+      background: var(--card)
+      border: 1px solid var(--text-disabled)
+      box-shadow: 4px 4px 0px 0px var(--shadow)
+
+      &:hover
+        transform: translate(0px, 0px)
+        box-shadow: 4px 4px 0px 0px var(--shadow)
 </style>
