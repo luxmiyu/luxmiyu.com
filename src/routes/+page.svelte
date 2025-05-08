@@ -39,6 +39,7 @@
         { icon: 'keyboard', name: 'keyboard', description: "Test your keyboard's keys" },
         { icon: 'font_download', name: 'emoji', description: 'Quickly convert text to emoji' },
         { icon: 'sticky_note', name: 'lorem', description: 'Dummy text' },
+        { icon: 'key', name: 'keygen', description: 'Random string generator' },
       ],
     },
     {

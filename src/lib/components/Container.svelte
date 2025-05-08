@@ -4,13 +4,15 @@
   let {
     children,
     large = false,
+    fill = false,
   }: {
     children?: Snippet
     large?: boolean
+    fill?: boolean
   } = $props()
 </script>
 
-<main class:large>
+<main class:large class:fill>
   {@render children?.()}
 </main>
 
@@ -30,4 +32,7 @@
 
     &.large
       max-width: 1200px
+
+    &.fill
+      min-height: 100dvh
 </style>
