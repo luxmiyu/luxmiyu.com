@@ -36,7 +36,7 @@ export const legacy = [
 
   'hsr_old',
 ]
-export const disabled = ['template']
+export const disabled = ['empty', 'template']
 
 export function match(value: string): boolean {
   return legacy.includes(value)

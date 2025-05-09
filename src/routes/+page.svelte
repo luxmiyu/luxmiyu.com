@@ -12,6 +12,7 @@
     {
       name: 'Tools',
       tools: [
+        { icon: 'web_asset', name: 'empty', description: 'An empty page' },
         { icon: 'html', name: 'template', description: 'Legacy web template' },
         {
           icon: 'music_note',
