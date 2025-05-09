@@ -3,8 +3,8 @@
 
   let {
     children,
-    columns,
-    minmax = '128px',
+    columns = '1',
+    minmax,
     gap = '8px',
   }: {
     children: Snippet
@@ -14,12 +14,12 @@
   } = $props()
 </script>
 
-{#if columns}
-  <main style:grid-template-columns="repeat({columns}, 1fr)" style:gap>
+{#if minmax}
+  <main style:grid-template-columns="repeat(auto-fill, minmax({minmax}, 1fr))" style:gap>
     {@render children?.()}
   </main>
 {:else}
-  <main style:grid-template-columns="repeat(auto-fill, minmax({minmax}, 1fr))" style:gap>
+  <main style:grid-template-columns="repeat({columns}, 1fr)" style:gap>
     {@render children?.()}
   </main>
 {/if}
