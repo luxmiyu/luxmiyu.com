@@ -11,7 +11,6 @@ export const legacy = [
   'youtube',
   'keyboard',
   'emoji',
-  'lorem',
 
   'uwufier',
   'sliders',
