@@ -111,11 +111,13 @@
 
   .item.done
     border: 1px solid var(--text-secondary)
-    filter: brightness(0.5)
+    filter: brightness(0.75)
+    opacity: 0.5
 
     color: var(--text-secondary)
     text-decoration: line-through
 
     &:hover
-      filter: brightness(0.75)
+      filter: brightness(1.0)
+      opacity: 0.6
 </style>
