@@ -7,7 +7,7 @@
 </script>
 
 <Container fill>
-  <Header title="empty" description="an empty page" />
+  <Header title="uwufier" description="can uwu uwufy me" />
 
   <Text>
     <h3>tex to be uwufied</h3>
