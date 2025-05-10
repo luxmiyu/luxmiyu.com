@@ -12,7 +12,7 @@
 
 <style lang="sass">
   span
-    display: flex
+    display: inline-flex
     align-items: center
 
     width: auto
