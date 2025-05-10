@@ -18,6 +18,26 @@
     align-items: center
     gap: 8px
 
+    :global(h1)
+      width: 100%
+      font-size: 28px
+      font-weight: 600
+
+    :global(h2)
+      width: 100%
+      font-size: 20px
+      font-weight: 500
+
+    :global(h3)
+      width: 100%
+      font-size: 16px
+      font-weight: 400
+
+    :global(h4)
+      width: 100%
+      font-size: 13px
+      font-weight: 400
+
     :global(p)
       width: 100%
       text-align: justify

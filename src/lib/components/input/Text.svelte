@@ -1,22 +1,19 @@
 <script lang="ts">
   let {
     value = $bindable(),
-    width = '100%',
+    width = 'auto',
   }: {
     value: string
     width?: string
   } = $props()
 </script>
 
-<span style:width>{value}</span>
+<input type="text" bind:value style:width />
 
 <style lang="sass">
-  span
-    display: flex
-    align-items: center
-
+  input
     width: auto
-    min-height: 36px
+    height: 36px
 
     border: 1px solid var(--text-disabled)
     background: var(--card)

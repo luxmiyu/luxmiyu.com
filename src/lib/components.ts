@@ -15,8 +15,12 @@ export { default as Text } from './components/Text.svelte'
 
 import { default as InputNumber } from './components/input/Number.svelte'
 import { default as InputSelect } from './components/input/Select.svelte'
+import { default as InputText } from './components/input/Text.svelte'
+import { default as InputTextarea } from './components/input/Textarea.svelte'
 
 export class Input {
   static Number = InputNumber
   static Select = InputSelect
+  static Text = InputText
+  static Textarea = InputTextarea
 }

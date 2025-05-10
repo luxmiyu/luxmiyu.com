@@ -12,7 +12,6 @@ export const legacy = [
   'keyboard',
   'emoji',
 
-  'uwufier',
   'sliders',
   'dcag',
   'advancements',
