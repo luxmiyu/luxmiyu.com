@@ -12,3 +12,11 @@ export { default as Playground } from './components/Playground.svelte'
 export { default as ProfilePicture } from './components/ProfilePicture.svelte'
 export { default as Output } from './components/Output.svelte'
 export { default as Text } from './components/Text.svelte'
+
+import { default as InputNumber } from './components/input/Number.svelte'
+import { default as InputSelect } from './components/input/Select.svelte'
+
+export class Input {
+  static Number = InputNumber
+  static Select = InputSelect
+}

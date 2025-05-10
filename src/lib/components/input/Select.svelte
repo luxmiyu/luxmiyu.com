@@ -1,19 +1,25 @@
 <script lang="ts">
+  import { type Snippet } from 'svelte'
+
   let {
+    children,
     value = $bindable(),
-    width = '100%',
+    width = 'auto',
   }: {
+    children?: Snippet
     value: string
     width?: string
   } = $props()
 </script>
 
-<span style:width>{value}</span>
+<select bind:value style:width>
+  {@render children?.()}
+</select>
 
 <style lang="sass">
-  span
+  select
     width: auto
-    min-height: 36px
+    height: 36px
 
     border: 1px solid var(--text-disabled)
     background: var(--card)

@@ -22,6 +22,13 @@
       width: 100%
       text-align: justify
 
+    :global(p.subtitle)
+      font-size: 12px
+      color: var(--text-secondary)
+
+    :global(p.center)
+      text-align: center
+
     :global(a)
       text-decoration: none
       color: var(--text-secondary)

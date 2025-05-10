@@ -1,7 +1,16 @@
 <script lang="ts">
   import { enhance } from '$app/forms'
 
-  import { Container, Button, Icon, Header, Masonry, Link, Playground } from '$lib/components'
+  import {
+    Header,
+    Footer,
+    Container,
+    Button,
+    Icon,
+    Masonry,
+    Link,
+    Playground,
+  } from '$lib/components'
 
   let { data } = $props()
 
@@ -266,6 +275,8 @@
         />
       </Masonry>
     </section>
+
+    <Footer />
   </Container>
 </main>
 

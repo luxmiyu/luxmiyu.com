@@ -1,19 +1,27 @@
 <script lang="ts">
   let {
     value = $bindable(),
-    width = '100%',
+    min = 0,
+    max = 100,
+    step = 1,
+
+    width = 'auto',
   }: {
-    value: string
+    value: number
+    min: number
+    max: number
+    step: number
+
     width?: string
   } = $props()
 </script>
 
-<span style:width>{value}</span>
+<input type="number" bind:value {min} {max} {step} style:width />
 
 <style lang="sass">
-  span
+  input
     width: auto
-    min-height: 36px
+    height: 36px
 
     border: 1px solid var(--text-disabled)
     background: var(--card)
