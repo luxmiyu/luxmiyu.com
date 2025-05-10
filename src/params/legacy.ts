@@ -1,4 +1,5 @@
 export const legacy = [
+  'bpmtap',
   'metronome',
   'convert',
   'color',
@@ -12,6 +13,7 @@ export const legacy = [
   'emoji',
   'lorem',
 
+  'uwufier',
   'sliders',
   'dcag',
   'advancements',
@@ -26,6 +28,7 @@ export const legacy = [
   'anything',
   'luxore',
 
+  'wordle',
   'tictactoe',
   'snake',
   'minesweeper',
