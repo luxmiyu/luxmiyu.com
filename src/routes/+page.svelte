@@ -7,7 +7,7 @@
     Container,
     Button,
     Icon,
-    Masonry,
+    Bricks,
     Link,
     Playground,
   } from '$lib/components'
@@ -137,11 +137,11 @@
       I do a bunch of things in my free time, but most of all, I love sharing stuff! I do dev,
       anime, gaming, vtubers and chill vibes.
     </p>
-    <Masonry>
+    <Bricks>
       <Link url="https://dcag.art" icon="/icon/dcag.png" label="Daily Cute Anime Girl" />
       <Link url="https://discord.gg/komimau" icon="/icon/komimau.png" label="Komimau Discord" />
       <Link url="https://map.luxmiyu.com/" icon="/icon/squaremap.png" label="SMP Minecraft Map" />
-    </Masonry>
+    </Bricks>
 
     <form action="?/toggleTheme" method="post" use:enhance>
       <Button>
@@ -173,7 +173,7 @@
     <section>
       <h2>Active Accounts</h2>
       <p class="subtitle">Follow me on these platforms!</p>
-      <Masonry>
+      <Bricks>
         <Link url="https://anilist.co/user/luxmiyu" icon="/icon/anilist.png" label="Anilist" />
         <Link url="https://osu.ppy.sh/users/luxmiyu" icon="/icon/osu.png" label="osu!" />
         <Link url="https://steamcommunity.com/id/luxmiyu/" icon="/icon/steam.png" label="Steam" />
@@ -181,13 +181,13 @@
         <Link url="https://www.youtube.com/@luxmiyu" icon="/icon/youtube.png" label="Youtube" />
         <Link url="https://pixiv.me/luxmiyu" icon="/icon/pixiv.png" label="Pixiv" />
         <Link url="https://modrinth.com/user/luxmiyu" icon="/icon/modrinth.png" label="Modrinth" />
-      </Masonry>
+      </Bricks>
     </section>
 
     <section>
       <h2>Inactive Accounts</h2>
       <p class="subtitle">Accounts I use but not frequently</p>
-      <Masonry>
+      <Bricks>
         <Link
           url="https://www.planetminecraft.com/member/luxmiyu"
           icon="/icon/planetminecraft.png"
@@ -222,13 +222,13 @@
           icon="/icon/bluesky.png"
           label="Bluesky"
         />
-      </Masonry>
+      </Bricks>
     </section>
 
     <section>
       <h2>Unused Accounts</h2>
       <p class="subtitle">Accounts I own but don't use</p>
-      <Masonry>
+      <Bricks>
         <Link url="https://luxmiyu.fanbox.cc/" icon="/icon/fanbox.png" label="FANBOX" />
         <Link url="https://skeb.jp/@luxmiyu" icon="/icon/skeb.png" label="Skeb" />
         <Link
@@ -259,13 +259,13 @@
           icon="/icon/zerochan.png"
           label="zerochan"
         />
-      </Masonry>
+      </Bricks>
     </section>
 
     <section>
       <h2>Legacy</h2>
       <p class="subtitle">Discontinued stuff, here for archiving purposes</p>
-      <Masonry>
+      <Bricks>
         <Link url="https://legacy.luxmiyu.com/" icon="/icon/link.png" label="legacy.luxmiyu.com" />
         <Link url="https://dcag.luxmiyu.com/" icon="/icon/link.png" label="dcag.luxmiyu.com" />
         <Link
@@ -273,7 +273,7 @@
           icon="/icon/link.png"
           label="luxmiyu.com/hsr_old"
         />
-      </Masonry>
+      </Bricks>
     </section>
 
     <Footer />
