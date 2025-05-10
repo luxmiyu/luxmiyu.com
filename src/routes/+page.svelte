@@ -130,7 +130,6 @@
 
 <main>
   <Container>
-    <!-- <ProfilePicture /> -->
     <Header pfp />
 
     <p>
