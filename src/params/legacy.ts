@@ -4,7 +4,6 @@ export const legacy = [
   'convert',
   'color',
   'rng',
-  'progress',
   'base64',
   'base',
   'binary',
