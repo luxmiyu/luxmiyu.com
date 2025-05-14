@@ -30,13 +30,17 @@
     page++
     if (page > pages) page = 1
   }
+
+  function oninput() {
+    page = Math.min(pages, Math.max(1, page))
+  }
 </script>
 
 <Container fill large>
   <Header title="bangs" description="browse the bangs" />
 
   <Grid>
-    <Input.Text bind:value focus />
+    <Input.Text bind:value focus {oninput} />
   </Grid>
 
   <Text>

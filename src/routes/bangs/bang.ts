@@ -1,6 +1,6 @@
 // from https://unduck.link/ and https://duckduckgo.com/bang.js, + some extras
 
-interface Bang {
+export interface Bang {
   c?: string
   d: string
   r: number
@@ -11,15 +11,6 @@ interface Bang {
 }
 
 export const bangs: Bang[] = [
-  {
-    c: 'Entertainment',
-    d: 'dcag.art',
-    r: 0,
-    s: 'Daily Cute Anime Girl',
-    sc: 'Search',
-    t: 'dcag',
-    u: 'https://dcag.art/search?q={{{s}}}',
-  },
   {
     c: 'Tech',
     d: 'www.01net.com',

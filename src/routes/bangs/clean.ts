@@ -1,4 +1,5 @@
-import { bangs } from '../bangs/bang'
+import { type Bang, bangs } from './bang'
+import { customBangs } from './custom'
 
 export interface CleanBang {
   name: string
@@ -12,7 +13,7 @@ export interface CleanBang {
   r: number
 }
 
-export const cleanBangs: CleanBang[] = bangs.map((bang) => {
+function cleanBang(bang: Bang): CleanBang {
   return {
     name: bang.s,
     bang: bang.t,
@@ -24,4 +25,9 @@ export const cleanBangs: CleanBang[] = bangs.map((bang) => {
 
     r: bang.r,
   }
-})
+}
+
+export const cleanBangs: CleanBang[] = customBangs
+  .map(cleanBang)
+  .concat(bangs.map(cleanBang))
+  .sort((a, b) => a.bang.localeCompare(b.bang))
