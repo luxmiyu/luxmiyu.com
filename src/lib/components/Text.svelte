@@ -1,10 +1,16 @@
 <script lang="ts">
   import type { Snippet } from 'svelte'
 
-  let { children }: { children: Snippet } = $props()
+  let {
+    children,
+    gap = '8px',
+  }: {
+    children: Snippet
+    gap?: string
+  } = $props()
 </script>
 
-<div>
+<div style:gap>
   {@render children?.()}
 </div>
 
