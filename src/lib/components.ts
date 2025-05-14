@@ -14,6 +14,7 @@ export { default as Output } from './components/Output.svelte'
 export { default as Text } from './components/Text.svelte'
 export { default as Columns } from './components/Columns.svelte'
 export { default as Rows } from './components/Rows.svelte'
+export { default as Separate } from './components/Separate.svelte'
 
 import { default as InputNumber } from './components/input/Number.svelte'
 import { default as InputSelect } from './components/input/Select.svelte'
