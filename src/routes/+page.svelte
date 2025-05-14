@@ -50,6 +50,8 @@
         { name: 'emoji', description: 'Quickly convert text to emoji', icon: 'font_download' },
         { name: 'lorem', description: 'Dummy text', icon: 'sticky_note' },
         { name: 'keygen', description: 'Random string generator', icon: 'key' },
+        { name: 'search', description: 'Search with bangs', icon: 'search' },
+        { name: 'bangs', description: 'Browse the bangs', icon: 'priority_high' },
       ],
     },
     {
