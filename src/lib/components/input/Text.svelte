@@ -5,12 +5,14 @@
     value = $bindable(),
     width = 'auto',
     focus = false,
+    autocorrect = 'on',
 
     onEnter,
   }: {
     value: string
     width?: string
     focus?: boolean
+    autocorrect?: 'on' | 'off'
 
     onEnter?: () => void
   } = $props()
@@ -30,7 +32,7 @@
   }
 </script>
 
-<input type="text" bind:this={input} bind:value style:width {onkeypress} />
+<input type="text" bind:this={input} bind:value style:width {onkeypress} {autocorrect} />
 
 <style lang="sass">
   input
