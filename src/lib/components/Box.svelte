@@ -5,14 +5,20 @@
     children,
     borderless = false,
     nopadding = false,
+
+    width = '100%',
+    height = '100%',
   }: {
     children?: Snippet
     borderless?: boolean
     nopadding?: boolean
+
+    width?: string
+    height?: string
   } = $props()
 </script>
 
-<div class:borderless class:nopadding>
+<div class:borderless class:nopadding style:width style:height>
   {@render children?.()}
 </div>
 
