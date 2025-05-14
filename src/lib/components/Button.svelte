@@ -11,6 +11,7 @@
     borderless = false,
     nopadding = false,
     disabled = false,
+    width = 'auto',
   }: {
     children?: Snippet
 
@@ -21,15 +22,16 @@
     borderless?: boolean
     nopadding?: boolean
     disabled?: boolean
+    width?: string
   } = $props()
 </script>
 
 {#if href}
-  <a {href} {target} class:borderless class:nopadding>
+  <a {href} {target} class:borderless class:nopadding style:width>
     {@render children?.()}
   </a>
 {:else}
-  <button {onclick} class:borderless class:nopadding {disabled}>
+  <button {onclick} class:borderless class:nopadding style:width {disabled}>
     {@render children?.()}
   </button>
 {/if}
@@ -42,7 +44,6 @@
     align-items: center
     gap: 2px
 
-    // width: 100%
     max-width: 100%
     overflow: hidden
 
