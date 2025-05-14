@@ -8,6 +8,7 @@
     autocorrect = 'on',
 
     onEnter,
+    oninput,
   }: {
     value: string
     width?: string
@@ -15,6 +16,7 @@
     autocorrect?: 'on' | 'off'
 
     onEnter?: () => void
+    oninput?: () => void
   } = $props()
 
   let input: HTMLInputElement
@@ -32,7 +34,7 @@
   }
 </script>
 
-<input type="text" bind:this={input} bind:value style:width {onkeypress} {autocorrect} />
+<input type="text" bind:this={input} bind:value style:width {onkeypress} {oninput} {autocorrect} />
 
 <style lang="sass">
   input
