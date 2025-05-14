@@ -1,14 +1,24 @@
 <script lang="ts">
+  import { browser } from '$app/environment'
+
   let {
     value = $bindable(),
     width = 'auto',
+    focus = false,
   }: {
     value: string
     width?: string
+    focus?: boolean
   } = $props()
+
+  let input: HTMLInputElement
+
+  $effect(() => {
+    if (focus) input.focus()
+  })
 </script>
 
-<input type="text" bind:value style:width />
+<input type="text" bind:this={input} bind:value style:width />
 
 <style lang="sass">
   input

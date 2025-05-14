@@ -6,6 +6,8 @@
     step = 1,
 
     width = 'auto',
+
+    focus = false,
   }: {
     value: number
     min: number
@@ -13,10 +15,18 @@
     step: number
 
     width?: string
+
+    focus?: boolean
   } = $props()
+
+  let input: HTMLInputElement
+
+  $effect(() => {
+    if (focus) input.focus()
+  })
 </script>
 
-<input type="number" bind:value {min} {max} {step} style:width />
+<input type="number" bind:this={input} bind:value {min} {max} {step} style:width />
 
 <style lang="sass">
   input

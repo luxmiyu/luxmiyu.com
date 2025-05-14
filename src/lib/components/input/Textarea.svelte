@@ -7,6 +7,8 @@
 
     vertical = false,
     horizontal = false,
+
+    focus = false,
   }: {
     value: string
     cols?: number
@@ -15,10 +17,19 @@
 
     vertical?: boolean
     horizontal?: boolean
+
+    focus?: boolean
   } = $props()
+
+  let textarea: HTMLTextAreaElement
+
+  $effect(() => {
+    if (focus) textarea.focus()
+  })
 </script>
 
-<textarea {cols} {rows} bind:value style:width class:vertical class:horizontal></textarea>
+<textarea bind:this={textarea} {cols} {rows} bind:value style:width class:vertical class:horizontal>
+</textarea>
 
 <style lang="sass">
   textarea
