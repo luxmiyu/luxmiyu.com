@@ -14,8 +14,7 @@
 
     display: flex
     flex-direction: column
-    justify-content: center
-    align-items: center
+    align-items: start
     gap: 8px
 
     :global(h1)
@@ -42,11 +41,15 @@
       width: 100%
       text-align: justify
 
-    :global(p.subtitle)
+    :global(a:hover)
+      text-decoration: underline
+      cursor: pointer
+
+    :global(p.subtitle), :global(a.subtitle)
       font-size: 12px
       color: var(--text-secondary)
 
-    :global(p.center)
+    :global(p.center), :global(a.center)
       text-align: center
 
     :global(a)
