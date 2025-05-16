@@ -264,7 +264,7 @@
     </section>
 
     <section>
-      <h2>Legacy</h2>
+      <h2>Archive</h2>
       <p class="subtitle">Discontinued stuff, here for archiving purposes</p>
       <Bricks>
         <Link url="https://legacy.luxmiyu.com/" icon="/icon/link.png" label="legacy.luxmiyu.com" />
@@ -274,6 +274,7 @@
           icon="/icon/link.png"
           label="luxmiyu.com/hsr_old"
         />
+        <Link url="https://unduck.luxmiyu.com/" icon="/icon/link.png" label="unduck.luxmiyu.com" />
       </Bricks>
     </section>
 
