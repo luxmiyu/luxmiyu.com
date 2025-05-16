@@ -1,15 +1,10 @@
 <script lang="ts">
   import { Icon } from '../components'
-  import { legacy, disabled } from '../../params/legacy'
+  import { tooltabs } from '$lib/tools'
 
   let {
-    tabs,
     current = $bindable(),
   }: {
-    tabs: {
-      name: string
-      tools: { name: string; icon: string; description?: string }[]
-    }[]
     current: string | null
   } = $props()
 
@@ -18,12 +13,12 @@
 </script>
 
 <main>
-  {#each tabs as tab}
+  {#each tooltabs as tab}
     <div class="tab">
       <p class="subtitle">{tab.name}</p>
       <section>
-        {#each tab.tools as { icon, name }}
-          {#if disabled.includes(name)}
+        {#each tab.tools as { icon, name, status }}
+          {#if status === 'deprecated'}
             <div class="tool disabled">
               <Icon name={icon} size="16px" />
               <p>{name}</p>
@@ -33,9 +28,8 @@
             <a
               class="tool"
               href="/{name}"
-              class:legacy={legacy.includes(name)}
-              class:disabled={disabled.includes(name)}
-              target={legacy.includes(name) ? '_blank' : '_self'}
+              class:legacy={status === 'legacy'}
+              target={status === 'legacy' ? '_blank' : '_self'}
               onmouseenter={() => onmouseenter(name)}
               {onmouseleave}
             >

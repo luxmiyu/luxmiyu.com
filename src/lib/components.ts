@@ -1,3 +1,4 @@
+export { default as Head } from './components/Head.svelte'
 export { default as Board } from './components/Board.svelte'
 export { default as Box } from './components/Box.svelte'
 export { default as Button } from './components/Button.svelte'

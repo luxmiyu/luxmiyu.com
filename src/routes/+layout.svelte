@@ -30,7 +30,7 @@
 
   <!-- social media metadata -->
   <meta property="og:url" content="https://luxmiyu.com{page.url.pathname}" />
-  <meta name="theme-color" content="#bfc487" />
+  <meta name="theme-color" content="#9dc1ec" />
 
   <!-- umami analytics -->
   {#if dev}

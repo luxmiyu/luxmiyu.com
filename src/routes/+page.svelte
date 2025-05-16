@@ -2,6 +2,7 @@
   import { enhance } from '$app/forms'
 
   import {
+    Head,
     Header,
     Footer,
     Container,
@@ -12,112 +13,13 @@
     Playground,
   } from '$lib/components'
 
+  import { tooltabs } from '$lib/tools'
+
   let { data } = $props()
 
-  const tabs: {
-    name: string
-    tools: { name: string; description?: string; icon: string }[]
-  }[] = [
-    {
-      name: 'Tools',
-      tools: [
-        { name: 'empty', description: 'An empty page', icon: 'web_asset' },
-        { name: 'template', description: 'Legacy web template', icon: 'html' },
-        {
-          name: 'bpmconverter',
-          description: 'Convert between rhythms and BPMs',
-          icon: 'music_note',
-        },
-        { name: 'bpmtap', description: 'Find the BPM by tapping', icon: 'touch_app' },
-        { name: 'metronome', description: 'Simple metronome', icon: 'tune' },
-        { name: 'convert', description: 'Convert between units', icon: 'square_foot' },
-        { name: 'color', description: 'Pretty color picker', icon: 'colors' },
-        { name: 'rng', description: 'Random number generator', icon: 'numbers' },
-        { name: 'progress', description: 'Progress bar for the current year', icon: 'hourglass' },
-        { name: 'base64', description: 'Encode or decode Base64', icon: 'text_format' },
-        { name: 'base', description: 'Convert between bases', icon: 'timer_10' },
-        {
-          name: 'binary',
-          description: 'Encode or decode binary or hexadecimal',
-          icon: 'subscript',
-        },
-        {
-          name: 'youtube',
-          description: 'Get the thumbnail of a YouTube video',
-          icon: 'media_link',
-        },
-        { name: 'keyboard', description: "Test your keyboard's keys", icon: 'keyboard' },
-        { name: 'emoji', description: 'Quickly convert text to emoji', icon: 'font_download' },
-        { name: 'lorem', description: 'Dummy text', icon: 'sticky_note' },
-        { name: 'keygen', description: 'Random string generator', icon: 'key' },
-        { name: 'search', description: 'Search with bangs', icon: 'search' },
-        { name: 'bangs', description: 'Browse the bangs', icon: 'priority_high' },
-      ],
-    },
-    {
-      name: 'Utility',
-      tools: [
-        { name: 'uwufier', description: 'Convert a string to uwu', icon: 'forum' },
-        { name: 'sliders', description: 'Advanced slider editor for osu!', icon: 'switches' },
-        { name: 'dcag', description: 'Daily Cute Anime Girl (2024 version)', icon: 'wall_art' },
-        { name: 'advancements', description: 'Minecraft advancements editor', icon: 'label' },
-        { name: 'hsr', description: 'Banner schedule for Honkai: Star Rail', icon: 'lists' },
-        { name: 'osucollab', description: 'Komimau osu! pfp collab', icon: 'group' },
-        {
-          name: 'speedtune',
-          description: 'Advanced Honkai: Star Rail combat rotation planner',
-          icon: 'steps',
-        },
-        {
-          name: 'qingque',
-          description: 'Probability graphs for Qingque from Honkai: Star Rail',
-          icon: 'playing_cards',
-        },
-        {
-          name: 'stratagems',
-          description: 'List of stratagems from Helldivers 2',
-          icon: 'open_with',
-        },
-        { name: 'wuwa', description: 'Banner schedule for Wuthering Waves', icon: 'lists' },
-        {
-          name: 'convene',
-          description: 'Convene tracker for Wuthering Waves',
-          icon: 'brightness_empty',
-        },
-        { name: 'adm2', description: 'Any Dimensions Mod 2 for Minecraft', icon: 'door_open' },
-        { name: 'anything', description: 'Anything mod for Minecraft', icon: 'apparel' },
-        { name: 'luxore', description: 'Luxore mod for Minecraft', icon: 'stack_hexagon' },
-        {
-          name: 'collector',
-          description: 'The Collector quest tracker for Escape from Tarkov',
-          icon: 'category_search',
-        },
-      ],
-    },
-    {
-      name: 'Games',
-      tools: [
-        { name: 'wordle', description: 'Guess the word', icon: 'password' },
-        {
-          name: 'tictactoe',
-          description: 'Play tic-tac-toe against the computer',
-          icon: 'grid_3x3',
-        },
-        { name: 'snake', description: 'Collect as many apples as you can', icon: 'floor' },
-        { name: 'minesweeper', description: 'Flag all of the mines', icon: 'bomb' },
-        { name: 'reaction', description: 'Test your reaction time', icon: 'pace' },
-        { name: 'mastermind', description: 'Guess the color code', icon: 'page_control' },
-        {
-          name: 'lights',
-          description: 'A puzzle game about turning off lights',
-          icon: 'backlight_low',
-        },
-        { name: 'drums', description: 'Simple drum machine', icon: 'album' },
-      ],
-    },
-  ]
-
-  let flat = $derived(tabs.flatMap((tab) => tab.tools.map((tool) => ({ ...tool, tab: tab.name }))))
+  let flat = $derived(
+    tooltabs.flatMap((tab) => tab.tools.map((tool) => ({ ...tool, tab: tab.name })))
+  )
 
   const defaultDescription =
     "These are mini web tools I've made that you might find cool or useful :D"
@@ -129,6 +31,12 @@
     return tool.description ?? `luxmiyu.com/${tool.name}`
   })
 </script>
+
+<Head
+  title="luxmiyu → home"
+  description="I do a bunch of things in my free time, but most of all, I love sharing stuff! I do dev, anime, gaming, vtubers and chill vibes. Here you'll find a list of my links, as well as a playground for tools I've made."
+  image="/preview/luxmiyu.jpg"
+/>
 
 <main>
   <Container>
@@ -160,7 +68,7 @@
 
     <section>
       <h2>Playground</h2>
-      <Playground {tabs} bind:current />
+      <Playground bind:current />
       <p class="subtitle">
         {description}
       </p>
