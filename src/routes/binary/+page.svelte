@@ -1,0 +1,82 @@
+<script lang="ts">
+  import { Header, Footer, Container, Input, Button, Grid, Text } from '$lib/components'
+
+  let original = $state('')
+  let binary = $state('')
+  let hexadecimal = $state('')
+
+  let disabled = $derived(original.length === 0)
+
+  function copy(str: string) {
+    navigator.clipboard.writeText(str)
+    alert('Copied to clipboard')
+  }
+
+  function reset() {
+    original = ''
+    binary = ''
+    hexadecimal = ''
+  }
+
+  function oninputOriginal() {
+    binary = original
+      .split('')
+      .map((char) => char.charCodeAt(0).toString(2))
+      .join(' ')
+    hexadecimal = original
+      .split('')
+      .map((char) => char.charCodeAt(0).toString(16))
+      .join(' ')
+  }
+
+  function oninputBinary() {
+    original = binary
+      .split(' ')
+      .map((char) => String.fromCharCode(parseInt(char, 2)))
+      .join('')
+    hexadecimal = original
+      .split('')
+      .map((char) => char.charCodeAt(0).toString(16))
+      .join(' ')
+  }
+
+  function oninputHexadecimal() {
+    original = hexadecimal
+      .split(' ')
+      .map((char) => String.fromCharCode(parseInt(char, 16)))
+      .join('')
+    binary = original
+      .split('')
+      .map((char) => char.charCodeAt(0).toString(2))
+      .join(' ')
+  }
+</script>
+
+<Container fill>
+  <Header title="binary" description="a simple text to binary converter" />
+
+  <Text>
+    <h3>Original Text</h3>
+    <Input.Textarea bind:value={original} width="100%" vertical oninput={oninputOriginal} />
+    <Grid columns="2">
+      <Button {disabled} onclick={() => copy(original)}>Copy to clipboard</Button>
+      <Button {disabled} onclick={reset}>Reset</Button>
+    </Grid>
+
+    <h3>Binary</h3>
+    <Input.Textarea bind:value={binary} width="100%" vertical oninput={oninputBinary} />
+    <Grid columns="2">
+      <Button {disabled} onclick={() => copy(binary)}>Copy to clipboard</Button>
+      <Button {disabled} onclick={reset}>Reset</Button>
+    </Grid>
+
+    <h3>Hexadecimal</h3>
+    <Input.Textarea bind:value={hexadecimal} width="100%" vertical oninput={oninputHexadecimal} />
+    <Grid columns="2">
+      <Button {disabled} onclick={() => copy(hexadecimal)}>Copy to clipboard</Button>
+      <Button {disabled} onclick={reset}>Reset</Button>
+    </Grid>
+  </Text>
+
+  <Footer />
+</Container>
