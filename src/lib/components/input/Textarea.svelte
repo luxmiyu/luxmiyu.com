@@ -9,6 +9,8 @@
     horizontal = false,
 
     focus = false,
+
+    oninput,
   }: {
     value: string
     cols?: number
@@ -19,6 +21,8 @@
     horizontal?: boolean
 
     focus?: boolean
+
+    oninput?: () => void
   } = $props()
 
   let textarea: HTMLTextAreaElement
@@ -28,7 +32,16 @@
   })
 </script>
 
-<textarea bind:this={textarea} {cols} {rows} bind:value style:width class:vertical class:horizontal>
+<textarea
+  bind:this={textarea}
+  bind:value
+  {cols}
+  {rows}
+  style:width
+  class:vertical
+  class:horizontal
+  {oninput}
+>
 </textarea>
 
 <style lang="sass">
