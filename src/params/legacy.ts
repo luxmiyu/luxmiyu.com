@@ -6,7 +6,6 @@ export const legacy = [
   'rng',
   'base64',
   'base',
-  'youtube',
   'keyboard',
   'emoji',
 
