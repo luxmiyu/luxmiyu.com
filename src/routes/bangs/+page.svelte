@@ -87,6 +87,9 @@
 
     text-decoration: none
 
+    overflow: hidden
+    word-break: break-all
+
     h3
       font-size: 14px
       font-weight: 450
