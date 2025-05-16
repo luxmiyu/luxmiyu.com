@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Header, Footer, Container } from '$lib/components'
+  import { Head, Header, Footer, Container } from '$lib/components'
 </script>
 
 <Container fill>
@@ -7,6 +7,8 @@
 
   <Footer />
 </Container>
+
+<Head title="luxmiyu → empty" description="empty" image="/preview/empty.jpg" />
 
 <style lang="sass">
   //

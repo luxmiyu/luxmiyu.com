@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Header, Footer, Container, Input } from '$lib/components'
+  import { Head, Header, Footer, Container, Input } from '$lib/components'
 
   // regex source:
   // https://gist.github.com/rodrigoborgesdeoliveira/987683cfbfcc8d800192da1e73adc486?permalink_comment_id=4342805#gistcomment-4342805
@@ -23,6 +23,12 @@
   let src = $derived(id ? getThumbnailUrl(id) : '')
   let href = $derived(id ? getYoutubeUrl(id) : '')
 </script>
+
+<Head
+  title="luxmiyu → youtube"
+  description="a youtube thumbnail grabber"
+  image="/preview/youtube.jpg"
+/>
 
 <Container fill large>
   <Header title="youtube" description="a youtube thumbnail grabber" />

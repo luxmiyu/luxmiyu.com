@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Header, Footer, Container, Grid, Text, Button } from '$lib/components'
+  import { Head, Header, Footer, Container, Grid, Text, Button } from '$lib/components'
 
   let count = $state(0)
   let label = $state('a button with an icon')
@@ -13,6 +13,8 @@
     }
   }
 </script>
+
+<Head title="luxmiyu → template" description="a generic web template" image="/preview/empty.jpg" />
 
 <Container fill>
   <Header title="luxmiyu" description="a generic web template" pfp />

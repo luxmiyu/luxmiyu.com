@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Header, Footer, Container, Input, Button, Grid, Text } from '$lib/components'
+  import { Head, Header, Footer, Container, Input, Button, Grid, Text } from '$lib/components'
 
   let original = $state('')
   let binary = $state('')
@@ -51,6 +51,12 @@
       .join(' ')
   }
 </script>
+
+<Head
+  title="luxmiyu → binary"
+  description="A simple text to binary converter"
+  image="/preview/binary.jpg"
+/>
 
 <Container fill>
   <Header title="binary" description="a simple text to binary converter" />

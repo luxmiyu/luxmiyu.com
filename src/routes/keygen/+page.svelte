@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Header, Footer, Container, Grid, Output, Button } from '$lib/components'
+  import { Head, Header, Footer, Container, Grid, Output, Button } from '$lib/components'
 
   let generated: string = $state('')
 
@@ -35,8 +35,10 @@
   }
 </script>
 
+<Head title="luxmiyu → keygen" description="random string generator" image="/preview/keygen.jpg" />
+
 <Container fill>
-  <Header title="keygen" description="Random string generator" />
+  <Header title="keygen" description="random string generator" />
   <Output value={generated} />
   <Grid columns="2">
     <Button onclick={reset}>Reset</Button>

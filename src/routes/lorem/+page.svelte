@@ -1,8 +1,10 @@
 <script lang="ts">
-  import { Header, Footer, Container, Text, Button, Grid } from '$lib/components'
+  import { Head, Header, Footer, Container, Text, Button, Grid } from '$lib/components'
 
   let short = $state(true)
 </script>
+
+<Head title="luxmiyu → lorem" description="lorem ipsum dolor sit amet" image="/preview/lorem.jpg" />
 
 <Container fill>
   <Header title="lorem ipsum" description="lorem ipsum dolor sit amet" />

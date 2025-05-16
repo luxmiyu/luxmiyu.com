@@ -1,5 +1,15 @@
 <script lang="ts">
-  import { Header, Footer, Container, Text, Input, Output, Grid, Button } from '$lib/components'
+  import {
+    Head,
+    Header,
+    Footer,
+    Container,
+    Text,
+    Input,
+    Output,
+    Grid,
+    Button,
+  } from '$lib/components'
   import { uwufy } from './uwu'
 
   let input = $state('')
@@ -14,6 +24,8 @@
     input = ''
   }
 </script>
+
+<Head title="luxmiyu → uwufier" description="can uwu uwufy me" image="/preview/uwufier.jpg" />
 
 <Container fill>
   <Header title="uwufier" description="can uwu uwufy me" />

@@ -1,6 +1,6 @@
 <script lang="ts">
   import { browser } from '$app/environment'
-  import { Container, Button, Header, Grid, Footer } from '$lib/components'
+  import { Head, Header, Container, Button, Grid, Footer } from '$lib/components'
   import { type Item, items } from './items'
 
   const done: string[] = $state([])
@@ -41,6 +41,12 @@
 
   if (browser) load()
 </script>
+
+<Head
+  title="luxmiyu → collector"
+  description="The Collector quest tracker for Escape from Tarkov"
+  image="/preview/collector.jpg"
+/>
 
 <Container large>
   <Header title="collector" description="The Collector quest tracker for Escape from Tarkov" />

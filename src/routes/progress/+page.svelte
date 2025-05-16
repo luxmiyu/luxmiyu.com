@@ -1,6 +1,6 @@
 <script lang="ts">
   import { browser } from '$app/environment'
-  import { Header, Footer, Container, Text } from '$lib/components'
+  import { Head, Header, Footer, Container, Text } from '$lib/components'
 
   let now = $state(new Date())
   let percentage = $derived.by(() => {
@@ -15,6 +15,12 @@
     }, 10)
   }
 </script>
+
+<Head
+  title="luxmiyu → progress"
+  description="a progress bar for the current year"
+  image="/preview/progress.jpg"
+/>
 
 <Container fill>
   <Header title="progress" description="a progress bar for the current year" />
@@ -35,6 +41,7 @@
     width: 100%
     height: 36px
 
+    background: var(--card)
     border: 2px solid var(--text)
     padding: 2px
 

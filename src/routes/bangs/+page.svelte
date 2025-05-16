@@ -1,5 +1,15 @@
 <script lang="ts">
-  import { Header, Footer, Container, Text, Grid, Input, Button, Separate } from '$lib/components'
+  import {
+    Head,
+    Header,
+    Footer,
+    Container,
+    Text,
+    Grid,
+    Input,
+    Button,
+    Separate,
+  } from '$lib/components'
   import { type CleanBang, cleanBangs } from './clean'
 
   let value = $state('')
@@ -35,6 +45,8 @@
     page = Math.min(pages, Math.max(1, page))
   }
 </script>
+
+<Head title="luxmiyu → bangs" description="browse the bangs" image="/preview/bangs.jpg" />
 
 <Container fill large>
   <Header title="bangs" description="browse the bangs" />

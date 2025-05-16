@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Header, Footer, Container, Text, Input, Output } from '$lib/components'
+  import { Head, Header, Footer, Container, Text, Input, Output } from '$lib/components'
 
   let rhythmIn = $state('3')
   let rhythmOut = $state('4')
@@ -9,6 +9,12 @@
   let mspt = $derived(60000 / bpmOut / parseInt(rhythmOut))
   let taps = $derived((bpmOut * parseInt(rhythmOut)) / 60)
 </script>
+
+<Head
+  title="luxmiyu → bpmconverter"
+  description="convert between rhythms"
+  image="/preview/bpmconverter.jpg"
+/>
 
 {#snippet options()}
   <option value="1">1/1</option>

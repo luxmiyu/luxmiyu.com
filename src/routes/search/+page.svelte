@@ -2,6 +2,7 @@
   import { page } from '$app/state'
   import { browser } from '$app/environment'
   import {
+    Head,
     Header,
     Footer,
     Container,
@@ -28,6 +29,8 @@
     }
   })
 </script>
+
+<Head title="luxmiyu → search" description="search with bangs" image="/preview/search.jpg" />
 
 <Container fill>
   <Header title="search" description="search with bangs" />
