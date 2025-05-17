@@ -5,6 +5,7 @@
     children,
 
     onclick = () => {},
+    onpointerdown = () => {},
     href = undefined,
     target = '_blank',
 
@@ -16,6 +17,7 @@
     children?: Snippet
 
     onclick?: () => void
+    onpointerdown?: () => void
     href?: string
     target?: string
 
@@ -31,7 +33,7 @@
     {@render children?.()}
   </a>
 {:else}
-  <button {onclick} class:borderless class:nopadding style:width {disabled}>
+  <button {onclick} {onpointerdown} class:borderless class:nopadding style:width {disabled}>
     {@render children?.()}
   </button>
 {/if}
