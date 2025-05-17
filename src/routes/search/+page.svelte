@@ -26,6 +26,7 @@
   $effect(() => {
     if (page.url.searchParams.has('bang')) {
       value = `!${page.url.searchParams.get('bang')!} `
+      window.history.replaceState({}, '', window.location.pathname)
     }
   })
 </script>
