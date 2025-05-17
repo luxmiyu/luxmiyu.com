@@ -2,13 +2,31 @@
   let {
     value = $bindable(),
     width = '100%',
+    height = 'auto',
+    center = false,
+
+    fontSize = 'inherit',
+    fontWeight = 'inherit',
   }: {
     value: string
     width?: string
+    height?: string
+    center?: boolean
+
+    fontSize?: string
+    fontWeight?: string
   } = $props()
 </script>
 
-<span style:width>{value}</span>
+<span
+  style:width
+  style:height
+  class:center
+  style:font-size={fontSize}
+  style:font-weight={fontWeight}
+>
+  {value}
+</span>
 
 <style lang="sass">
   span
@@ -22,4 +40,7 @@
     background: var(--card)
     color: var(--text)
     padding: 8px
+
+    &.center
+      justify-content: center
 </style>
