@@ -26,7 +26,7 @@ export const tooltabs: ToolTab[] = [
         name: 'bpmtap',
         description: 'Find the BPM by tapping',
         icon: 'touch_app',
-        status: 'legacy',
+        status: 'updated',
       },
       { name: 'metronome', description: 'Simple metronome', icon: 'tune', status: 'legacy' },
       {
