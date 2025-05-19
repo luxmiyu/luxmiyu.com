@@ -77,6 +77,10 @@
     --shadow: #3a3a3a
     --input: #3a3a3a
     --input-hover: #4a4a4a
+
+    --range: #bababa
+    --range-border: #3a3a3a
+    --range-background: #3a3a3a
     
     --background-dots: #222222
 
@@ -117,6 +121,10 @@
       --shadow: #eaeaea
       --input: #d8d8d8
       --input-hover: #c8c8c8
+
+      --range: #eaeaea
+      --range-border: #aaaaaa
+      --range-background: #aaaaaa
 
       --background-dots: #f4f4f4
 

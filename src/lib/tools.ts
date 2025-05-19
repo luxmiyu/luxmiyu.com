@@ -47,7 +47,7 @@ export const tooltabs: ToolTab[] = [
         name: 'base64',
         description: 'Encode or decode Base64',
         icon: 'text_format',
-        status: 'legacy',
+        status: 'updated',
       },
       { name: 'base', description: 'Convert between bases', icon: 'timer_10', status: 'legacy' },
       {

@@ -27,21 +27,25 @@
       width: 100%
       font-size: 28px
       font-weight: 600
+      margin-top: 8px
 
     :global(h2)
       width: 100%
       font-size: 20px
       font-weight: 500
+      margin-top: 6px
 
     :global(h3)
       width: 100%
       font-size: 16px
       font-weight: 400
+      margin-top: 4px
 
     :global(h4)
       width: 100%
       font-size: 13px
       font-weight: 400
+      margin-top: 4px
 
     :global(p)
       width: 100%

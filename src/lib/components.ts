@@ -16,15 +16,18 @@ export { default as Text } from './components/Text.svelte'
 export { default as Columns } from './components/Columns.svelte'
 export { default as Rows } from './components/Rows.svelte'
 export { default as Separate } from './components/Separate.svelte'
+export { default as Center } from './components/Center.svelte'
 
 import { default as InputNumber } from './components/input/Number.svelte'
 import { default as InputSelect } from './components/input/Select.svelte'
 import { default as InputText } from './components/input/Text.svelte'
 import { default as InputTextarea } from './components/input/Textarea.svelte'
+import { default as InputRange } from './components/input/Range.svelte'
 
 export class Input {
   static Number = InputNumber
   static Select = InputSelect
   static Text = InputText
   static Textarea = InputTextarea
+  static Range = InputRange
 }
