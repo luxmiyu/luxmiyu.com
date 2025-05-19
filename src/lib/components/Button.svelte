@@ -8,6 +8,7 @@
     onpointerdown = () => {},
     href = undefined,
     target = '_blank',
+    rel = undefined,
 
     borderless = false,
     nopadding = false,
@@ -20,6 +21,7 @@
     onpointerdown?: () => void
     href?: string
     target?: string
+    rel?: string
 
     borderless?: boolean
     nopadding?: boolean
@@ -29,7 +31,7 @@
 </script>
 
 {#if href}
-  <a {href} {target} class:borderless class:nopadding style:width>
+  <a {href} {target} {rel} class:borderless class:nopadding style:width>
     {@render children?.()}
   </a>
 {:else}
