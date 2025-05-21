@@ -130,7 +130,7 @@ export const tooltabs: ToolTab[] = [
         name: 'stratagems',
         description: 'List of stratagems from Helldivers 2',
         icon: 'open_with',
-        status: 'legacy',
+        status: 'updated',
       },
       {
         name: 'wuwa',
