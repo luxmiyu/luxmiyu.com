@@ -204,3 +204,7 @@ export const tooltabs: ToolTab[] = [
     ],
   },
 ]
+
+export const tools: (Tool & { category: string })[] = tooltabs.flatMap((category) => {
+  return category.tools.map((tool) => ({ ...tool, category: category.name }))
+})
