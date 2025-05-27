@@ -1,27 +1,42 @@
 <script lang="ts">
   let {
-    text = 'by luxmiyu',
+    source = true,
+    discord = true,
   }: {
-    text?: string
+    source?: boolean
+    discord?: boolean
   } = $props()
 </script>
 
 <footer>
-  <a href="/">{text}</a>
+  <p>
+    <a href="/">by luxmiyu</a>
+
+    {#if source}
+      · <a href="https://github.com/luxmiyu/luxmiyu.com" target="_blank">source code</a>
+    {/if}
+
+    {#if discord}
+      · <a href="https://discord.gg/komimau" target="_blank">discord server</a>
+    {/if}
+  </p>
 </footer>
 
 <style lang="sass">
   footer
     display: flex
     justify-content: center
+    align-items: center
+    gap: 8px
+
     width: 100%
 
-    a
+    p, a
       text-decoration: none
       color: var(--text-secondary)
       font-size: 12px
       font-weight: 300
 
-      &:hover
+    a:hover
         text-decoration: underline
 </style>
