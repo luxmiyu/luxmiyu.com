@@ -25,6 +25,8 @@
   let actualMax = $derived(max - ((max - min) % step))
   let decimals = $derived(step.toString().split('.')[1]?.length || 0)
 
+  let actualAmount = $derived(Math.max(1, Math.floor(amount)))
+
   function reset() {
     if (value === '0' && history.length === 0) {
       min = 0
@@ -47,20 +49,16 @@
     amount = Math.floor(amount)
     if (amount < 1) amount = 1
 
-    if (amount === 1) {
+    if (actualAmount === 1) {
       value = next()
       history.push(value)
     } else {
       let array: string[] = []
-      for (let i = 0; i < amount; i++) {
+      for (let i = 0; i < actualAmount; i++) {
         array.push(next())
       }
       value = `[${array.join(', ')}]`
     }
-  }
-
-  function copy() {
-    navigator.clipboard.writeText(value)
   }
 
   let [fontSize, fontWeight] = $derived.by(() => {
@@ -86,7 +84,7 @@
 
   <Text>
     <Output bind:value center minHeight="128px" {fontSize} {fontWeight} />
-    {#if amount === 1}
+    {#if actualAmount === 1}
       <p class="subtitle center">History: {history.length > 0 ? history.join(', ') : '-'}</p>
     {/if}
 
@@ -105,7 +103,7 @@
     </Columns>
 
     <p class="subtitle center">
-      Generate {amount} random number{amount === 1 ? '' : 's'} between {min} and
+      Generate {actualAmount} random number{amount === 1 ? '' : 's'} between {min} and
       {actualMax.toFixed(decimals)} (inclusive) with a step of {step}
     </p>
 
