@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Head, Header, Footer, Container, Input, Button, Grid, Text } from '$lib/components'
+  import { Head, Header, Footer, Container, Input, Button, Grid, Text, Copy } from '$lib/components'
 
   let original = $state('')
   let binary = $state('')
@@ -65,21 +65,21 @@
     <h3>Original Text</h3>
     <Input.Textarea bind:value={original} width="100%" vertical oninput={oninputOriginal} />
     <Grid columns="2">
-      <Button {disabled} onclick={() => copy(original)}>Copy to clipboard</Button>
+      <Copy {disabled} value={original} text="Copy to clipboard" />
       <Button {disabled} onclick={reset}>Reset</Button>
     </Grid>
 
     <h3>Binary</h3>
     <Input.Textarea bind:value={binary} width="100%" vertical oninput={oninputBinary} />
     <Grid columns="2">
-      <Button {disabled} onclick={() => copy(binary)}>Copy to clipboard</Button>
+      <Copy {disabled} value={binary} text="Copy to clipboard" />
       <Button {disabled} onclick={reset}>Reset</Button>
     </Grid>
 
     <h3>Hexadecimal</h3>
     <Input.Textarea bind:value={hexadecimal} width="100%" vertical oninput={oninputHexadecimal} />
     <Grid columns="2">
-      <Button {disabled} onclick={() => copy(hexadecimal)}>Copy to clipboard</Button>
+      <Copy {disabled} value={hexadecimal} text="Copy to clipboard" />
       <Button {disabled} onclick={reset}>Reset</Button>
     </Grid>
   </Text>

@@ -48,7 +48,7 @@
   image="/preview/collector.jpg"
 />
 
-<Container large>
+<Container large fill>
   <Header title="collector" description="The Collector quest tracker for Escape from Tarkov" />
 
   <Grid minmax="250px" gap="2px">

@@ -10,6 +10,7 @@
     Columns,
     Center,
     Button,
+    Copy,
     Grid,
   } from '$lib/components'
 
@@ -111,7 +112,7 @@
       <Button onclick={generate}>Generate</Button>
       <Grid columns="2">
         <Button onclick={reset}>Reset</Button>
-        <Button onclick={copy}>Copy</Button>
+        <Copy {value} />
       </Grid>
     </Grid>
   </Text>

@@ -1,5 +1,15 @@
 <script lang="ts">
-  import { Head, Header, Footer, Container, Text, Input, Button, Columns } from '$lib/components'
+  import {
+    Head,
+    Header,
+    Footer,
+    Container,
+    Text,
+    Input,
+    Button,
+    Columns,
+    Copy,
+  } from '$lib/components'
   import { convertText, convertArrow } from './emoji'
 
   let inputText = $state('')
@@ -22,7 +32,7 @@
     <h3>Letters</h3>
     <Columns template="1fr 120px">
       <Input.Text bind:value={inputText} />
-      <Button onclick={() => navigator.clipboard.writeText(outputText)}>Copy Output</Button>
+      <Copy disabled={outputText.length === 0} value={outputText} text="Copy Output" />
     </Columns>
     {#if outputText}
       <p>{outputText}</p>
@@ -30,7 +40,7 @@
     <h3>Arrows</h3>
     <Columns template="1fr 120px">
       <Input.Text bind:value={inputArrows} />
-      <Button onclick={() => navigator.clipboard.writeText(outputArrows)}>Copy Output</Button>
+      <Copy disabled={outputArrows.length === 0} value={outputArrows} text="Copy Output" />
     </Columns>
     {#if outputArrows}
       <p>{outputArrows}</p>

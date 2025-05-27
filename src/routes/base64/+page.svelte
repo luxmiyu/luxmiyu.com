@@ -10,12 +10,14 @@
     Columns,
     Grid,
     Text,
+    Copy,
   } from '$lib/components'
 
   let depth = $state(1)
   let original = $state('')
   let encoded = $state('')
   let last: 'original' | 'encoded' = 'original'
+  let disabled = $derived(original.length === 0)
 
   function isValidCharacter(char: string): boolean {
     return char.length === 1 && char.charCodeAt(0) <= 255
@@ -78,16 +80,16 @@
     <h3>Original Text</h3>
     <Input.Textarea bind:value={original} width="100%" vertical oninput={oninputOriginal} />
     <Grid columns="3">
-      <Button onclick={() => navigator.clipboard.writeText(original)}>Copy to clipboard</Button>
-      <Button onclick={clear}>Clear Text</Button>
-      <Button onclick={clean}>Filter Invalid</Button>
+      <Copy {disabled} value={original} text="Copy to clipboard" />
+      <Button {disabled} onclick={clear}>Clear Text</Button>
+      <Button {disabled} onclick={clean}>Filter Invalid</Button>
     </Grid>
 
     <h3>Encoded Text</h3>
     <Input.Textarea bind:value={encoded} width="100%" vertical oninput={oninputEncoded} />
     <Grid columns="2">
-      <Button onclick={() => navigator.clipboard.writeText(encoded)}>Copy to clipboard</Button>
-      <Button onclick={clear}>Clear Text</Button>
+      <Copy {disabled} value={encoded} text="Copy to clipboard" />
+      <Button {disabled} onclick={clear}>Clear Text</Button>
     </Grid>
 
     <Columns template="80px 1fr">

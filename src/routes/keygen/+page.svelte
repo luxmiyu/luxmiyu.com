@@ -1,15 +1,10 @@
 <script lang="ts">
-  import { Head, Header, Footer, Container, Grid, Output, Button } from '$lib/components'
+  import { Head, Header, Footer, Container, Grid, Output, Button, Copy } from '$lib/components'
 
   let generated: string = $state('')
 
   function reset() {
     generated = ''
-  }
-
-  function copy() {
-    navigator.clipboard.writeText(generated)
-    alert('Copied to clipboard')
   }
 
   function generateUUID() {
@@ -42,7 +37,7 @@
   <Output value={generated} />
   <Grid columns="2">
     <Button onclick={reset}>Reset</Button>
-    <Button onclick={copy} disabled={generated === ''}>Copy to Clipboard</Button>
+    <Copy disabled={generated === ''} value={generated} text="Copy to Clipboard" />
   </Grid>
   <Grid minmax="200px">
     <Button onclick={generateUUID}>Random UUID</Button>
