@@ -3,6 +3,10 @@
     value = $bindable(),
     width = '100%',
     height = 'auto',
+    minWidth = 'auto',
+    minHeight = 'auto',
+    maxWidth = 'auto',
+    maxHeight = 'auto',
     center = false,
 
     fontSize = 'inherit',
@@ -11,6 +15,10 @@
     value: string
     width?: string
     height?: string
+    minWidth?: string
+    minHeight?: string
+    maxWidth?: string
+    maxHeight?: string
     center?: boolean
 
     fontSize?: string
@@ -21,9 +29,13 @@
 <span
   style:width
   style:height
-  class:center
+  style:min-width={minWidth}
+  style:min-height={minHeight}
+  style:max-width={maxWidth}
+  style:max-height={maxHeight}
   style:font-size={fontSize}
   style:font-weight={fontWeight}
+  class:center
 >
   {value}
 </span>
