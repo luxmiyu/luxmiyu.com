@@ -4,7 +4,7 @@
     width = '100%',
     height = 'auto',
     minWidth = 'auto',
-    minHeight = 'auto',
+    minHeight = '36px',
     maxWidth = 'auto',
     maxHeight = 'auto',
     center = false,
