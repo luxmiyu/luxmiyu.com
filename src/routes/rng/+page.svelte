@@ -44,6 +44,7 @@
   }
 
   function generate() {
+    amount = Math.floor(amount)
     if (amount < 1) amount = 1
 
     if (amount === 1) {
