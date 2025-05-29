@@ -52,6 +52,8 @@
   style:font-size={size}
   style:color={colored}
   style:font-variation-settings="'FILL' {filled ? 1 : 0}, 'wght' {weight}, 'GRAD' {grad}, 'opsz' {opsz}"
+  style:max-width={size}
+  style:max-height={size}
 >
   {name}
 </span>
@@ -65,6 +67,8 @@
     display: flex
     justify-content: center
     align-items: center
+
+    overflow: hidden
 
     &.secondary
       color: var(--text-secondary)
