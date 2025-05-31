@@ -443,15 +443,22 @@ export default class Color {
     let r = this.r - color.r
     let g = this.g - color.g
     let b = this.b - color.b
-    return Math.sqrt(r ** 2 + g ** 2 + b ** 2)
+    return Math.sqrt(r * r + g * g + b * b)
+  }
+
+  distanceSquaredTo(color: Color): number {
+    let r = this.r - color.r
+    let g = this.g - color.g
+    let b = this.b - color.b
+    return r * r + g * g + b * b
   }
 
   getClosest(): { name: string; hex: string; rgb: number[] } {
     let closestColor = colors[0]
-    let closestDistance = this.distanceTo(Color.fromHex(closestColor.hex))
+    let closestDistance = this.distanceSquaredTo(Color.fromHex(closestColor.hex))
 
     for (let i = 1; i < colors.length; i++) {
-      let distance = this.distanceTo(Color.fromHex(colors[i].hex))
+      let distance = this.distanceSquaredTo(Color.fromHex(colors[i].hex))
 
       if (distance < closestDistance) {
         closestColor = colors[i]
