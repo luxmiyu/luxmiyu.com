@@ -104,7 +104,3 @@
 
   <Footer />
 </Container>
-
-<style lang="sass">
-  //
-</style>
