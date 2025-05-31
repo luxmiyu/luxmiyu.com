@@ -35,7 +35,7 @@ export const tooltabs: ToolTab[] = [
         icon: 'square_foot',
         status: 'legacy',
       },
-      { name: 'color', description: 'Pretty color picker', icon: 'colors', status: 'legacy' },
+      { name: 'color', description: 'Pretty color picker', icon: 'colors', status: 'updated' },
       { name: 'rng', description: 'Random number generator', icon: 'numbers', status: 'updated' },
       {
         name: 'progress',

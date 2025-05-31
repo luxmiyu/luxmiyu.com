@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { browser } from '$app/environment'
   import { type Snippet } from 'svelte'
 
   let {
@@ -14,6 +15,11 @@
     nopadding = false,
     disabled = false,
     width = 'auto',
+
+    background = undefined,
+    color = undefined,
+
+    keybind = undefined,
   }: {
     children?: Snippet
 
@@ -27,15 +33,50 @@
     nopadding?: boolean
     disabled?: boolean
     width?: string
+
+    background?: string
+    color?: string
+
+    keybind?: string
   } = $props()
+
+  function listener(e: KeyboardEvent) {
+    if (e.code === keybind) onclick()
+  }
+
+  $effect(() => {
+    if (browser && keybind) {
+      document.addEventListener('keydown', listener)
+    }
+
+    return () => document.removeEventListener('keydown', listener)
+  })
 </script>
 
 {#if href}
-  <a {href} {target} {rel} class:borderless class:nopadding style:width>
+  <a
+    {href}
+    {target}
+    {rel}
+    class:borderless
+    class:nopadding
+    style:width
+    style:background
+    style:color
+  >
     {@render children?.()}
   </a>
 {:else}
-  <button {onclick} {onpointerdown} class:borderless class:nopadding style:width {disabled}>
+  <button
+    {onclick}
+    {onpointerdown}
+    class:borderless
+    class:nopadding
+    style:width
+    {disabled}
+    style:background
+    style:color
+  >
     {@render children?.()}
   </button>
 {/if}
