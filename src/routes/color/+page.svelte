@@ -88,14 +88,6 @@
   <Text gap="16px">
     <Grid>
       <Center><Picker bind:h bind:s bind:v /></Center>
-      <!-- <div class="current">
-        <p
-          style:background={hsv.toStringHex()}
-          style:color={hsv.getContrastingTextColor().toStringHex()}
-        >
-          {hsv.getClosest().name}
-        </p>
-      </div> -->
     </Grid>
 
     <Palette {h} {s} {v} {setColor} />
@@ -114,23 +106,5 @@
 </Container>
 
 <style lang="sass">
-  .current
-    display: flex
-    justify-content: center
-    align-items: center
-
-    p
-      display: flex
-      justify-content: center
-      align-items: center
-      width: 320px
-      height: 32px
-
-      font-size: 13px
-      font-weight: 500
-
-      box-shadow: 4px 4px 0px 0px var(--shadow)
-      border: 1px solid var(--text)
-      background: var(--card)
-      color: var(--text)
+  //
 </style>
