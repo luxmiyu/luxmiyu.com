@@ -88,21 +88,21 @@
   <Text gap="16px">
     <Grid>
       <Center><Picker bind:h bind:s bind:v /></Center>
-      <div class="current">
+      <!-- <div class="current">
         <p
           style:background={hsv.toStringHex()}
           style:color={hsv.getContrastingTextColor().toStringHex()}
         >
           {hsv.getClosest().name}
         </p>
-      </div>
+      </div> -->
     </Grid>
+
+    <Palette {h} {s} {v} {setColor} />
 
     <InputColors {hsv} {rgb} {smoothTransitionTo} />
     <RangesHSV bind:h bind:s bind:v />
     <RangesRGB bind:r bind:g bind:b {onRGBChange} />
-
-    <Palette {h} {s} {v} {setColor} />
 
     <Grid>
       <!-- <Button onclick={onEyedropperClick}>Eyedropper</Button> -->

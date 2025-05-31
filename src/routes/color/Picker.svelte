@@ -56,14 +56,12 @@
   })
 </script>
 
-<div class="container">
-  <div bind:this={picker} class="picker" style:background={hue.toStringHex()} {onpointerdown}>
-    <div class="saturation"></div>
-    <div class="value"></div>
+<div bind:this={picker} class="picker" style:background={hue.toStringHex()} {onpointerdown}>
+  <div class="saturation"></div>
+  <div class="value"></div>
 
-    <div class="thumb" style:top={100 - v + '%'} style:left={s + '%'}>
-      <div class="bg" style:background={color.toStringHex()}></div>
-    </div>
+  <div class="thumb" style:top={100 - v + '%'} style:left={s + '%'}>
+    <div class="bg" style:background={color.toStringHex()}></div>
   </div>
 </div>
 
@@ -71,8 +69,9 @@
   .picker
     position: relative
 
-    width: 320px
-    height: 320px
+    width: 100%
+    height: 240px
+    max-width: 680px
 
     box-shadow: 4px 4px 0px 0px var(--shadow)
     border: 1px solid var(--text)
@@ -112,6 +111,8 @@
       background: black
 
       pointer-events: none
+
+      z-index: 100
 
       .bg
         width: calc(100% - 4px)
