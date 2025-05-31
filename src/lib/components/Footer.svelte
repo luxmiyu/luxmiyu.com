@@ -30,6 +30,7 @@
     gap: 8px
 
     width: 100%
+    height: 16px
 
     p, a
       text-decoration: none
