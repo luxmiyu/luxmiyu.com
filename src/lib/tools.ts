@@ -136,7 +136,7 @@ export const tooltabs: ToolTab[] = [
         name: 'wuwa',
         description: 'Banner schedule for Wuthering Waves',
         icon: 'lists',
-        status: 'legacy',
+        status: 'deprecated',
       },
       {
         name: 'convene',
