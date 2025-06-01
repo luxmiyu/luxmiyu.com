@@ -62,6 +62,9 @@
     :global(p.center), :global(a.center)
       text-align: center
 
+    :global(p.right), :global(a.right)
+      text-align: right
+
     :global(a)
       text-decoration: none
       color: var(--text-secondary)
