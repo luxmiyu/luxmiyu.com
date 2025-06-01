@@ -78,6 +78,12 @@ export const tooltabs: ToolTab[] = [
       { name: 'keygen', description: 'Random string generator', icon: 'key', status: 'updated' },
       { name: 'search', description: 'Search with bangs', icon: 'search', status: 'updated' },
       { name: 'bangs', description: 'Browse the bangs', icon: 'priority_high', status: 'updated' },
+      {
+        name: 'text',
+        description: 'A simple text converter',
+        icon: 'convert_to_text',
+        status: 'updated',
+      },
     ],
   },
   {
