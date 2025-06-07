@@ -172,4 +172,13 @@ export const customBangs: Bang[] = [
     t: 'patreonc',
     u: 'https://www.patreon.com/explore/search?type=campaign&query={{{s}}}',
   },
+  {
+    c: 'Entertainment',
+    d: 'dpm.lol',
+    r: 0,
+    s: 'DPM.LOL (Champion Builds)',
+    sc: 'Games (general)',
+    t: 'dpm',
+    u: 'https://dpm.lol/champions/{{{s}}}/build',
+  },
 ]
