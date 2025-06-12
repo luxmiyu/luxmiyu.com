@@ -181,4 +181,22 @@ export const customBangs: Bang[] = [
     t: 'dpm',
     u: 'https://dpm.lol/champions/{{{s}}}/build',
   },
+  {
+    c: 'Entertainment',
+    d: 'mapgenie.io',
+    r: 0,
+    s: 'Mapgenie (Escape from Tarkov)',
+    sc: 'Games (general)',
+    t: 'mapg',
+    u: 'https://mapgenie.io/tarkov/maps/{{{s}}}',
+  },
+  {
+    c: 'Entertainment',
+    d: 'mapgenie.io',
+    r: 0,
+    s: 'Mapgenie (Escape from Tarkov)',
+    sc: 'Games (general)',
+    t: 'mapgenie',
+    u: 'https://mapgenie.io/tarkov/maps/{{{s}}}',
+  },
 ]
