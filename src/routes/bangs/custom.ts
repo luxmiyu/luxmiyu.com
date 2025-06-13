@@ -199,4 +199,13 @@ export const customBangs: Bang[] = [
     t: 'mapgenie',
     u: 'https://mapgenie.io/tarkov/maps/{{{s}}}',
   },
+  {
+    c: 'Entertainment',
+    d: 'nyaa.si',
+    r: 0,
+    s: 'Nyaa.si Tracker',
+    sc: 'Misc',
+    t: 'nyaa',
+    u: 'https://nyaa.si/?f=0&c=0_0&q={{{s}}}',
+  },
 ]
