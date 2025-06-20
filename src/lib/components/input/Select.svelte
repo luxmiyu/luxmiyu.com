@@ -5,14 +5,16 @@
     children,
     value = $bindable(),
     width = 'auto',
+    onchange,
   }: {
     children?: Snippet
     value: string
     width?: string
+    onchange?: () => void
   } = $props()
 </script>
 
-<select bind:value style:width>
+<select bind:value style:width {onchange}>
   {@render children?.()}
 </select>
 

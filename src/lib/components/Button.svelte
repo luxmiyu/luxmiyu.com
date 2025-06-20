@@ -14,6 +14,8 @@
     borderless = false,
     nopadding = false,
     disabled = false,
+    nested = false,
+    selected = false,
     width = 'auto',
 
     background = undefined,
@@ -32,6 +34,8 @@
     borderless?: boolean
     nopadding?: boolean
     disabled?: boolean
+    nested?: boolean
+    selected?: boolean
     width?: string
 
     background?: string
@@ -60,6 +64,8 @@
     {rel}
     class:borderless
     class:nopadding
+    class:nested
+    class:selected
     style:width
     style:background
     style:color
@@ -72,6 +78,8 @@
     {onpointerdown}
     class:borderless
     class:nopadding
+    class:nested
+    class:selected
     style:width
     {disabled}
     style:background
@@ -132,4 +140,36 @@
       &:hover
         transform: translate(0px, 0px)
         box-shadow: 4px 4px 0px 0px var(--shadow)
+
+    &.nested
+      box-shadow: none
+      border: none
+      background: var(--card)
+      border-radius: 2px
+
+      &.selected
+        background: var(--input)
+
+      &:hover
+        transform: translate(0px, 0px)
+        box-shadow: none
+
+        background: var(--input)
+
+      &:active
+        transform: translate(0px, 0px)
+        box-shadow: none
+
+        background: var(--input-hover)
+
+      &:disabled
+        cursor: not-allowed
+        color: var(--text-disabled)
+        background: var(--input)
+        border: none
+        box-shadow: none
+
+        &:hover
+          transform: translate(0px, 0px)
+          box-shadow: none
 </style>

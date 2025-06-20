@@ -13,7 +13,7 @@
     Grid,
     Output,
   } from '$lib/components'
-  import { convertText, convertArrow } from '../emoji/emoji'
+  import { convertText, convertArrow } from '../arrows/emoji'
   import { uwufy } from '../uwufier/uwu'
 
   const examples = [

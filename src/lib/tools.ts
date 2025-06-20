@@ -70,8 +70,14 @@ export const tooltabs: ToolTab[] = [
       },
       {
         name: 'emoji',
-        description: 'Quickly convert text to emoji',
+        description: 'Simple emoji picker',
         icon: 'font_download',
+        status: 'updated',
+      },
+      {
+        name: 'arrows',
+        description: 'Quickly convert text to arrow emoji',
+        icon: 'swap_vert',
         status: 'updated',
       },
       { name: 'lorem', description: 'Dummy text', icon: 'sticky_note', status: 'updated' },

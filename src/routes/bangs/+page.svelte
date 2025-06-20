@@ -71,14 +71,16 @@
     {/each}
   </Grid>
 
-  <Grid columns="2">
+  <!-- <Grid columns="2">
     <Button onclick={previousPage}>Previous Page</Button>
     <Button onclick={nextPage}>Next Page</Button>
   </Grid>
 
   <Text>
     <p class="subtitle">Page {page} of {pages}</p>
-  </Text>
+  </Text> -->
+
+  <Input.Paginator bind:page {pages} label />
 
   <Footer />
 </Container>

@@ -20,15 +20,19 @@ export { default as Separate } from './components/Separate.svelte'
 export { default as Text } from './components/Text.svelte'
 
 import { default as InputNumber } from './components/input/Number.svelte'
+import { default as InputPaginator } from './components/input/Paginator.svelte'
 import { default as InputRange } from './components/input/Range.svelte'
 import { default as InputSelect } from './components/input/Select.svelte'
+import { default as InputSelector } from './components/input/Selector.svelte'
 import { default as InputText } from './components/input/Text.svelte'
 import { default as InputTextarea } from './components/input/Textarea.svelte'
 
 export class Input {
   static Number = InputNumber
+  static Paginator = InputPaginator
   static Range = InputRange
   static Select = InputSelect
+  static Selector = InputSelector
   static Text = InputText
   static Textarea = InputTextarea
 }
