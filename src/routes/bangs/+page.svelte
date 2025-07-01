@@ -10,24 +10,14 @@
     Button,
     Separate,
   } from '$lib/components'
-  import { type CleanBang, cleanBangs } from './clean'
+  import { cleanBangs } from './clean'
+  import qualifies from '$lib/util/qualifies'
 
   let value = $state('')
   let count = $state(21)
   let page = $state(1)
 
-  function match(bang: CleanBang): boolean {
-    if (value === '') return true
-
-    const matchString =
-      `!${bang.bang} ${bang.name} ${bang.domain} ${bang.url} ${bang.category} ${bang.subcategory}`.toLowerCase()
-
-    const splitValue = value.toLowerCase().split(/\s+/g)
-
-    return splitValue.every((v) => matchString.includes(v))
-  }
-
-  let matchingBangs = $derived(cleanBangs.filter(match))
+  let matchingBangs = $derived(cleanBangs.filter((cb) => qualifies(cb, value)))
   let pages = $derived(Math.ceil(matchingBangs.length / count))
   let pagedBangs = $derived(matchingBangs.slice((page - 1) * count, page * count))
 

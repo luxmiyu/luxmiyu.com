@@ -2,25 +2,16 @@
   import { Head, Header, Footer, Container, Text, Input, Columns, Grid } from '$lib/components'
   import Emoji from './Emoji.svelte'
   import emojis from './emojis'
+  import qualifies from '$lib/util/qualifies'
 
   let categories = $derived(Array.from(new Set(['search', ...emojis.map((e) => e.category)])))
   let category = $state('search')
 
   let search = $state('')
 
-  function match(matchString: string): boolean {
-    if (search === '') return true
-    const splitSearch = search.toLowerCase().split(/\s+/g)
-    return splitSearch.every((v) => matchString.includes(v))
-  }
-
   let filtered = $derived.by(() => {
     if (category === 'search') {
-      return emojis.filter((e) =>
-        match(
-          `${e.emoji} ${e.description} ${e.version} ${e.keywords.join(' ')} ${e.category} ${e.group} ${e.subgroup}`
-        )
-      )
+      return emojis.filter((emoji) => qualifies(emoji, search))
     } else {
       return emojis.filter((e) => e.category === category)
     }
