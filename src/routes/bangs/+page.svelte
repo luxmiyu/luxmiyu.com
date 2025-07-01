@@ -1,15 +1,5 @@
 <script lang="ts">
-  import {
-    Head,
-    Header,
-    Footer,
-    Container,
-    Text,
-    Grid,
-    Input,
-    Button,
-    Separate,
-  } from '$lib/components'
+  import { Head, Header, Footer, Container, Text, Grid, Input, Separate } from '$lib/components'
   import { cleanBangs } from './clean'
   import qualifies from '$lib/util/qualifies'
 
@@ -20,16 +10,6 @@
   let matchingBangs = $derived(cleanBangs.filter((cb) => qualifies(cb, value)))
   let pages = $derived(Math.ceil(matchingBangs.length / count))
   let pagedBangs = $derived(matchingBangs.slice((page - 1) * count, page * count))
-
-  function previousPage() {
-    page--
-    if (page < 1) page = pages
-  }
-
-  function nextPage() {
-    page++
-    if (page > pages) page = 1
-  }
 
   function oninput() {
     page = Math.min(pages, Math.max(1, page))
@@ -60,15 +40,6 @@
       </a>
     {/each}
   </Grid>
-
-  <!-- <Grid columns="2">
-    <Button onclick={previousPage}>Previous Page</Button>
-    <Button onclick={nextPage}>Next Page</Button>
-  </Grid>
-
-  <Text>
-    <p class="subtitle">Page {page} of {pages}</p>
-  </Text> -->
 
   <Input.Paginator bind:page {pages} label />
 
