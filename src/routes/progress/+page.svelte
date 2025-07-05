@@ -9,10 +9,16 @@
     return ((now.getTime() - start.getTime()) / (end.getTime() - start.getTime())) * 100
   })
 
+  let init = $state(false)
+
   if (browser) {
     setInterval(() => {
       now = new Date()
     }, 10)
+
+    setTimeout(() => {
+      init = true
+    }, 50)
   }
 </script>
 
@@ -26,7 +32,7 @@
   <Header title="progress" description="a progress bar for the current year" />
 
   <div class="container">
-    <div class="bar"></div>
+    <div class="bar" style:width="{init ? percentage : 0}%"></div>
   </div>
 
   <Text>
@@ -46,13 +52,15 @@
     padding: 2px
 
     .bar
-      width: 30%
+      width: 0%
       height: 100%
       background: var(--text)
 
       background: linear-gradient(-45deg, var(--red), var(--yellow), var(--green), var(--blue))
       animation: gradient 15s ease infinite
       background-size: 400% 400%
+
+      transition: width 0.5s ease
 
       @keyframes gradient
         0%
