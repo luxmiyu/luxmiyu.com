@@ -26,7 +26,7 @@
     width?: string
   } = $props()
 
-  let timeout: number | null = null
+  let timeout: NodeJS.Timeout | null = null
   let currentText: string = $state(text)
 
   function onclick() {
