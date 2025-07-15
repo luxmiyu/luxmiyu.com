@@ -1,10 +1,9 @@
 <script lang="ts">
   import '$lib/style/reset.css'
   import '$lib/style/highlight.css'
-  import 'rehype-callouts/theme/vitepress'
 
   import { page } from '$app/state'
-  import { dev, browser } from '$app/environment'
+  import { dev } from '$app/environment'
 
   let { children, data } = $props()
 

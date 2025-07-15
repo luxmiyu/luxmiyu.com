@@ -1,7 +1,6 @@
 import { mdsvex } from 'mdsvex';
 import slug from 'rehype-slug';
 import autolink from 'rehype-autolink-headings';
-import callouts from 'rehype-callouts';
 
 /** @type {import('mdsvex').MdsvexOptions} */
 const options = {
@@ -12,9 +11,6 @@ const options = {
 	rehypePlugins: [
 		slug,
 		autolink,
-		[callouts, {
-			theme: 'vitepress'
-		}],
 	],
 }
 

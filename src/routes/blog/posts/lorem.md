@@ -1,18 +1,13 @@
 ---
 title: Lorem Ipsum
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mollis risus eget metus
-  ultricies, eget egestas lectus luctus. Sed sed enim sit amet dui efficitur blandit. Quisque vitae
-  convallis erat. Aenean ullamcorper erat nec commodo sollicitudin. Integer tincidunt leo sit amet
-  volutpat lobortis.
+description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mollis risus eget metus ultricies, eget egestas lectus luctus.
 author: 'luxmiyu'
 tags: ['meta']
-date: '2025-07-09'
+date: '2025-07-16'
 image: /blog/generic.jpg
 large: false
 published: true
 ---
-
-# Lorem Ipsum
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mollis risus eget metus ultricies,
 eget egestas lectus luctus. Sed sed enim sit amet dui efficitur blandit. Quisque vitae convallis

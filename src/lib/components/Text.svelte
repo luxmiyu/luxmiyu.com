@@ -41,6 +41,9 @@
       margin-right: auto
       display: block
 
+    :global(.center)
+      text-align: center
+
     :global(h1)
       width: 100%
       font-size: 28px
@@ -85,9 +88,6 @@
       font-size: 12px
       color: var(--text-secondary)
 
-    :global(p.center), :global(a.center)
-      text-align: center
-
     :global(p.right), :global(a.right)
       text-align: right
 
@@ -118,6 +118,7 @@
       border: 1px solid var(--text-secondary)
       border-collapse: collapse
       background: var(--card)
+      margin: 4px 0
 
     :global(thead)
       background-color: var(--input-hover)
@@ -127,6 +128,7 @@
     :global(th), :global(td)
       padding: 9px
       border: 1px solid var(--text-secondary)
+      vertical-align: top
 
     :global(th)
       text-transform: uppercase
@@ -142,7 +144,33 @@
     :global(ol li)
       list-style-type: decimal
 
-    /* rehype-callouts */
-    :global(.callout)
-      margin: 4px 0
+    :global(blockquote)
+      display: flex
+      flex-direction: column
+      gap: 4px
+
+      border-left: 3px solid var(--text)
+      padding: 8px 16px
+
+      width: 100%
+
+    :global(blockquote.gray)
+      border-color: var(--text-secondary)
+      color: var(--text-secondary)
+
+    :global(blockquote.red)
+      border-color: var(--red)
+      color: var(--red)
+      
+    :global(blockquote.green)
+      border-color: var(--green)
+      color: var(--green)
+
+    :global(blockquote.blue)
+      border-color: var(--blue)
+      color: var(--blue)
+
+    :global(blockquote.yellow)
+      border-color: var(--yellow)
+      color: var(--yellow)
 </style>

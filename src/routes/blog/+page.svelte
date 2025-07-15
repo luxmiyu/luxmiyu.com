@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { Head, Header, Footer, Container, Grid, Text, Button, Separate } from '$lib/components'
+  import { Head, Header, Footer, Container, Grid, Button } from '$lib/components'
+  import formatDate from '$lib/util/formatDate'
 
   let { data } = $props()
 </script>
@@ -27,7 +28,7 @@
                   <p class="tag">{tag}</p>
                 {/each}
               </div>
-              <p>{post.author}</p>
+              <p>{formatDate(new Date(post.date))}</p>
             </div>
           </div>
         </div>
@@ -50,7 +51,7 @@
     padding: 8px
 
     .image
-      width: 200px
+      width: 180px
       height: 100%
       overflow: hidden
 
@@ -113,7 +114,7 @@
             background: var(--input-hover)
             color: var(--text)
 
-    @media screen and (max-width: 600px)
+    @media screen and (max-width: 560px)
       flex-direction: column-reverse
       height: 150px
       gap: 8px

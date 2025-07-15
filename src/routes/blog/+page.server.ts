@@ -1,6 +1,6 @@
 import { getPosts } from './getPosts'
 
 export async function load() {
-  const posts = await getPosts()
+  const posts = getPosts()
   return { posts }
 }

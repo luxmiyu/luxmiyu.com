@@ -1,25 +1,42 @@
 <script lang="ts">
-  import { Head, Header, Footer, Container, Text, Box } from '$lib/components'
+  import { Head, Footer, Container, Text, Grid, Box, Separate } from '$lib/components'
+  import BlogNavigation from './BlogNavigation.svelte'
+  import formatDate from '$lib/util/formatDate'
 
   let { data } = $props()
 
-  let metadata = $derived(data.metadata)
+  let post = $derived(data.post)
   let Content = $derived(data.content)
+
+  let [previous, next] = $derived([data.previous, data.next])
 </script>
 
-<Head title={metadata.title} description={metadata.description} image={metadata.image} />
+<Head title={post.title} description={post.description} image={post.image} />
 
-<Container fill large={metadata.large}>
-  <Header title={metadata.title} description={metadata.description} />
+<Container fill large={post.large}>
+  <Box dark height="auto">
+    <Grid>
+      <Text>
+        <h1 class="center">{post.title}</h1>
+        <p class="subtitle">{post.description}</p>
+        <Separate>
+          <p class="subtitle">Author: {post.author}</p>
+          <p class="subtitle right">Date: {formatDate(new Date(post.date))}</p>
+        </Separate>
+      </Text>
+
+      <BlogNavigation {previous} {next} />
+    </Grid>
+  </Box>
 
   <Box dark>
     <Text lineHeight="1.25">
-      <p class="subtitle">
-        <a href="/blog">&lsaquo; Go Back</a>
-      </p>
-
       <Content />
     </Text>
+  </Box>
+
+  <Box dark height="auto">
+    <BlogNavigation {previous} {next} />
   </Box>
 
   <Footer />

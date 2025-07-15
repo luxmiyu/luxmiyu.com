@@ -1,6 +1,6 @@
 import type Post from './Post'
 
-export async function getPosts() {
+export function getPosts(): Post[] {
   const posts: Post[] = []
 
   const paths = import.meta.glob('./posts/*.md', { eager: true })
