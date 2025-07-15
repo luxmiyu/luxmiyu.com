@@ -1,5 +1,7 @@
 <script lang="ts">
   import '$lib/style/reset.css'
+  import '$lib/style/highlight.css'
+  import 'rehype-callouts/theme/vitepress'
 
   import { page } from '$app/state'
   import { dev, browser } from '$app/environment'

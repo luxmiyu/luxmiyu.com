@@ -4,13 +4,17 @@
   let {
     children,
     gap = '8px',
+    card = false,
+    lineHeight = '1.0',
   }: {
     children: Snippet
     gap?: string
+    card?: boolean
+    lineHeight?: string
   } = $props()
 </script>
 
-<div style:gap>
+<div style:gap class:card style:line-height={lineHeight}>
   {@render children?.()}
 </div>
 
@@ -23,33 +27,55 @@
     align-items: start
     gap: 8px
 
+    &.card
+      background: var(--background)
+      padding: 8px
+      border-radius: 2px
+      border: 1px solid var(--text-secondary)
+
+    :global(img)
+      max-width: 100%
+      
+    :global(img.center)
+      margin-left: auto
+      margin-right: auto
+      display: block
+
     :global(h1)
       width: 100%
       font-size: 28px
       font-weight: 600
-      margin-top: 8px
 
     :global(h2)
       width: 100%
       font-size: 20px
       font-weight: 500
-      margin-top: 6px
 
     :global(h3)
       width: 100%
       font-size: 16px
       font-weight: 400
-      margin-top: 4px
 
     :global(h4)
       width: 100%
       font-size: 13px
       font-weight: 400
-      margin-top: 4px
 
     :global(p)
       width: 100%
       text-align: justify
+
+    :global(strong)
+      font-weight: 500
+
+    :global(em)
+      font-style: italic
+
+    :global(hr)
+      width: 100%
+      height: 0
+      border: none
+      border-bottom: var(--text-secondary) solid 1px
 
     :global(a:hover)
       text-decoration: underline
@@ -71,4 +97,52 @@
 
       &:hover
         text-decoration: underline
+
+    :global(code)
+      background: var(--card)
+      padding: 2px 4px
+      border-radius: 2px
+      font-family: Menlo, Monaco, Consolas, "Andale Mono", "Ubuntu Mono", "Courier New", monospace
+
+    :global(pre)
+      width: 100%
+      font-family: monospace
+      padding: 16px
+      border-radius: 4px
+
+    :global(pre code)
+      background: none
+
+    :global(table)
+      width: 100%
+      border: 1px solid var(--text-secondary)
+      border-collapse: collapse
+      background: var(--card)
+
+    :global(thead)
+      background-color: var(--input-hover)
+      color: var(--text)
+      font-weight: 500
+
+    :global(th), :global(td)
+      padding: 9px
+      border: 1px solid var(--text-secondary)
+
+    :global(th)
+      text-transform: uppercase
+      letter-spacing: 0.03em
+
+    :global(ul), :global(ol)
+      padding-left: 25px
+      line-height: 1.25
+
+    :global(ul li)
+      list-style-type: disc
+
+    :global(ol li)
+      list-style-type: decimal
+
+    /* rehype-callouts */
+    :global(.callout)
+      margin: 4px 0
 </style>

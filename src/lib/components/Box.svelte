@@ -1,6 +1,5 @@
 <script lang="ts">
   import { type Snippet } from 'svelte'
-  import type { Booleanish } from 'svelte/elements'
 
   let {
     children,
@@ -9,17 +8,19 @@
     padding = '8px',
     width = '100%',
     height = '100%',
+    dark = false,
   }: {
     children?: Snippet
-    borderless?: Booleanish
+    borderless?: boolean
 
     padding?: string
     width?: string
     height?: string
+    dark?: boolean
   } = $props()
 </script>
 
-<div class:borderless style:padding style:width style:height>
+<div class:borderless class:dark style:padding style:width style:height>
   {@render children?.()}
 </div>
 
@@ -33,6 +34,9 @@
     background: var(--card)
     color: var(--text)
     padding: 8px
+
+    &.dark
+      background: var(--background)
 
     &.borderless
       border: none

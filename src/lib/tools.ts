@@ -90,6 +90,12 @@ export const tooltabs: ToolTab[] = [
         icon: 'convert_to_text',
         status: 'updated',
       },
+      {
+        name: 'blog',
+        description: 'Sometimes I write stuff',
+        icon: 'format_paragraph',
+        status: 'updated',
+      },
     ],
   },
   {
