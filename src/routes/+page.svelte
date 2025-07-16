@@ -183,6 +183,7 @@
           label="luxmiyu.com/hsr_old"
         />
         <Link url="https://unduck.luxmiyu.com/" icon="/icon/link.png" label="unduck.luxmiyu.com" />
+        <Link url="https://pool.luxmiyu.com/" icon="/icon/link.png" label="pool.luxmiyu.com" />
       </Bricks>
     </section>
 
