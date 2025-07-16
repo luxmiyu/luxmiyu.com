@@ -19,42 +19,25 @@
       <Text>
         <h1 class="center">{post.title}</h1>
         <p class="subtitle">{post.description}</p>
-
-        <Separate>
-          <p class="subtitle">Author: {post.author}</p>
-          <p class="subtitle right">Date: {formatDate(new Date(post.date))}</p>
-        </Separate>
       </Text>
 
-      <BlogNavigation {previous} {next} />
+      <BlogNavigation {post} {previous} {next} />
     </Grid>
   </Box>
 
-  <Box dark>
-    <Text height="100%" lineHeight="1.25">
-      <Content />
+  <Grid>
+    <Box dark width="100%" height="auto">
+      <Text lineHeight="1.25">
+        <Content />
+      </Text>
+    </Box>
 
-      <p class="subtitle right raw">
-        <a href="/blog/{post.slug}.md" target="_blank">/blog/{post.slug}.md</a>
-      </p>
-    </Text>
-  </Box>
-
-  <Box dark height="auto">
-    <Grid>
-      <BlogNavigation {previous} {next} />
-    </Grid>
-  </Box>
+    <Box dark height="auto">
+      <Grid>
+        <BlogNavigation {post} {previous} {next} />
+      </Grid>
+    </Box>
+  </Grid>
 
   <Footer />
 </Container>
-
-<style lang="sass">
-  .raw
-    display: flex
-    flex-direction: column
-    justify-content: flex-end
-
-    height: 16px
-    flex-grow: 1
-</style>

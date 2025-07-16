@@ -1,10 +1,20 @@
 <script lang="ts">
-  import { Grid, Box, Button } from '$lib/components'
+  import { Grid, Text, Separate, Button } from '$lib/components'
+  import formatDate from '$lib/util/formatDate'
   import type Post from '../Post'
 
-  let { previous, next }: { previous: Post | null; next: Post | null } = $props()
+  let { post, previous, next }: { post: Post; previous: Post | null; next: Post | null } = $props()
 </script>
 
+<Text>
+  <Separate>
+    <p class="subtitle">Author: {post.author}</p>
+    <p class="subtitle center">
+      <a href="/blog/{post.slug}.md" target="_blank">{post.slug}.md</a>
+    </p>
+    <p class="subtitle right">Date: {formatDate(new Date(post.date))}</p>
+  </Separate>
+</Text>
 <Grid columns="3">
   {#if previous}
     <Button nested href="/blog/{previous.slug}" target="_self">
