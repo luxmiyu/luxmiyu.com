@@ -1,6 +1,7 @@
 ---
 title: Lorem Ipsum
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mollis risus eget metus ultricies, eget egestas lectus luctus.
+description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mollis risus eget metus
+  ultricies, eget egestas lectus luctus.
 author: 'luxmiyu'
 tags: ['meta']
 date: '2025-07-16'

@@ -17,7 +17,7 @@ export async function load({ params }) {
     if (post.metadata.published === false) throw error(404)
     return {
       content: post.default,
-      post: post.metadata as Post,
+      post: { ...post.metadata, slug } as Post,
 
       previous,
       next,

@@ -19,6 +19,7 @@
       <Text>
         <h1 class="center">{post.title}</h1>
         <p class="subtitle">{post.description}</p>
+
         <Separate>
           <p class="subtitle">Author: {post.author}</p>
           <p class="subtitle right">Date: {formatDate(new Date(post.date))}</p>
@@ -32,11 +33,22 @@
   <Box dark>
     <Text lineHeight="1.25">
       <Content />
+
+      <p class="subtitle right">
+        <a href="/blog/{post.slug}.md" target="_blank">/blog/{post.slug}.md</a>
+      </p>
     </Text>
   </Box>
 
   <Box dark height="auto">
-    <BlogNavigation {previous} {next} />
+    <Grid>
+      <BlogNavigation {previous} {next} />
+      <!-- <Text>
+        <p class="subtitle">
+          <a href="/blog/{post.slug}.md" target="_blank">/blog/{post.slug}.md</a>
+        </p>
+      </Text> -->
+    </Grid>
   </Box>
 
   <Footer />
