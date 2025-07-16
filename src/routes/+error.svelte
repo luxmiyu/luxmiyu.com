@@ -20,9 +20,29 @@
         <blockquote>
           <p>{data.error}</p>
         </blockquote>
+
+        <div class="gif">
+          <img src="/error.gif" alt="luxmiyu" />
+        </div>
       </Text>
     </Box>
   </Grid>
 
   <Footer />
 </Container>
+
+<style lang="sass">
+  .gif 
+    width: 100%
+    aspect-ratio: 5 / 2
+    position: relative
+    overflow: hidden
+
+    img 
+      position: absolute
+      inset: 0
+      width: 100%
+      height: 100%
+      object-fit: cover
+
+</style>
