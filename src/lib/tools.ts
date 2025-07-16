@@ -96,6 +96,7 @@ export const tooltabs: ToolTab[] = [
         icon: 'format_paragraph',
         status: 'updated',
       },
+      { name: 'error', description: 'An error page', icon: 'error', status: 'updated' },
     ],
   },
   {
