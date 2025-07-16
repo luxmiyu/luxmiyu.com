@@ -10,3 +10,5 @@ published: false
 ---
 
 This post isn't published and shouldn't show up unless you access it directly.
+
+<img class="center" src="/error.gif" alt="test">
