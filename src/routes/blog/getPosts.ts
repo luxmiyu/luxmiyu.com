@@ -13,7 +13,7 @@ export function getPosts(): Post[] {
       const metadata = file.metadata as Omit<Post, 'slug'>
       const post = { ...metadata, slug } satisfies Post
 
-      if (post.published) posts.push(post)
+      posts.push(post)
     }
   }
 

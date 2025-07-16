@@ -31,10 +31,10 @@
   </Box>
 
   <Box dark>
-    <Text lineHeight="1.25">
+    <Text height="100%" lineHeight="1.25">
       <Content />
 
-      <p class="subtitle right">
+      <p class="subtitle right raw">
         <a href="/blog/{post.slug}.md" target="_blank">/blog/{post.slug}.md</a>
       </p>
     </Text>
@@ -43,11 +43,6 @@
   <Box dark height="auto">
     <Grid>
       <BlogNavigation {previous} {next} />
-      <!-- <Text>
-        <p class="subtitle">
-          <a href="/blog/{post.slug}.md" target="_blank">/blog/{post.slug}.md</a>
-        </p>
-      </Text> -->
     </Grid>
   </Box>
 
@@ -55,5 +50,11 @@
 </Container>
 
 <style lang="sass">
-  //
+  .raw
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+
+    height: 16px
+    flex-grow: 1
 </style>

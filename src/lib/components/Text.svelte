@@ -5,16 +5,18 @@
     children,
     gap = '8px',
     card = false,
+    height = 'auto',
     lineHeight = '1.0',
   }: {
     children: Snippet
     gap?: string
     card?: boolean
+    height?: string
     lineHeight?: string
   } = $props()
 </script>
 
-<div style:gap class:card style:line-height={lineHeight}>
+<div style:gap class:card style:height style:line-height={lineHeight}>
   {@render children?.()}
 </div>
 

@@ -1,6 +1,6 @@
 ---
 title: Test
-description: This post isn't published and shouldn't show up.
+description: This post isn't published and shouldn't show up unless you access it directly.
 author: 'luxmiyu'
 tags: ['meta']
 date: '2030-01-01'
@@ -9,6 +9,4 @@ large: false
 published: false
 ---
 
-# Test
-
-This is a test paragraph.
+This post isn't published and shouldn't show up unless you access it directly.

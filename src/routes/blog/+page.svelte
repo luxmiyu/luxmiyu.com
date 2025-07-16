@@ -11,7 +11,7 @@
   <Header title="blog" description="sometimes i write stuff" />
 
   <Grid>
-    {#each data.posts as post}
+    {#each data.posts.filter((post) => post.published) as post}
       <Button nopadding href="/blog/{post.slug}" target="_self">
         <div class="post">
           <div class="image">
