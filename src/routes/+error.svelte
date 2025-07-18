@@ -8,7 +8,7 @@
   })
 </script>
 
-<Head title="luxmiyu → empty" description="empty" image="/preview/empty.jpg" />
+<Head title="luxmiyu → error" description="error" image="/preview/error.jpg" />
 
 <Container fill>
   <Header title={data.status} description={data.error} />
