@@ -126,11 +126,7 @@
           icon="/icon/curseforge.png"
           label="Curseforge"
         />
-        <Link
-          url="https://bsky.app/profile/luxmiyu.bsky.social"
-          icon="/icon/bluesky.png"
-          label="Bluesky"
-        />
+        <Link url="https://bsky.app/profile/luxmiyu.com" icon="/icon/bluesky.png" label="Bluesky" />
       </Bricks>
     </section>
 
