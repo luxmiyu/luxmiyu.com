@@ -164,6 +164,7 @@
           icon="/icon/zerochan.png"
           label="zerochan"
         />
+        <Link url="https://www.threads.com/@luxmiyu" icon="/icon/threads.png" label="Threads" />
       </Bricks>
     </section>
 
