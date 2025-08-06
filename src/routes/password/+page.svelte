@@ -55,7 +55,11 @@
   })
 </script>
 
-<Head title="luxmiyu → password" description="password" image="/preview/password.jpg" />
+<Head
+  title="luxmiyu → password"
+  description="a simple password generator"
+  image="/preview/password.jpg"
+/>
 
 <Container fill>
   <Header title="password" description="a simple password generator" />
