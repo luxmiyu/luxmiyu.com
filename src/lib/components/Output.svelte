@@ -8,6 +8,7 @@
     maxWidth = 'auto',
     maxHeight = 'auto',
     center = false,
+    breakall = false,
 
     fontSize = 'inherit',
     fontWeight = 'inherit',
@@ -20,6 +21,7 @@
     maxWidth?: string
     maxHeight?: string
     center?: boolean
+    breakall?: boolean
 
     fontSize?: string
     fontWeight?: string
@@ -36,6 +38,7 @@
   style:font-size={fontSize}
   style:font-weight={fontWeight}
   class:center
+  class:breakall
 >
   {value}
 </span>
@@ -52,6 +55,9 @@
     background: var(--card)
     color: var(--text)
     padding: 8px
+
+    &.breakall
+      word-break: break-all
 
     &.center
       justify-content: center

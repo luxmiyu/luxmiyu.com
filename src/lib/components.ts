@@ -19,6 +19,7 @@ export { default as Rows } from './components/Rows.svelte'
 export { default as Separate } from './components/Separate.svelte'
 export { default as Text } from './components/Text.svelte'
 
+import { default as InputCheckbox } from './components/input/Checkbox.svelte'
 import { default as InputNumber } from './components/input/Number.svelte'
 import { default as InputPaginator } from './components/input/Paginator.svelte'
 import { default as InputRange } from './components/input/Range.svelte'
@@ -26,8 +27,10 @@ import { default as InputSelect } from './components/input/Select.svelte'
 import { default as InputSelector } from './components/input/Selector.svelte'
 import { default as InputText } from './components/input/Text.svelte'
 import { default as InputTextarea } from './components/input/Textarea.svelte'
+import { default as InputToggle } from './components/input/Toggle.svelte'
 
 export class Input {
+  static Checkbox = InputCheckbox
   static Number = InputNumber
   static Paginator = InputPaginator
   static Range = InputRange
@@ -35,4 +38,5 @@ export class Input {
   static Selector = InputSelector
   static Text = InputText
   static Textarea = InputTextarea
+  static Toggle = InputToggle
 }

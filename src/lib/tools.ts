@@ -97,6 +97,12 @@ export const tooltabs: ToolTab[] = [
         status: 'updated',
       },
       { name: 'error', description: 'An error page', icon: 'error', status: 'updated' },
+      {
+        name: 'password',
+        description: 'A simple password generator',
+        icon: 'password',
+        status: 'updated',
+      },
     ],
   },
   {
