@@ -1,15 +1,11 @@
 <script lang="ts">
   let {
     checked = $bindable(),
-
     focus = false,
-
     oninput,
   }: {
     checked: boolean
-
     focus?: boolean
-
     oninput?: () => void
   } = $props()
 
