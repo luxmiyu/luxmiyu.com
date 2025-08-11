@@ -23,20 +23,19 @@
   let symbols: boolean = $state(false)
   let spaces: boolean = $state(false)
 
-  function regenerate() {
+  let pool = $derived.by(() => {
     let pool = ''
     if (lowercase) pool += 'abcdefghijklmnopqrstuvwxyz'
     if (uppercase) pool += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     if (numbers) pool += '0123456789'
     if (symbols) pool += '!@#$%^&*()[]{}'
+    if (spaces) pool += ' '
+    return pool
+  })
 
-    if (spaces) {
-      const amount = Math.floor(length * 0.1) + 1
-      for (let i = 0; i < amount; i++) {
-        pool += ' '
-      }
-    }
+  let combinations = $derived(pool.length ** length)
 
+  function regenerate() {
     if (pool === '') {
       value = ''
       return
@@ -45,6 +44,17 @@
     let result = ''
     for (let i = 0; i < length; i++) {
       result += pool[Math.floor(Math.random() * pool.length)]
+    }
+
+    if (spaces) {
+      let spaced = ''
+
+      for (let ch of result) {
+        if (Math.random() < 0.1) spaced += ' '
+        else spaced += ch
+      }
+
+      result = spaced
     }
 
     value = result
@@ -92,6 +102,7 @@
         <Input.Checkbox bind:checked={spaces} />
       </Separate>
     </Grid>
+    <p class="subtitle right">Combinations: {combinations}</p>
     <Grid columns="2">
       <Copy {value} />
       <Button onclick={regenerate}>Regenerate</Button>
