@@ -10,6 +10,10 @@
 
     focus = false,
 
+    placeholder = '',
+    monospace = false,
+    required = false,
+
     oninput,
   }: {
     value: string
@@ -21,6 +25,10 @@
     horizontal?: boolean
 
     focus?: boolean
+
+    placeholder?: string
+    monospace?: boolean
+    required?: boolean
 
     oninput?: () => void
   } = $props()
@@ -41,6 +49,9 @@
   class:vertical
   class:horizontal
   {oninput}
+  {placeholder}
+  class:monospace
+  {required}
 >
 </textarea>
 
@@ -58,4 +69,7 @@
 
     &.horizontal
       resize: horizontal
+
+    &.monospace
+      font-family: monospace
 </style>

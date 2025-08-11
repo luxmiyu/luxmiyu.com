@@ -7,6 +7,10 @@
     focus = false,
     autocorrect = 'on',
 
+    placeholder = '',
+    monospace = false,
+    required = false,
+
     onEnter,
     oninput,
   }: {
@@ -14,6 +18,10 @@
     width?: string
     focus?: boolean
     autocorrect?: 'on' | 'off'
+
+    placeholder?: string
+    monospace?: boolean
+    required?: boolean
 
     onEnter?: () => void
     oninput?: () => void
@@ -34,7 +42,18 @@
   }
 </script>
 
-<input type="text" bind:this={input} bind:value style:width {onkeypress} {oninput} {autocorrect} />
+<input
+  type="text"
+  bind:this={input}
+  bind:value
+  style:width
+  {onkeypress}
+  {oninput}
+  {autocorrect}
+  {placeholder}
+  class:monospace
+  {required}
+/>
 
 <style lang="sass">
   input
@@ -45,4 +64,7 @@
     background: var(--card)
     color: var(--text)
     padding: 8px
+
+    &.monospace
+      font-family: monospace
 </style>
