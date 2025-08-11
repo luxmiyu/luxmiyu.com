@@ -108,7 +108,7 @@
     box-shadow: 4px 4px 0px 0px var(--shadow)
     border: 1px solid var(--text)
     background: var(--card)
-    color: var(--text)
+    color: var(--text) !important
     padding: 8px
 
     cursor: pointer
@@ -128,6 +128,8 @@
 
       transform: translate(1px, 1px)
       box-shadow: 3px 3px 0px 0px var(--shadow)
+
+      text-decoration: none !important
     
     &:active
       background: var(--input-hover)
@@ -137,7 +139,7 @@
 
     &:disabled
       cursor: not-allowed
-      color: var(--text-disabled)
+      color: var(--text-disabled) !important
       background: var(--card)
       border: 1px solid var(--text-disabled)
       box-shadow: 4px 4px 0px 0px var(--shadow)
@@ -161,6 +163,8 @@
 
         background: var(--input)
 
+        text-decoration: none !important
+
       &:active
         transform: translate(0px, 0px)
         box-shadow: none
@@ -169,7 +173,7 @@
 
       &:disabled
         cursor: not-allowed
-        color: var(--text-disabled)
+        color: var(--text-disabled) !important
         background: var(--input)
         border: none
         box-shadow: none
