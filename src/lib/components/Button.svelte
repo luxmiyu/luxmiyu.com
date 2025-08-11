@@ -22,6 +22,8 @@
     color = undefined,
 
     keybind = undefined,
+
+    type = 'button',
   }: {
     children?: Snippet
 
@@ -42,6 +44,8 @@
     color?: string
 
     keybind?: string
+
+    type?: 'button' | 'submit' | 'reset'
   } = $props()
 
   function listener(e: KeyboardEvent) {
@@ -84,6 +88,7 @@
     {disabled}
     style:background
     style:color
+    {type}
   >
     {@render children?.()}
   </button>
