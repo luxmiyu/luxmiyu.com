@@ -10,7 +10,7 @@
 
 <footer>
   <p>
-    <a href="/">by luxmiyu</a>
+    <a href="/" target="_self">by luxmiyu</a>
 
     {#if source}
       · <a href="https://github.com/luxmiyu/luxmiyu.com" target="_blank">source code</a>
