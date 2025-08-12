@@ -52,8 +52,8 @@
       <Link url="https://map.luxmiyu.com/" icon="/icon/squaremap.png" label="SMP Minecraft Map" />
     </Bricks>
 
-    <form action="?/toggleTheme" method="post" use:enhance>
-      <Button>
+    <form action="?/toggleTheme" method="POST" use:enhance>
+      <Button type="submit">
         <div class="toggleTheme">
           {#if data.lightTheme}
             <Icon name="dark_mode" size="20px" />
