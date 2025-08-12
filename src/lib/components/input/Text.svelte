@@ -10,6 +10,7 @@
     placeholder = '',
     monospace = false,
     required = false,
+    disabled = false,
 
     onEnter,
     oninput,
@@ -22,6 +23,7 @@
     placeholder?: string
     monospace?: boolean
     required?: boolean
+    disabled?: boolean
 
     onEnter?: () => void
     oninput?: () => void
@@ -53,6 +55,7 @@
   {placeholder}
   class:monospace
   {required}
+  {disabled}
 />
 
 <style lang="sass">
@@ -67,4 +70,7 @@
 
     &.monospace
       font-family: monospace
+
+    &:disabled
+      color: var(--text-disabled)
 </style>
