@@ -33,19 +33,17 @@ export const actions = {
     const updated = new Date().toISOString()
     const csvs = parseCSVs(csv)
 
-    await db
-      .collection('pool')
-      .updateOne(
-        { id },
-        {
-          $set: {
-            title: title.slice(0, 200),
-            description: description.slice(0, 4000),
-            csvs: csvs.slice(0, 50),
-            updated,
-          },
-        }
-      )
+    await db.collection('pool').updateOne(
+      { id },
+      {
+        $set: {
+          title: title.slice(0, 400),
+          description: description.slice(0, 8000),
+          csvs: csvs.slice(0, 50),
+          updated,
+        },
+      }
+    )
   },
   delete: async ({ request }) => {
     const data = await request.formData()
