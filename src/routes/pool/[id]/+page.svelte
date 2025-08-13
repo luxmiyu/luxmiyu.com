@@ -49,19 +49,16 @@
     }
   }
 
-  let html = $derived.by(() => {
+  let html = $state('')
+  $effect(() => {
     const dirty = marked(pool.description)
-    if (typeof dirty === 'string') return DOMPurify.sanitize(dirty)
-  })
-  let textOnly = $derived.by(() => {
-    const dirty = marked(pool.description)
-    if (typeof dirty === 'string') return DOMPurify.sanitize(dirty, { ALLOWED_TAGS: [] })
+    if (typeof dirty === 'string') html = DOMPurify.sanitize(dirty)
   })
 </script>
 
 <Head
   title={pool.title}
-  description={textOnly}
+  description={pool.description}
   image={pool.maps[0]?.cover ?? '/preview/pool.jpg'}
 />
 
