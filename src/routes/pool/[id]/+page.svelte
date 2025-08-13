@@ -6,17 +6,6 @@
 
   let { data } = $props()
 
-  let html = $derived.by(() => {
-    const dirty = marked(pool.description)
-    if (typeof dirty === 'string') return DOMPurify.sanitize(dirty)
-  })
-  let textOnly = $derived.by(() => {
-    const dirty = marked(pool.description)
-    if (typeof dirty === 'string') return DOMPurify.sanitize(dirty, { ALLOWED_TAGS: [] })
-  })
-
-  $effect(() => {})
-
   let interval: NodeJS.Timeout | null = null
   $effect(() => {
     async function update() {
@@ -59,6 +48,15 @@
       playing = id
     }
   }
+
+  let html = $derived.by(() => {
+    const dirty = marked(pool.description)
+    if (typeof dirty === 'string') return DOMPurify.sanitize(dirty)
+  })
+  let textOnly = $derived.by(() => {
+    const dirty = marked(pool.description)
+    if (typeof dirty === 'string') return DOMPurify.sanitize(dirty, { ALLOWED_TAGS: [] })
+  })
 </script>
 
 <Head
