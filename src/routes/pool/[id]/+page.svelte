@@ -64,7 +64,7 @@
 
 <audio bind:this={audio}></audio>
 
-<Container fill>
+<Container fill large>
   <Text>
     <Grid>
       <h1>{pool.title}</h1>
@@ -74,12 +74,12 @@
       {#each Object.keys(sections) as section}
         <section>
           <h3>{section}</h3>
-          <div class="maps" style:background-color={sections[section]![0].color}>
-            <Grid gap="2px">
-              {#each sections[section]! as map}
+          <div class="maps" style:--background-color={sections[section]![0].color}>
+            {#each sections[section]! as map}
+              <div class="map" style:--border-color={map.color}>
                 <Map {map} {playing} {hidden} {toggleHidden} {play} />
-              {/each}
-            </Grid>
+              </div>
+            {/each}
           </div>
         </section>
       {/each}
@@ -100,4 +100,23 @@
     .maps
       padding: 2px
       border-radius: 4px
+
+      display: grid
+      grid-template-columns: repeat(auto-fill, minmax(520px, 1fr))
+      gap: 2px
+
+      .map
+        border-radius: 4px
+        overflow: hidden
+
+        box-shadow: 2px 2px var(--border-color), -2px 2px var(--border-color), 2px -2px var(--border-color), -2px -2px var(--border-color)
+
+      @media screen and (max-width: 1050px)
+        display: flex
+        flex-direction: column
+
+        background: var(--background-color)
+
+        .map
+          box-shadow: none
 </style>
