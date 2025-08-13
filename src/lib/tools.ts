@@ -193,6 +193,12 @@ export const tooltabs: ToolTab[] = [
         icon: 'category_search',
         status: 'updated',
       },
+      {
+        name: 'pool',
+        description: 'An osu tournament map pool displayer',
+        icon: 'queue_music',
+        status: 'updated',
+      },
     ],
   },
   {

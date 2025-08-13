@@ -15,6 +15,8 @@
     weight = 400,
     grad = 0,
     opsz = 40,
+
+    overflow = false,
   }: {
     name?: string
     size?: string
@@ -31,6 +33,8 @@
     weight?: 100 | 200 | 300 | 400 | 500 | 600 | 700
     grad?: -25 | 0 | 200
     opsz?: 20 | 24 | 40 | 48
+
+    overflow?: boolean
   } = $props()
 
   let filled = $derived(fill || starred || bookmarked || followed || hearted)
@@ -54,6 +58,7 @@
   style:font-variation-settings="'FILL' {filled ? 1 : 0}, 'wght' {weight}, 'GRAD' {grad}, 'opsz' {opsz}"
   style:max-width={size}
   style:max-height={size}
+  style:overflow={overflow ? 'visible' : 'hidden'}
 >
   {name}
 </span>
