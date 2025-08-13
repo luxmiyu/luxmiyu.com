@@ -423,9 +423,9 @@ export async function createPool(title: string, description: string, csv: string
   const pool: Pool = {
     id,
     edit,
-    title,
-    description,
-    csvs,
+    title: title.slice(0, 200),
+    description: description.slice(0, 4000),
+    csvs: csvs.slice(0, 50),
     created: new Date().toISOString(),
     updated: new Date().toISOString(),
   }

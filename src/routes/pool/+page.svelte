@@ -68,7 +68,7 @@ Tiebreaker,TB,#eeaad5,4881796,-"
         monospace
         vertical
       ></Input.Textarea>
-      {#if title.length === 0 || csv.length === 0}
+      {#if title.length === 0 || description.length === 0 || csv.length === 0}
         <Button disabled>Create New Map Pool</Button>
       {:else}
         <Button {href} target="_self">Create New Map Pool</Button>
