@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Head, Footer, Container, Text, Grid } from '$lib/components'
+  import { Head, Footer, Separate, Text, Grid } from '$lib/components'
   import { marked } from 'marked'
   import DOMPurify from 'dompurify'
   import Map from './Map.svelte'
@@ -26,6 +26,8 @@
     if (hidden.includes(id)) hidden = hidden.filter((i) => i !== id)
     else hidden = [...hidden, id]
   }
+  const showAll = () => (hidden = [])
+  const hideAll = () => (hidden = pool.maps.map((map) => map.id))
 
   let audio: HTMLAudioElement
   let playing: string | null = $state(null)
@@ -36,7 +38,7 @@
   })
 
   function play(id: string) {
-    console.log(previewURL(id))
+    console.log('now playing', previewURL(id))
 
     if (playing === id) {
       audio.pause()
@@ -64,7 +66,7 @@
 
 <audio bind:this={audio}></audio>
 
-<Container fill large>
+<div class="container">
   <Text>
     <Grid>
       <h1>{pool.title}</h1>
@@ -73,7 +75,7 @@
 
       {#each Object.keys(sections) as section}
         <section>
-          <h3>{section}</h3>
+          <h3 class:single={sections[section]!.length === 1}>{section}</h3>
           <div class="maps" style:--background-color={sections[section]![0].color}>
             {#each sections[section]! as map}
               <div class="map" style:--border-color={map.color}>
@@ -84,39 +86,98 @@
         </section>
       {/each}
 
-      <p class="subtitle">Mappool ID: {pool.id}</p>
+      <Separate>
+        <p class="subtitle">Mappool ID: {pool.id}</p>
+        <div class="hidebuttons">
+          <button onclick={showAll}>Show All</button> ·
+          <button onclick={hideAll}>Hide All</button>
+        </div>
+      </Separate>
     </Grid>
   </Text>
 
   <Footer />
-</Container>
+</div>
 
 <style lang="sass">
-  section
+  $breakpoint: 1000px
+
+  .container
     display: flex
     flex-direction: column
-    gap: 2px
+    justify-content: center
+    align-items: center
+    gap: 8px
+    padding: 8px
 
-    .maps
-      padding: 2px
-      border-radius: 4px
+    width: 100%
+    overflow: hidden
 
-      display: grid
-      grid-template-columns: repeat(auto-fill, minmax(520px, 1fr))
+    max-width: 1200px
+    min-height: 100dvh
+
+    section
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
       gap: 2px
 
-      .map
+      h3.single
+        max-width: 604px
+
+      .maps
+        padding: 2px
         border-radius: 4px
-        overflow: hidden
 
-        box-shadow: 2px 2px var(--border-color), -2px 2px var(--border-color), 2px -2px var(--border-color), -2px -2px var(--border-color)
-
-      @media screen and (max-width: 1050px)
         display: flex
-        flex-direction: column
+        flex-direction: row
+        justify-content: center
+        flex-wrap: wrap
+        gap: 2px
 
-        background: var(--background-color)
+        width: 100%
 
         .map
-          box-shadow: none
+          width: 400px
+          max-width: 600px
+          flex-grow: 1
+          border-radius: 4px
+          overflow: hidden
+
+          border: 2px solid var(--border-color)
+
+    .hidebuttons
+      display: flex
+      flex-direction: row
+      justify-content: center
+      align-items: center
+      gap: 6px
+      color: var(--text-secondary)
+
+      button
+        cursor: pointer
+        border: none
+        background: none
+        color: var(--text-secondary)
+        font-size: 12px
+        width: max-content
+        padding: 0
+
+        &:hover
+          text-decoration: underline
+
+    @media screen and (max-width: $breakpoint)
+      max-width: 727px
+
+      section
+        .maps
+          display: flex
+          flex-direction: column
+          
+          max-width: 100%
+
+          .map
+            width: auto
+            max-width: none
 </style>
