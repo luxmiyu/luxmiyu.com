@@ -6,12 +6,16 @@
 
   let { data } = $props()
 
-  let html = $state('')
-
-  $effect(() => {
+  let html = $derived.by(() => {
     const dirty = marked(pool.description)
-    if (typeof dirty === 'string') html = DOMPurify.sanitize(dirty)
+    if (typeof dirty === 'string') return DOMPurify.sanitize(dirty)
   })
+  let textOnly = $derived.by(() => {
+    const dirty = marked(pool.description)
+    if (typeof dirty === 'string') return DOMPurify.sanitize(dirty, { ALLOWED_TAGS: [] })
+  })
+
+  $effect(() => {})
 
   let interval: NodeJS.Timeout | null = null
   $effect(() => {
@@ -57,7 +61,11 @@
   }
 </script>
 
-<Head title={pool.title} description={html} image={pool.maps[0]?.cover ?? '/preview/pool.jpg'} />
+<Head
+  title={pool.title}
+  description={textOnly}
+  image={pool.maps[0]?.cover ?? '/preview/pool.jpg'}
+/>
 
 <audio bind:this={audio}></audio>
 
