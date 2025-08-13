@@ -117,6 +117,7 @@
           font-size: 12px
           font-weight: 500
           border-radius: 2px
+          line-height: 0
 
           display: flex
           align-items: center
