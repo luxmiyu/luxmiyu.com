@@ -68,6 +68,7 @@ Tiebreaker,TB,#eeaad5,4881796,-"
         monospace
         vertical
       ></Input.Textarea>
+      <p class="subtitle syntax">Syntax: Category,CT1,#ffffff,5231502,EZDT</p>
       {#if title.length === 0 || description.length === 0 || csv.length === 0}
         <Button disabled>Create New Map Pool</Button>
       {:else}
@@ -80,5 +81,6 @@ Tiebreaker,TB,#eeaad5,4881796,-"
 </Container>
 
 <style lang="sass">
-  //
+  .syntax
+    font-family: monospace
 </style>

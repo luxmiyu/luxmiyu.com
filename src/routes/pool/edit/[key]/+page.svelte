@@ -84,6 +84,7 @@ Tiebreaker,TB,#eeaad5,4881796,-"
         vertical
         rows={csvLines + 1}
       ></Input.Textarea>
+      <p class="subtitle syntax">Syntax: Category,CT1,#ffffff,5231502,EZDT</p>
 
       <Grid columns="2">
         <form
@@ -130,5 +131,6 @@ Tiebreaker,TB,#eeaad5,4881796,-"
 </Container>
 
 <style lang="sass">
-  //
+  .syntax
+    font-family: monospace
 </style>
