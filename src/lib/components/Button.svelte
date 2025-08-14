@@ -27,7 +27,7 @@
   }: {
     children?: Snippet
 
-    onclick?: () => void
+    onclick?: (event: Event) => void
     onpointerdown?: () => void
     href?: string
     target?: string
@@ -49,7 +49,7 @@
   } = $props()
 
   function listener(e: KeyboardEvent) {
-    if (e.code === keybind) onclick()
+    if (e.code === keybind) onclick(e)
   }
 
   $effect(() => {
@@ -73,6 +73,7 @@
     style:width
     style:background
     style:color
+    {onclick}
   >
     {@render children?.()}
   </a>

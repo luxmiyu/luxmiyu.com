@@ -5,11 +5,11 @@ import { error, redirect } from '@sveltejs/kit'
 import type { Actions } from './$types'
 
 export async function load({ params }) {
-  const [id, edit] = params.key.split('-')
+  const [id, key] = params.key.split('-')
 
   const pool = await getPool(id)
   if (!pool) throw error(404, 'Pool not found')
-  if (edit !== pool.edit) throw error(401, 'Unauthorized')
+  if (key !== pool.key) throw error(401, 'Unauthorized')
 
   const unparsed = unparseCSVs(pool.csvs)
 
@@ -20,15 +20,15 @@ export const actions = {
   update: async ({ request }) => {
     const data = await request.formData()
     const id = data.get('id') as string
-    const edit = data.get('edit') as string
+    const key = data.get('key') as string
     const title = data.get('title') as string
     const description = data.get('description') as string
     const csv = data.get('csv') as string
-    if (!id || !edit) return error(400, 'Missing fields')
+    if (!id || !key) return error(400, 'Missing fields')
 
     const pool = await db.collection<Pool>('pool').findOne({ id }, { projection: { _id: 0 } })
     if (!pool) throw error(404, 'Pool not found')
-    if (edit !== pool.edit) throw error(401, 'Unauthorized')
+    if (key !== pool.key) throw error(401, 'Unauthorized')
 
     const updated = new Date().toISOString()
     const csvs = parseCSVs(csv)
@@ -48,12 +48,12 @@ export const actions = {
   delete: async ({ request }) => {
     const data = await request.formData()
     const id = data.get('id') as string
-    const edit = data.get('edit') as string
-    if (!id || !edit) return error(400, 'Missing fields')
+    const key = data.get('key') as string
+    if (!id || !key) return error(400, 'Missing fields')
 
     const pool = await db.collection<Pool>('pool').findOne({ id }, { projection: { _id: 0 } })
     if (!pool) throw error(404, 'Pool not found')
-    if (edit !== pool.edit) throw error(401, 'Unauthorized')
+    if (key !== pool.key) throw error(401, 'Unauthorized')
 
     await db.collection('pool').deleteOne({ id })
 

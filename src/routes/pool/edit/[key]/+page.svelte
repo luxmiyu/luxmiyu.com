@@ -15,6 +15,7 @@
     Separate,
   } from '$lib/components'
   import { dev } from '$app/environment'
+  import { redirect } from '@sveltejs/kit'
 
   let { data } = $props()
   let pool = $derived(data.pool)
@@ -38,7 +39,7 @@
 
   const baseURL = dev ? 'http://localhost:5173' : 'https://luxmiyu.com'
   let viewURL = $derived(`${baseURL}/pool/${pool.id}`)
-  let editURL = $derived(`${baseURL}/pool/edit/${pool.id}-${pool.edit}`)
+  let editURL = $derived(`${baseURL}/pool/edit/${pool.id}-${pool.key}`)
 </script>
 
 <Head title="Editing {pool.title}" description="Editing {pool.title}" image={'/preview/pool.jpg'} />
@@ -55,6 +56,32 @@
         <Input.Text value={editURL} disabled />
         <Copy value={editURL} text="Copy Edit URL" />
       </Columns>
+      <Grid columns="2">
+        <Button
+          href="/pool/regenerate?id={pool.id}&key={pool.key}"
+          target="_self"
+          onclick={(e) => {
+            if (!confirm('Are you sure you want to regenerate both pool URLs?')) {
+              e.preventDefault()
+            }
+          }}
+        >
+          Regenerate URLs
+        </Button>
+        <form
+          action="?/delete"
+          method="POST"
+          onsubmit={(e) => {
+            if (!confirm('Are you sure you want to delete this pool?')) {
+              e.preventDefault()
+            }
+          }}
+        >
+          <input type="hidden" name="id" value={pool.id} />
+          <input type="hidden" name="key" value={pool.key} />
+          <Button width="100%" type="submit">Delete Pool</Button>
+        </form>
+      </Grid>
       <p class="subtitle">Save your Edit URL so you don't lose access to this pool!</p>
 
       <h4>Title</h4>
@@ -86,7 +113,7 @@ Tiebreaker,TB,#eeaad5,4881796,-"
       ></Input.Textarea>
       <p class="subtitle syntax">Syntax: Category,CT1,#ffffff,5231502,EZDT</p>
 
-      <Grid columns="2">
+      <Grid>
         <form
           method="POST"
           action="?/update"
@@ -99,24 +126,11 @@ Tiebreaker,TB,#eeaad5,4881796,-"
           }}
         >
           <input type="hidden" name="id" value={pool.id} />
-          <input type="hidden" name="edit" value={pool.edit} />
+          <input type="hidden" name="key" value={pool.key} />
           <input type="hidden" name="title" value={title} />
           <input type="hidden" name="description" value={description} />
           <input type="hidden" name="csv" value={csv} />
           <Button width="100%" type="submit">{updating ? 'Updating...' : 'Update'}</Button>
-        </form>
-        <form
-          action="?/delete"
-          method="POST"
-          onsubmit={(e) => {
-            if (!confirm('Are you sure you want to delete this pool?')) {
-              e.preventDefault()
-            }
-          }}
-        >
-          <input type="hidden" name="id" value={pool.id} />
-          <input type="hidden" name="edit" value={pool.edit} />
-          <Button width="100%" type="submit">Delete</Button>
         </form>
       </Grid>
 
@@ -124,6 +138,8 @@ Tiebreaker,TB,#eeaad5,4881796,-"
         <p class="subtitle">Last updated: {pool.updated.split('T').join(' ').split('.')[0]}</p>
         <p class="subtitle right"><a href="/pool/{pool.id}" target="_blank">view pool</a></p>
       </Separate>
+
+      <h4>Danger Zone</h4>
     </Grid>
   </Text>
 

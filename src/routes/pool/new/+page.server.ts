@@ -8,7 +8,7 @@ export async function load({ url }) {
   const { title, description, csv } = JSON.parse(decodeURIComponent(json))
   if (!title || !csv) return redirect(302, `/pool`)
 
-  const edit = await createPool(title, description, csv)
+  const poolUrl = await createPool(title, description, csv)
 
-  return redirect(302, `/pool/edit/${edit}`)
+  return redirect(302, `/pool/edit/${poolUrl}`)
 }

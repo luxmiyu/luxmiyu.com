@@ -394,8 +394,8 @@ export function generateKey(length: number = 8): string {
   return Array.from({ length }, () => charset[Math.floor(Math.random() * charset.length)]).join('')
 }
 
-export function toPoolView(pool: ComputedPool): Omit<ComputedPool, 'edit'> {
-  const { edit, ...rest } = pool
+export function toPoolView(pool: ComputedPool): Omit<ComputedPool, 'key'> {
+  const { key, ...rest } = pool
   return rest
 }
 
@@ -415,14 +415,14 @@ export async function createPool(title: string, description: string, csv: string
   const csvs = parseCSVs(csv)
 
   const id = generateKey()
-  const edit = generateKey(4)
+  const key = generateKey(24)
 
   const alreadyExists = await getPool(id)
   if (alreadyExists) return createPool(title, description, csv)
 
   const pool: Pool = {
     id,
-    edit,
+    key,
     title: title.slice(0, 400),
     description: description.slice(0, 8000),
     csvs: csvs.slice(0, 50),
@@ -432,5 +432,21 @@ export async function createPool(title: string, description: string, csv: string
 
   await db.collection('pool').insertOne(pool)
 
-  return `${id}-${edit}`
+  return `${id}-${key}`
+}
+
+export async function regeneratePoolUrl(oldId: string, oldKey: string): Promise<string> {
+  const pool = await getPool(oldId)
+  if (!pool) throw error(404, 'Pool not found')
+  if (oldKey !== pool.key) throw error(401, 'Unauthorized')
+
+  const id = generateKey()
+  const key = generateKey(24)
+
+  const alreadyExists = await getPool(id)
+  if (alreadyExists) return regeneratePoolUrl(oldId, oldKey)
+
+  await db.collection('pool').updateOne({ id: oldId }, { $set: { id, key } })
+
+  return `${id}-${key}`
 }

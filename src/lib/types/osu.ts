@@ -10,7 +10,7 @@ export type CSV = {
 
 export type Pool = {
   id: string
-  edit: string
+  key: string
 
   title: string
   description: string

@@ -1,6 +1,4 @@
-import { db } from '$lib/server/db'
 import { getComputedPool, toPoolView } from '$lib/server/osu.js'
-import type { Pool } from '$lib/types/osu'
 import { error } from '@sveltejs/kit'
 
 export async function load({ params }) {
