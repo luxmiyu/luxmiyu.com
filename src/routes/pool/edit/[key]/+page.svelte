@@ -42,7 +42,11 @@
   let editURL = $derived(`${baseURL}/pool/edit/${pool.id}-${pool.key}`)
 </script>
 
-<Head title="Editing {pool.title}" description="Editing {pool.title}" image={'/preview/pool.jpg'} />
+<Head
+  title="Editing {pool.title}"
+  description="Editing {pool.title}"
+  image={'/preview/pool_edit.jpg'}
+/>
 
 <Container fill>
   <Text>
