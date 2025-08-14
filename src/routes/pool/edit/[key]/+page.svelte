@@ -138,8 +138,6 @@ Tiebreaker,TB,#eeaad5,4881796,-"
         <p class="subtitle">Last updated: {pool.updated.split('T').join(' ').split('.')[0]}</p>
         <p class="subtitle right"><a href="/pool/{pool.id}" target="_blank">view pool</a></p>
       </Separate>
-
-      <h4>Danger Zone</h4>
     </Grid>
   </Text>
 
