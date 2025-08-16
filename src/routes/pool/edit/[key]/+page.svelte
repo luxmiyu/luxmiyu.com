@@ -117,7 +117,7 @@ Tiebreaker,TB,#eeaad5,4881796,-"
       ></Input.Textarea>
       <p class="subtitle syntax">Syntax: Category,CT1,#ffffff,5231502,EZDT</p>
 
-      <Grid>
+      <Grid columns="2">
         <form
           method="POST"
           action="?/update"
@@ -136,12 +136,10 @@ Tiebreaker,TB,#eeaad5,4881796,-"
           <input type="hidden" name="csv" value={csv} />
           <Button width="100%" type="submit">{updating ? 'Updating...' : 'Update'}</Button>
         </form>
+        <Button href="/pool/{pool.id}">View Pool</Button>
       </Grid>
 
-      <Separate>
-        <p class="subtitle">Last updated: {pool.updated.split('T').join(' ').split('.')[0]}</p>
-        <p class="subtitle right"><a href="/pool/{pool.id}" target="_blank">view pool</a></p>
-      </Separate>
+      <p class="subtitle">Last updated: {pool.updated.split('T').join(' ').split('.')[0]}</p>
     </Grid>
   </Text>
 
