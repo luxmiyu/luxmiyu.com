@@ -86,7 +86,7 @@
       text-decoration: underline
       cursor: pointer
 
-    :global(p.subtitle), :global(a.subtitle)
+    :global(p.subtitle), :global(a.subtitle), :global(span.subtitle)
       font-size: 12px
       color: var(--text-secondary)
 

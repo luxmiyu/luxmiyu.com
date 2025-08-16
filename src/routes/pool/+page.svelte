@@ -1,6 +1,17 @@
 <script lang="ts">
-  import { Head, Header, Footer, Container, Grid, Input, Button, Text } from '$lib/components'
-  import { defaults } from './defaults'
+  import {
+    Head,
+    Header,
+    Footer,
+    Container,
+    Grid,
+    Input,
+    Button,
+    Text,
+    TextButton,
+    Center,
+  } from '$lib/components'
+  import presets from './presets'
 
   let title = $state('')
   let description = $state('')
@@ -17,10 +28,10 @@
     csv = ''
   }
 
-  function fill() {
-    title = defaults.title
-    description = defaults.description
-    csv = defaults.csv
+  function fill(newTitle: string, newDescription: string, newCSV: string) {
+    title = newTitle
+    description = newDescription
+    csv = newCSV
   }
 </script>
 
@@ -35,13 +46,15 @@
 
   <Text>
     <Grid>
-      <!-- svelte-ignore a11y_click_events_have_key_events -->
-      <!-- svelte-ignore a11y_no_static_element_interactions -->
-      <!-- svelte-ignore a11y_missing_attribute -->
-      <Grid columns="2">
-        <a class="subtitle right" onclick={fill}>Fill</a>
-        <a class="subtitle" onclick={clear}>Clear</a>
-      </Grid>
+      <Center>
+        <span class="subtitle">Presets:</span>
+        {#each presets as preset}
+          <TextButton onclick={() => fill(preset.title, preset.description, preset.csv)} subtitle>
+            {preset.title}
+          </TextButton>
+        {/each}
+        <TextButton onclick={clear} subtitle>Clear</TextButton>
+      </Center>
 
       <h4>Title</h4>
       <Input.Text bind:value={title} placeholder="My New Tournament"></Input.Text>

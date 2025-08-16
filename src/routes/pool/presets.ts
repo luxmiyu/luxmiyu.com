@@ -1,6 +1,13 @@
-export const defaults = {
-  title: 'OWC 2024 Grand Finals',
-  description: `This is the official map pool for the osu! World Cup 2024 Tournament! It was run by the [osu! team](https://osu.ppy.sh/wiki/en/People/osu%21_team) and various community members.
+type Preset = {
+  title: string
+  description: string
+  csv: string
+}
+
+const presets: Preset[] = [
+  {
+    title: 'OWC 2024 Grand Finals',
+    description: `This is the official map pool for the osu! World Cup 2024 Tournament! It was run by the [osu! team](https://osu.ppy.sh/wiki/en/People/osu%21_team) and various community members.
 
 | Position | Member(s) |
 | -------- | --------- |
@@ -15,25 +22,28 @@ export const defaults = {
 
 You can read more about this tournament [here](https://osu.ppy.sh/wiki/en/Tournaments/OWC/2024).
 `,
-  csv: `Nomod,NM 1,#fafafa,4881501,NM
-Nomod,NM 2,#fafafa,4881869,NM
-Nomod,NM 3,#fafafa,4881614,NM
-Nomod,NM 4,#fafafa,4881668,NM
-Nomod,NM 5,#fafafa,4881677,NM
-Hidden,HD 1,#e3b88c,4881712,HD
-Hidden,HD 2,#e3b88c,4881475,HD
-Hidden,HD 3,#e3b88c,4881714,HD
-Hardrock,HR 1,#e38c8e,2874944,HR
-Hardrock,HR 2,#e38c8e,4881729,HR
-Hardrock,HR 3,#e38c8e,2332178,HR
-Doubletime,DT 1,#8cafe3,4880978,DT
-Doubletime,DT 2,#8cafe3,4881745,DT
-Doubletime,DT 3,#8cafe3,74684,DT
-Doubletime,DT 4,#8cafe3,2067859,DT
-Freemod,FM 1,#a98ce3,4881757,-
-Freemod,FM 2,#a98ce3,4881763,-
-Freemod,FM 3,#a98ce3,4881931,-
-Freemod,FM 4,#a98ce3,4881760,-
+    csv: `Nomod,NM1,#fafafa,4881501,NM
+Nomod,NM2,#fafafa,4881869,NM
+Nomod,NM3,#fafafa,4881614,NM
+Nomod,NM4,#fafafa,4881668,NM
+Nomod,NM5,#fafafa,4881677,NM
+Hidden,HD1,#e3b88c,4881712,HD
+Hidden,HD2,#e3b88c,4881475,HD
+Hidden,HD3,#e3b88c,4881714,HD
+Hardrock,HR1,#e38c8e,2874944,HR
+Hardrock,HR2,#e38c8e,4881729,HR
+Hardrock,HR3,#e38c8e,2332178,HR
+Doubletime,DT1,#8cafe3,4880978,DT
+Doubletime,DT2,#8cafe3,4881745,DT
+Doubletime,DT3,#8cafe3,74684,DT
+Doubletime,DT4,#8cafe3,2067859,DT
+Freemod,FM1,#a98ce3,4881757,-
+Freemod,FM2,#a98ce3,4881763,-
+Freemod,FM3,#a98ce3,4881931,-
+Freemod,FM4,#a98ce3,4881760,-
 Tiebreaker,TB,#eeaad5,4881796,-
 `,
-}
+  },
+]
+
+export default presets

@@ -7,15 +7,9 @@
 
     onclick = () => {},
     onpointerdown = () => {},
-    href = undefined,
-    target = '_blank',
-    rel = undefined,
 
-    borderless = false,
-    nopadding = false,
+    subtitle = false,
     disabled = false,
-    nested = false,
-    selected = false,
     width = 'auto',
 
     background = undefined,
@@ -29,15 +23,9 @@
 
     onclick?: () => void
     onpointerdown?: () => void
-    href?: string
-    target?: string
-    rel?: string
 
-    borderless?: boolean
-    nopadding?: boolean
+    subtitle?: boolean
     disabled?: boolean
-    nested?: boolean
-    selected?: boolean
     width?: string
 
     background?: string
@@ -64,19 +52,33 @@
 <button
   {onclick}
   {onpointerdown}
-  class:borderless
-  class:nopadding
-  class:nested
-  class:selected
   style:width
   {disabled}
   style:background
   style:color
   {type}
+  class:subtitle
 >
   {@render children?.()}
 </button>
 
 <style lang="sass">
-  //
+  button
+    appearance: none
+    border: none
+    background: none
+    color: var(--text-secondary)
+    cursor: pointer
+
+    font-family: var(--font-family)
+    font-weight: var(--font-weight)
+    font-size: var(--font-size)
+
+    text-decoration: none
+
+    &.subtitle
+      font-size: 12px
+
+    &:hover
+      text-decoration: underline
 </style>

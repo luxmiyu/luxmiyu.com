@@ -18,6 +18,7 @@ export { default as ProfilePicture } from './components/ProfilePicture.svelte'
 export { default as Rows } from './components/Rows.svelte'
 export { default as Separate } from './components/Separate.svelte'
 export { default as Text } from './components/Text.svelte'
+export { default as TextButton } from './components/TextButton.svelte'
 
 import { default as InputCheckbox } from './components/input/Checkbox.svelte'
 import { default as InputNumber } from './components/input/Number.svelte'
