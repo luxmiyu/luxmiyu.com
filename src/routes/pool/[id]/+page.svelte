@@ -71,8 +71,6 @@
     <Grid>
       <h1>{pool.title}</h1>
 
-      {@html html}
-
       {#each Object.keys(sections) as section}
         <section>
           <h3 class:single={sections[section]!.length === 1}>{section}</h3>
@@ -93,6 +91,8 @@
           <button onclick={hideAll}>Hide All</button>
         </div>
       </Separate>
+
+      {@html html}
     </Grid>
   </Text>
 
