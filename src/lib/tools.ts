@@ -199,6 +199,12 @@ export const tooltabs: ToolTab[] = [
         icon: 'queue_music',
         status: 'updated',
       },
+      {
+        name: 'minecraft',
+        description: 'A collection of my Minecraft content and favorite mods!',
+        icon: 'castle',
+        status: 'updated',
+      },
     ],
   },
   {
