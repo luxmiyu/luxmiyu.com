@@ -155,6 +155,11 @@ export const categories: ModCategory[] = [
         iconURL: 'kleeslabs.png',
         url: 'https://modrinth.com/mod/kleeslabs',
       },
+      {
+        name: 'Inventory Sorting',
+        iconURL: 'inventory-sorting.png',
+        url: 'https://modrinth.com/mod/inventory-sorting',
+      },
     ],
   },
 
@@ -222,6 +227,11 @@ export const categories: ModCategory[] = [
         url: 'https://modrinth.com/mod/better-ping-display-fabric',
       },
       {
+        name: 'Ping View',
+        iconURL: 'ping-view.png',
+        url: 'https://modrinth.com/mod/ping-view',
+      },
+      {
         name: 'Presencium',
         iconURL: 'presencium.png',
         url: 'https://modrinth.com/mod/presencium',
@@ -252,9 +262,24 @@ export const categories: ModCategory[] = [
         url: 'https://modrinth.com/mod/language-reload',
       },
       {
+        name: 'Language Reload',
+        iconURL: 'language-reload.png',
+        url: 'https://modrinth.com/mod/language-reload',
+      },
+      {
+        name: 'lazy-language-loader',
+        iconURL: 'lazy-language-loader.png',
+        url: 'https://modrinth.com/mod/lazy-language-loader',
+      },
+      {
         name: 'More Chat History',
         iconURL: 'morechathistory.png',
         url: 'https://modrinth.com/mod/morechathistory',
+      },
+      {
+        name: 'Chat Animation',
+        iconURL: 'chatanimation.png',
+        url: 'https://modrinth.com/mod/chatanimation',
       },
       {
         name: 'Slot Cycler',
@@ -337,6 +362,11 @@ export const categories: ModCategory[] = [
         name: '3D Skin Layers',
         iconURL: '3dskinlayers.png',
         url: 'https://modrinth.com/mod/3dskinlayers',
+      },
+      {
+        name: '3D Armor',
+        iconURL: 'armor-3d.png',
+        url: 'https://modrinth.com/mod/armor-3d',
       },
       {
         name: 'Continuity',
@@ -448,6 +478,11 @@ export const categories: ModCategory[] = [
         name: 'Veinminer',
         iconURL: 'sgtveinminer.png',
         url: 'https://modrinth.com/mod/sgtveinminer',
+      },
+      {
+        name: 'Ore Harvester',
+        iconURL: 'ore-harvester.png',
+        url: 'https://modrinth.com/mod/ore-harvester',
       },
       {
         name: 'squaremap',
