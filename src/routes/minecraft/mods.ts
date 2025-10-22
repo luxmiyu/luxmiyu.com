@@ -187,6 +187,11 @@ export const categories: ModCategory[] = [
         url: 'https://modrinth.com/mod/appleskin',
       },
       {
+        name: 'Auto Reconnect Reforged',
+        iconURL: 'autoreconnectrf.png',
+        url: 'https://modrinth.com/mod/autoreconnectrf',
+      },
+      {
         name: 'Lightweight Inventory Sorting',
         iconURL: 'lightweight-inventory-sorting.png',
         url: 'https://modrinth.com/mod/lightweight-inventory-sorting',
@@ -374,6 +379,11 @@ export const categories: ModCategory[] = [
         url: 'https://modrinth.com/mod/continuity',
       },
       {
+        name: 'Continuity',
+        iconURL: 'optigui.png',
+        url: 'https://modrinth.com/mod/optigui',
+      },
+      {
         name: 'Entity Model Features',
         iconURL: 'entity-model-features.png',
         url: 'https://modrinth.com/mod/entity-model-features',
@@ -448,6 +458,11 @@ export const categories: ModCategory[] = [
         name: 'Ledger',
         iconURL: 'ledger.png',
         url: 'https://modrinth.com/mod/ledger',
+      },
+      {
+        name: 'Mods Command',
+        iconURL: 'mods-command.png',
+        url: 'https://modrinth.com/mod/mods-command',
       },
       {
         name: 'Chunky',
