@@ -12,6 +12,7 @@
 
     fontSize = 'inherit',
     fontWeight = 'inherit',
+    monospace = false,
   }: {
     value: string
     width?: string
@@ -25,6 +26,7 @@
 
     fontSize?: string
     fontWeight?: string
+    monospace?: boolean
   } = $props()
 </script>
 
@@ -39,6 +41,7 @@
   style:font-weight={fontWeight}
   class:center
   class:breakall
+  class:monospace
 >
   {value}
 </span>
@@ -61,4 +64,9 @@
 
     &.center
       justify-content: center
+
+    &.monospace
+      font-family: monospace
+      word-break: break-all
+      overflow-wrap: anywhere
 </style>

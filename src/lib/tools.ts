@@ -205,6 +205,12 @@ export const tooltabs: ToolTab[] = [
         icon: 'castle',
         status: 'updated',
       },
+      {
+        name: 'tetobooru',
+        description: 'A simple Tetris board image generator',
+        icon: 'dashboard_customize',
+        status: 'updated',
+      },
     ],
   },
   {

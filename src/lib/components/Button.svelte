@@ -124,6 +124,9 @@
     &.nopadding
       padding: 0
 
+    &.selected
+      background: var(--input)
+
     &:hover
       background: var(--input)
 

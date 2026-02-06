@@ -9,7 +9,7 @@
     width = '100%',
     height = 'auto',
   }: {
-    children: Snippet
+    children?: Snippet
     columns?: string
     minmax?: string
     gap?: string

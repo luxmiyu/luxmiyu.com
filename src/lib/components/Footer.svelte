@@ -2,9 +2,15 @@
   let {
     source = true,
     discord = true,
+
+    extra = '',
+    extraURL = '',
   }: {
     source?: boolean
     discord?: boolean
+
+    extra?: string
+    extraURL?: string
   } = $props()
 </script>
 
@@ -18,6 +24,10 @@
 
     {#if discord}
       · <a href="https://discord.gg/komimau" target="_blank">discord server</a>
+    {/if}
+
+    {#if extra && extraURL}
+      · <a href={extraURL} target="_blank">{extra}</a>
     {/if}
   </p>
 </footer>
