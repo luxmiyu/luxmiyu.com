@@ -209,4 +209,5 @@
   canvas
     background: #111111
     cursor: crosshair
+    touch-action: none
 </style>
