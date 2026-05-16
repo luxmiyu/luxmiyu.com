@@ -202,7 +202,7 @@
     <Button onclick={clear}>Clear Board</Button>
   </Grid>
 
-  <Footer extra="tetobooru" extraURL="https://github.com/luxmiyu/tetobooru" />
+  <Footer extras={[{ href: 'https://github.com/luxmiyu/tetobooru', label: 'tetobooru' }]} />
 </Container>
 
 <style lang="sass">

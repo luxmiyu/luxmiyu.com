@@ -1,17 +1,40 @@
 <script lang="ts">
+  import { onMount } from 'svelte'
+
+  interface FooterLink {
+    href: string
+    label: string
+  }
+
   let {
     source = true,
     discord = true,
 
-    extra = '',
-    extraURL = '',
+    extras = [],
   }: {
     source?: boolean
     discord?: boolean
 
-    extra?: string
-    extraURL?: string
+    extras?: FooterLink[]
   } = $props()
+
+  const links: FooterLink[] = $state([])
+
+  onMount(() => {
+    links.length = 0
+
+    if (source)
+      links.push({
+        href: 'https://github.com/luxmiyu/luxmiyu.com',
+        label: 'source code',
+      })
+
+    if (discord)
+      links.push({
+        href: 'https://discord.gg/komimau',
+        label: 'discord server',
+      })
+  })
 </script>
 
 <footer>
@@ -26,9 +49,9 @@
       · <a href="https://discord.gg/komimau" target="_blank">discord server</a>
     {/if}
 
-    {#if extra && extraURL}
-      · <a href={extraURL} target="_blank">{extra}</a>
-    {/if}
+    {#each extras as { href, label }}
+      · <a {href} target="_blank">{label}</a>
+    {/each}
   </p>
 </footer>
 
