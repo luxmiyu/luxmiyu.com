@@ -103,6 +103,12 @@ export const tooltabs: ToolTab[] = [
         icon: 'password',
         status: 'updated',
       },
+      {
+        name: 'reset',
+        description: 'A reset stylesheet',
+        icon: 'brand_family',
+        status: 'updated',
+      },
     ],
   },
   {
