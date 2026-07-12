@@ -12,6 +12,15 @@ export const customBangs: Bang[] = [
   },
   {
     c: 'Entertainment',
+    d: 'luxmiyu.com',
+    r: 0,
+    s: 'luxmiyu.com/[tool]',
+    sc: 'Search',
+    t: 'l',
+    u: 'https://luxmiyu.com/{{{s}}}',
+  },
+  {
+    c: 'Entertainment',
     d: 'dcag.art',
     r: 0,
     s: 'Daily Cute Anime Girl',
