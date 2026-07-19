@@ -109,6 +109,12 @@ export const tooltabs: ToolTab[] = [
         icon: 'brand_family',
         status: 'updated',
       },
+      {
+        name: 'kaomoji',
+        description: 'A collection of japanese text emojis',
+        icon: 'emoticon',
+        status: 'updated',
+      },
     ],
   },
   {

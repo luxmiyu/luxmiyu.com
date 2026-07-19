@@ -1,9 +1,17 @@
 <script lang="ts">
-  let { children } = $props()
+  import { type Snippet } from 'svelte'
+
+  let {
+    children,
+    gap = '8px',
+  }: {
+    children?: Snippet
+    gap?: string
+  } = $props()
 </script>
 
-<main>
-  {@render children()}
+<main style:gap>
+  {@render children?.()}
 </main>
 
 <style lang="sass">
