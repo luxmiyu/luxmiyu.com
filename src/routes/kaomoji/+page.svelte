@@ -3,7 +3,11 @@
   import categories from './kaomoji'
 </script>
 
-<Head title="luxmiyu → kaomoji" description="kaomoji" image="/preview/kaomoji.jpg" />
+<Head
+  title="luxmiyu → kaomoji"
+  description="a collection of japanese text emojis"
+  image="/preview/kaomoji.jpg"
+/>
 
 <Container fill>
   <Header title="kaomoji" description="a collection of japanese text emojis" />

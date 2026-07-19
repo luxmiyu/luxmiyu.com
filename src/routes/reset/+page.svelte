@@ -51,7 +51,7 @@ table {
 }`
 </script>
 
-<Head title="luxmiyu → reset" description="reset" image="/preview/reset.jpg" />
+<Head title="luxmiyu → reset" description="a reset stylesheet" image="/preview/reset.jpg" />
 
 <Container fill>
   <Header title="reset" description="a reset stylesheet" />
