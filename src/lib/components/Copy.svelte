@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { type Snippet } from 'svelte'
   import { Button } from '$lib/components'
 
   let {
@@ -12,6 +11,7 @@
     borderless = false,
     nopadding = false,
     disabled = false,
+    nested = false,
     width = 'auto',
   }: {
     value: string
@@ -23,6 +23,7 @@
     borderless?: boolean
     nopadding?: boolean
     disabled?: boolean
+    nested?: boolean
     width?: string
   } = $props()
 
@@ -41,4 +42,4 @@
   })
 </script>
 
-<Button {borderless} {nopadding} {disabled} {width} {onclick}>{currentText}</Button>
+<Button {borderless} {nopadding} {disabled} {nested} {width} {onclick}>{currentText}</Button>

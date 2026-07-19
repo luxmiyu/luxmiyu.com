@@ -217,6 +217,12 @@ export const tooltabs: ToolTab[] = [
         icon: 'dashboard_customize',
         status: 'updated',
       },
+      {
+        name: 'fzero',
+        description: 'A Tiled extension to create barrier brushes for F-ZERO',
+        icon: 'scatter_plot',
+        status: 'updated',
+      },
     ],
   },
   {
