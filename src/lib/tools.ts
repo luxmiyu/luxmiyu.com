@@ -115,6 +115,12 @@ export const tooltabs: ToolTab[] = [
         icon: 'emoticon',
         status: 'updated',
       },
+      {
+        name: 'bmi',
+        description: 'A simple BMI calculator',
+        icon: 'body_fat',
+        status: 'updated',
+      },
     ],
   },
   {
