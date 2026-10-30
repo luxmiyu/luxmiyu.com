@@ -3,6 +3,7 @@
   import { Head, Header, Footer, Container, Text, Input } from '$lib/components'
 
   let query: string = $state('')
+  let found: boolean = $state(false)
   let definitions: string[] = $state([])
 
   let lastQuery = ''
@@ -11,6 +12,7 @@
     const interval = setInterval(() => {
       if (query === lastQuery) return
       lastQuery = query
+      found = false
       definitions = []
 
       if (query.length > 1) {
@@ -18,7 +20,12 @@
         fetch(`https://scrabble.luxmiyu.com/api/definitions/${current}`)
           .then((response) => response.json())
           .then((json) => {
-            if (current === lastQuery) definitions = json
+            if (current === lastQuery) {
+              if (json.word !== null) {
+                found = true
+                definitions = json.definitions
+              }
+            }
           })
       }
     }, 1000)
@@ -39,12 +46,16 @@
   <Input.Text bind:value={query} width="100%" focus placeholder="Search for a word..." />
 
   <Text>
-    {#if definitions.length > 0}
+    {#if query.length === 0}
+      <!--  -->
+    {:else if !found}
+      <p class="subtitle">&lt;invalid word&gt;</p>
+    {:else if definitions.length > 0}
       {#each definitions as definition}
         <p class="subtitle">{definition}</p>
       {/each}
     {:else}
-      <p class="subtitle">...</p>
+      <p class="subtitle">&lt;no definitions found&gt;</p>
     {/if}
   </Text>
 
