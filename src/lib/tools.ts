@@ -235,6 +235,12 @@ export const tooltabs: ToolTab[] = [
         icon: 'scatter_plot',
         status: 'updated',
       },
+      {
+        name: 'scrabble',
+        description: 'The CSW24 wordlist with Wiktionary definitions',
+        icon: 'dictionary',
+        status: 'updated',
+      },
     ],
   },
   {
